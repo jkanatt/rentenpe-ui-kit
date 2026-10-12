@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons — Rentenpe UI Kit (PayDash Match)</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    /* ══════ EXACT PAYDASH BUTTON CLASSES ══════ */
+    /* Source: Pay-Dash/src/app/globals.css lines 172-258 */
+
+    /* Primary / glass-button-active */
+    .pd-btn-primary {
+      background: linear-gradient(180deg, #242424 0%, #0A0A0A 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.2);
+      border-radius: 9999px;
+      padding: 0 24px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      white-space: nowrap; text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+    .pd-btn-primary:hover {
+      background: linear-gradient(180deg, #333333 0%, #111111 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.25);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    .pd-btn-primary:active { transform: translateY(0); box-shadow: 0 4px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1); }
+
+    /* Secondary / glass-button */
+    .pd-btn-secondary {
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.10);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      border-radius: 9999px;
+      padding: 0 24px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      color: #000000; cursor: pointer; transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .pd-btn-secondary:hover { background: #FAFAFC; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06); }
+    .pd-btn-secondary:active { transform: translateY(0); box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+
+    /* Tertiary / Quiet */
+    .pd-btn-tertiary {
+      background: transparent; border: none; border-radius: 9999px;
+      padding: 0 16px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      color: var(--color-text-secondary); cursor: pointer; transition: all 150ms;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .pd-btn-tertiary:hover { color: var(--color-text-primary); background: rgba(0,0,0,0.03); }
+
+    /* Danger / glass-button-danger */
+    .pd-btn-danger {
+      background: #EF4444; color: #FFFFFF; border: none; border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(239,68,68,0.2);
+      padding: 0 24px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 150ms; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .pd-btn-danger:hover { background: #DC2626; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(239,68,68,0.3); }
+
+    /* Danger Secondary */
+    .pd-btn-danger-secondary {
+      background: transparent; color: #EF4444; border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 9999px; padding: 0 24px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 150ms; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .pd-btn-danger-secondary:hover { background: #FEF2F2; }
+
+    /* Small */
+    .pd-btn-sm { min-height: 32px; padding: 0 16px; font-size: 12px; }
+    /* Large */
+    .pd-btn-lg { min-height: 52px; padding: 0 32px; font-size: 15px; }
+    /* Full Width */
+    .pd-btn-full { width: 100%; }
+
+    /* Icon Button */
+    .pd-btn-icon {
+      width: 42px; height: 42px; padding: 0; border-radius: 9999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #FFFFFF; border: 1px solid rgba(0,0,0,0.10);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06); cursor: pointer;
+      transition: all 150ms; font-size: 18px; color: var(--color-text-primary);
+    }
+    .pd-btn-icon:hover { background: #FAFAFC; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .pd-btn-icon.ghost { background: transparent; border: none; box-shadow: none; color: var(--color-text-secondary); }
+    .pd-btn-icon.ghost:hover { background: rgba(0,0,0,0.04); color: var(--color-text-primary); }
+    .pd-btn-icon.destructive { background: #FEF2F2; color: #EF4444; border: 1px solid rgba(239,68,68,0.2); }
+    .pd-btn-icon.destructive:hover { background: #EF4444; color: white; }
+    .pd-btn-icon-sm { width: 32px; height: 32px; font-size: 14px; }
+
+    /* Edit / Outlined */
+    .pd-btn-edit {
+      background: white; color: #0F172A; border: 1px solid #E2E8F0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-radius: 9999px;
+      padding: 0 24px; min-height: 42px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 150ms; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .pd-btn-edit:hover { background: #F8FAFC; transform: translateY(-1px); }
+
+    /* Brutalist Button (from BrutalistSelect) */
+    .pd-btn-brutalist {
+      border: 2px solid #000; border-radius: 0; background: #FFF; color: #000;
+      box-shadow: 2px 2px 0px #000; padding: 0 16px; min-height: 38px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: all 0.1s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .pd-btn-brutalist:hover { box-shadow: 3px 3px 0px #000; transform: translate(-1px, -1px); }
+    .pd-btn-brutalist:active { box-shadow: 1px 1px 0px #000; transform: translate(1px, 1px); }
+    .pd-btn-brutalist.dark { background: #000; color: #FFF; border: 2px solid #000; box-shadow: 2px 2px 0px rgba(0,0,0,0.3); }
+
+    /* Pill Tab */
+    .pd-tab { padding: 12px 28px; min-height: 44px; border: none; background: #FFFFFF; color: var(--color-text-secondary); font-size: 13px; font-weight: 500; cursor: pointer; border-radius: 9999px; transition: all 0.25s; display: inline-flex; align-items: center; }
+    .pd-tab:hover { color: var(--color-text-primary); background: rgba(0,0,0,0.04); }
+    .pd-tab.active { background: #000000; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 4px 14px rgba(0,0,0,0.18), inset 0 1px 1px rgba(255,255,255,0.08); font-weight: 600; }
+
+    /* Loading state */
+    .pd-btn-loading { opacity: 0.7; cursor: wait; pointer-events: none; }
+    .pd-spinner { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; }
+    .pd-spinner-dark { border-color: rgba(0,0,0,0.1); border-top-color: #000; }
+
+    /* Disabled */
+    .pd-btn-disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+    /* Button Group */
+    .pd-btn-group { display: inline-flex; border: 1px solid rgba(0,0,0,0.10); border-radius: 9999px; overflow: hidden; background: white; }
+    .pd-btn-group button { border: none; border-right: 1px solid rgba(0,0,0,0.06); background: white; padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 150ms; color: var(--color-text-secondary); }
+    .pd-btn-group button:last-child { border-right: none; }
+    .pd-btn-group button:hover { background: #FAFAFC; color: var(--color-text-primary); }
+    .pd-btn-group button.active { background: #000; color: white; }
+
+    /* Split Button */
+    .pd-split-btn { display: inline-flex; border-radius: 9999px; overflow: hidden; }
+    .pd-split-main { background: linear-gradient(180deg, #242424, #0A0A0A); color: white; border: 1px solid rgba(255,255,255,0.15); border-right: none; padding: 0 20px; min-height: 42px; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; border-radius: 9999px 0 0 9999px; box-shadow: 0 8px 20px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.2); }
+    .pd-split-chevron { background: linear-gradient(180deg, #1a1a1a, #050505); color: white; border: 1px solid rgba(255,255,255,0.15); border-left: 1px solid rgba(255,255,255,0.1); padding: 0 12px; min-height: 42px; cursor: pointer; display: flex; align-items: center; border-radius: 0 9999px 9999px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.2); }
+
+    /* Preview grid */
+    .btn-preview-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 24px; background: var(--color-surface-inset); border-radius: var(--radius-md); margin-bottom: 12px; }
+    .btn-preview-dark { background: #0F0F14; }
+    .btn-preview-col { display: flex; flex-direction: column; gap: 12px; padding: 24px; background: var(--color-surface-inset); border-radius: var(--radius-md); margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn active" id="tabBtnComponents" onclick="switchSidebarTab('components')">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <nav class="catalog-nav" id="navComponentsList">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Buttons</div>
+        <a href="#btnhier" class="catalog-nav-item active">🔘 Button Hierarchy</a>
+        <a href="#btnsize" class="catalog-nav-item">📏 Size Variants</a>
+        <a href="#btnicon" class="catalog-nav-item">⊞ Icon Buttons</a>
+        <a href="#btnlink" class="catalog-nav-item">🔗 Text & Link Actions</a>
+        <a href="#btndest" class="catalog-nav-item">🗑️ Destructive Actions</a>
+        <a href="#btnstate" class="catalog-nav-item">⚡ Interaction States</a>
+        <a href="#btnadorn" class="catalog-nav-item">✨ Icon Placement</a>
+        <a href="#btnsplit" class="catalog-nav-item">◫ Split & Menu</a>
+        <a href="#btngroup" class="catalog-nav-item">▦ Groups & Toolbars</a>
+        <a href="#fab" class="catalog-nav-item">⊕ Floating Action</a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Navigate</div>
+        <a href="../index.html" class="catalog-nav-item">← Back to Index</a>
+      </div>
+    </nav>
+    
+    <nav class="catalog-nav" id="navPagesList" style="display:none;">
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+          <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+          <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+          <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+          <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+          <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+          <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+          <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+
+    </nav>
+    <div class="catalog-sidebar-footer">
+      <div class="theme-toggle"><button class="theme-toggle-option active" data-theme="light">☀️ Light</button><button class="theme-toggle-option" data-theme="dark">🌙 Dark</button></div>
+    </div>
+  </aside>
+
+  <main class="catalog-main">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">Buttons</h1>
+      <p class="catalog-page-description">10 families · 30 components. Every button style extracted 100% from the Pay-Dash repo's <code>globals.css</code> — exact gradients, shadows, borders, and transitions.</p>
+      <div style="padding:12px 16px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.15);border-radius:8px;margin-top:16px;font-size:13px;color:var(--color-success-text)"><strong>PayDash Source:</strong> globals.css lines 172-258, Sidebar.tsx lines 388-417, Select.tsx (BrutalistSelect)</div>
+    </div>
+
+    <!-- ═══ 1. BUTTON HIERARCHY ═══ -->
+    <section class="component-section" id="btnhier">
+      <div class="component-section-header"><div><span class="component-family-id">BTNHIER</span><h2 class="component-family-name">Button Hierarchy</h2><p class="component-family-desc">Primary, secondary, and tertiary button levels for visual weight control.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNHIER·A</span><span class="component-card-model">Model A — Primary Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary">Primary Action</button><button class="pd-btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Create New</button></div><div class="btn-preview-row btn-preview-dark"><button class="pd-btn-primary">On Dark Surface</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNHIER·B</span><span class="component-card-model">Model B — Secondary Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-secondary">Secondary</button><button class="pd-btn-edit">Outlined Edit</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNHIER·C</span><span class="component-card-model">Model C — Tertiary / Quiet Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-tertiary">Cancel</button><button class="pd-btn-tertiary">View All →</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 2. SIZE VARIANTS ═══ -->
+    <section class="component-section" id="btnsize">
+      <div class="component-section-header"><div><span class="component-family-id">BTNSIZE</span><h2 class="component-family-name">Button Size Variants</h2><p class="component-family-desc">Small, medium, and large size options for contextual density control.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSIZE·A</span><span class="component-card-model">Model A — Small</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary pd-btn-sm">Small Primary</button><button class="pd-btn-secondary pd-btn-sm">Small Secondary</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSIZE·B</span><span class="component-card-model">Model B — Medium / Standard</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary">Standard Primary</button><button class="pd-btn-secondary">Standard Secondary</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSIZE·C</span><span class="component-card-model">Model C — Large / Full-Width</span></div><div class="component-card-preview"><div class="btn-preview-col"><button class="pd-btn-primary pd-btn-lg">Large Primary</button><button class="pd-btn-primary pd-btn-full">Full Width Primary</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 3. ICON BUTTON ═══ -->
+    <section class="component-section" id="btnicon">
+      <div class="component-section-header"><div><span class="component-family-id">BTNICON</span><h2 class="component-family-name">Icon Button</h2><p class="component-family-desc">Compact icon-only actions for toolbars and utility controls.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNICON·A</span><span class="component-card-model">Model A — Standard Utility Icon Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-icon">⚙️</button><button class="pd-btn-icon">📋</button><button class="pd-btn-icon">🔔</button><button class="pd-btn-icon pd-btn-icon-sm">✏️</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNICON·B</span><span class="component-card-model">Model B — Subtle / Ghost Icon Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-icon ghost">✕</button><button class="pd-btn-icon ghost">⋮</button><button class="pd-btn-icon ghost">⟨</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNICON·C</span><span class="component-card-model">Model C — Destructive Icon Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-icon destructive">🗑️</button><button class="pd-btn-icon destructive">✕</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 4. TEXT & LINK ACTIONS ═══ -->
+    <section class="component-section" id="btnlink">
+      <div class="component-section-header"><div><span class="component-family-id">BTNLINK</span><h2 class="component-family-name">Text & Link Actions</h2><p class="component-family-desc">Inline text links and standalone link actions.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNLINK·A</span><span class="component-card-model">Model A — Inline Text Link</span></div><div class="component-card-preview"><div class="btn-preview-row"><span style="font-size:14px;color:var(--color-text-secondary)">By continuing you agree to our <a href="#" style="color:#2563EB;font-weight:600;text-decoration:underline">Terms of Service</a></span></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNLINK·B</span><span class="component-card-model">Model B — Standalone Link Action</span></div><div class="component-card-preview"><div class="btn-preview-row"><a href="#" style="font-size:13px;font-weight:600;color:#2563EB;text-decoration:none;display:flex;align-items:center;gap:4px">View All Properties</a></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNLINK·C</span><span class="component-card-model">Model C — External / Trailing-Icon Link</span></div><div class="component-card-preview"><div class="btn-preview-row"><a href="#" style="font-size:13px;font-weight:600;color:#2563EB;text-decoration:none;display:flex;align-items:center;gap:6px">Open Documentation <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 5. DESTRUCTIVE ACTIONS ═══ -->
+    <section class="component-section" id="btndest">
+      <div class="component-section-header"><div><span class="component-family-id">BTNDEST</span><h2 class="component-family-name">Destructive Actions</h2><p class="component-family-desc">High-friction buttons for irreversible or dangerous operations.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNDEST·A</span><span class="component-card-model">Model A — Destructive Primary</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-danger">Delete Account</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNDEST·B</span><span class="component-card-model">Model B — Destructive Secondary</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-danger-secondary">Remove Access</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNDEST·C</span><span class="component-card-model">Model C — Destructive Icon Action</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-icon destructive">🗑️</button><button class="pd-btn-danger pd-btn-sm"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Remove</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 6. INTERACTION STATES ═══ -->
+    <section class="component-section" id="btnstate">
+      <div class="component-section-header"><div><span class="component-family-id">BTNSTATE</span><h2 class="component-family-name">Button Interaction States</h2><p class="component-family-desc">Hover, focus, loading, and disabled state presentations.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSTATE·A</span><span class="component-card-model">Model A — Hover / Focus / Pressed</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary">Default</button><button class="pd-btn-primary" style="background:linear-gradient(180deg,#333,#111);border:1px solid rgba(255,255,255,0.22);box-shadow:0 12px 28px rgba(0,0,0,0.25),inset 0 1px 1px rgba(255,255,255,0.25)">Hover</button><button class="pd-btn-primary" style="outline:2px solid #2563EB;outline-offset:2px">Focus</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSTATE·B</span><span class="component-card-model">Model B — Loading / In Progress</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary pd-btn-loading"><span class="pd-spinner"></span>Processing...</button><button class="pd-btn-secondary pd-btn-loading"><span class="pd-spinner pd-spinner-dark"></span>Saving</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSTATE·C</span><span class="component-card-model">Model C — Disabled / Unavailable</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary pd-btn-disabled">Disabled Primary</button><button class="pd-btn-secondary pd-btn-disabled">Disabled Secondary</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 7. ICON PLACEMENT ═══ -->
+    <section class="component-section" id="btnadorn">
+      <div class="component-section-header"><div><span class="component-family-id">BTNADORN</span><h2 class="component-family-name">Button Icon Placement</h2><p class="component-family-desc">Leading, trailing, and combined icon+label configurations.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNADORN·A</span><span class="component-card-model">Model A — Leading Icon</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Employee</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNADORN·B</span><span class="component-card-model">Model B — Trailing Icon</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-secondary">Continue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNADORN·C</span><span class="component-card-model">Model C — Full-Width / Icon + Label</span></div><div class="component-card-preview"><div class="btn-preview-col"><button class="pd-btn-primary pd-btn-full pd-btn-lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Submit Application</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 8. SPLIT & MENU ═══ -->
+    <section class="component-section" id="btnsplit">
+      <div class="component-section-header"><div><span class="component-family-id">BTNSPLIT</span><h2 class="component-family-name">Split & Menu Button</h2><p class="component-family-desc">Split action + chevron trigger and dropdown menu buttons.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSPLIT·A</span><span class="component-card-model">Model A — Split Action + Chevron</span></div><div class="component-card-preview"><div class="btn-preview-row"><div class="pd-split-btn"><button class="pd-split-main">Run Payroll</button><button class="pd-split-chevron">▾</button></div></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSPLIT·B</span><span class="component-card-model">Model B — Dropdown Trigger Button</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-secondary">Export ▾</button><button class="pd-btn-primary">Actions ▾</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNSPLIT·C</span><span class="component-card-model">Model C — Overflow Action Trigger</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-icon">⋯</button><button class="pd-btn-icon ghost">⋮</button></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 9. GROUPS & TOOLBARS ═══ -->
+    <section class="component-section" id="btngroup">
+      <div class="component-section-header"><div><span class="component-family-id">BTNGROUP</span><h2 class="component-family-name">Button Groups & Toolbars</h2><p class="component-family-desc">Horizontally and vertically grouped button sets for view switching and toolbars.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNGROUP·A</span><span class="component-card-model">Model A — Horizontal Button Group</span></div><div class="component-card-preview"><div class="btn-preview-row"><div class="pd-btn-group"><button class="active">All</button><button>Active</button><button>Draft</button></div></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNGROUP·B</span><span class="component-card-model">Model B — Pill Tab Group</span></div><div class="component-card-preview"><div class="btn-preview-row"><div style="display:inline-flex;padding:5px;background:#fff;border:1px solid rgba(0,0,0,0.10);border-radius:9999px;gap:2px"><button class="pd-tab active">Overview</button><button class="pd-tab">Details</button><button class="pd-tab">Activity</button></div></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNGROUP·C</span><span class="component-card-model">Model C — Toolbar Action Group</span></div><div class="component-card-preview"><div class="btn-preview-row"><div style="display:flex;gap:8px"><button class="pd-btn-secondary pd-btn-sm">📋 Copy</button><button class="pd-btn-secondary pd-btn-sm">📥 Export</button><button class="pd-btn-danger pd-btn-sm">🗑️ Delete</button></div></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ 10. FAB ═══ -->
+    <section class="component-section" id="fab">
+      <div class="component-section-header"><div><span class="component-family-id">FAB</span><h2 class="component-family-name">Floating Action Button</h2><p class="component-family-desc">Persistent floating action triggers for primary app actions.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">FAB·A</span><span class="component-card-model">Model A — Icon-Only FAB</span></div><div class="component-card-preview"><div class="btn-preview-row" style="min-height:100px;position:relative"><div style="position:absolute;right:24px;bottom:24px"><button class="pd-btn-primary" style="width:56px;height:56px;padding:0;border-radius:16px;font-size:24px;box-shadow:0 12px 32px rgba(0,0,0,0.3),inset 0 1px 1px rgba(255,255,255,0.2)">+</button></div></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">FAB·B</span><span class="component-card-model">Model B — Extended FAB with Label</span></div><div class="component-card-preview"><div class="btn-preview-row" style="min-height:100px;position:relative"><div style="position:absolute;right:24px;bottom:24px"><button class="pd-btn-primary" style="padding:0 24px;height:56px;border-radius:16px;font-size:14px;box-shadow:0 12px 32px rgba(0,0,0,0.3),inset 0 1px 1px rgba(255,255,255,0.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>New Property</button></div></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">FAB·C</span><span class="component-card-model">Model C — Mini / Secondary FAB</span></div><div class="component-card-preview"><div class="btn-preview-row" style="min-height:100px;position:relative"><div style="position:absolute;right:24px;bottom:24px;display:flex;flex-direction:column;gap:12px;align-items:center"><button class="pd-btn-icon" style="width:40px;height:40px;box-shadow:0 4px 12px rgba(0,0,0,0.12)">📝</button><button class="pd-btn-icon" style="width:40px;height:40px;box-shadow:0 4px 12px rgba(0,0,0,0.12)">📎</button><button class="pd-btn-primary" style="width:56px;height:56px;padding:0;border-radius:16px;font-size:24px;box-shadow:0 12px 32px rgba(0,0,0,0.3)">+</button></div></div></div></div>
+      </div>
+    </section>
+
+    <!-- ═══ BRUTALIST VARIANTS ═══ -->
+    <section class="component-section" id="brutalist">
+      <div class="component-section-header"><div><span class="component-family-id">BTNBRUT</span><h2 class="component-family-name">Brutalist Button Variants</h2><p class="component-family-desc">Neo-Brutalist style from PayDash's BrutalistSelect and DrawerPanel — sharp corners, hard shadows, thick borders.</p></div></div>
+      <div class="component-grid">
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNBRUT·A</span><span class="component-card-model">Model A — Light Brutalist</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-brutalist">Download</button><button class="pd-btn-brutalist">View Report</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNBRUT·B</span><span class="component-card-model">Model B — Dark Brutalist</span></div><div class="component-card-preview"><div class="btn-preview-row"><button class="pd-btn-brutalist dark">Send Email</button><button class="pd-btn-brutalist dark">Approve</button></div></div></div>
+        <div class="component-card"><div class="component-card-header"><span class="component-card-id">BTNBRUT·C</span><span class="component-card-model">Model C — Brutalist Group</span></div><div class="component-card-preview"><div class="btn-preview-row"><div style="display:flex"><button class="pd-btn-brutalist" style="border-right:none">Download</button><button class="pd-btn-brutalist dark">Send Email</button></div></div></div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

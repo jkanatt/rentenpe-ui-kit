@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboards & SaaS Suites — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/screens-data.js"></script>
+  <script src="../js/screen-renderers.js"></script>
+  <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+<div class="catalog-shell">
+  <!-- Sidebar -->
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div style="margin-bottom: 12px; display:flex; align-items:center; justify-content:space-between;">
+        <a href="../index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+          <div style="width:28px; height:28px; border-radius:8px; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;">R</div>
+          <span style="font-size: 15px; font-weight: 800; color: var(--color-text-primary);">RentenPe</span>
+        </a>
+        <span style="font-size: 10px; font-weight: 800; color: #10B981; background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:99px;">PRO 2.0</span>
+      </div>
+
+      <!-- Search Input -->
+      <div class="sidebar-search" style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 10px; font-size: 14px; color: #94A3B8;">🔍</span>
+        <input type="text" id="catalogSearch" placeholder="Search pages or components..." style="width: 100%; padding: 10px 10px 10px 36px; background: var(--color-surface-sunken, #F1F5F9); border: none; border-radius: 8px; font-size: 13px; outline: none;">
+      </div>
+    </div>
+
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn" id="tabBtnComponents" onclick="window.location.href='../index.html#components'">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn active" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="catalog-nav" id="navPagesList" style="display:block;">
+      
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+    
+        <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+      
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+      
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+      
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+      
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+    
+        <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+    
+        <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+      
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+      
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+      
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+      
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+      
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+      
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item active" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+      
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+      
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+      
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+      
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+      
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+      
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+      
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+      
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+      
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+      
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <div class="catalog-sidebar-footer">
+      <button onclick="window.openThemePicker()" style="width: 100%; margin-bottom: 12px; padding: 10px; background: var(--color-surface, #FFFFFF); border: 1px solid var(--color-border, #E2E8F0); border-radius: 10px; color: var(--color-text-primary, #0F172A); font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        🎨 Customize Tokens
+      </button>
+      <div class="theme-toggle">
+        <button class="theme-toggle-option active" data-theme="light">☀️ Light</button>
+        <button class="theme-toggle-option" data-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="catalog-main" style="background: var(--color-surface-sunken, #F8FAFC); padding: 32px 48px;">
+    <!-- Suite Header Banner -->
+    <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <a href="../index.html#pages" style="color:#94A3B8; text-decoration:none; font-size:12px; font-weight:700;">← All Suites</a>
+          <span style="color:#64748B;">/</span>
+          <span style="color:#38BDF8; font-size:12px; font-weight:700;">Dashboards & SaaS Suites</span>
+        </div>
+        <h1 style="font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 10px 0;">📊 Dashboards & SaaS Suites</h1>
+        <p style="font-size:14px; color:#94A3B8; margin:0; max-width:600px; line-height:1.6;">3D Leaderboard podium, calendar week planners, dark task boards, and agency landing pages.</p>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-size:36px; font-weight:900; color:#38BDF8;">12</div>
+        <div style="font-size:11px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Interactive Screens</div>
+      </div>
+    </div>
+
+    <!-- Screens Gallery Grid -->
+    <div class="screens-gallery-grid">
+      
+      <div class="screen-card-container" id="leaderboard-podium">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0F172A;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div>
+            <div style="font-weight:900;font-size:16px;margin-bottom:16px;">🏆 Weekly Leaderboard</div>
+            <!-- 3D Podium Stacks -->
+            <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;height:160px;margin-bottom:20px;">
+              <div style="flex:1;background:#334155;border-radius:12px 12px 0 0;height:90px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <div style="font-size:10px;font-weight:800;">🥈 Alex</div>
+                <div style="font-size:9px;color:#94A3B8;">8,420 pts</div>
+              </div>
+              <div style="flex:1;background:linear-gradient(180deg,#F59E0B,#B45309);border-radius:14px 14px 0 0;height:130px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 0 20px rgba(245,158,11,0.3);">
+                <div style="font-size:18px;">👑</div>
+                <div style="font-size:11px;font-weight:900;color:#fff;">🥇 Joshua</div>
+                <div style="font-size:9px;color:#FEF3C7;">12,950 pts</div>
+              </div>
+              <div style="flex:1;background:#1E293B;border-radius:12px 12px 0 0;height:70px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <div style="font-size:10px;font-weight:800;">🥉 Maria</div>
+                <div style="font-size:9px;color:#94A3B8;">6,100 pts</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:#1E293B;border:1px solid #334155;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:12px;font-weight:700;">Your Position: #1</span>
+            <span style="font-size:12px;font-weight:800;color:#F59E0B;">+2,400 pts today</span>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 1 OF 12 • REF PIN_40</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">3D Podium — Gamified Leaderboard</h3>
+            </div>
+            <span class="screen-info-badge">gold-spotlight</span>
+          </div>
+          <p class="screen-info-desc">Spotlight header, 3D Gold/Orange podium with Rank 1 ($500), Rank 2 ($300), Rank 3 ($200) avatars, and ranked list.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">September 2026 Spotlight header</span><span class="screen-element-tag">3D Podium with Rank 1 (Designer eno. $500)</span><span class="screen-element-tag">Rank 2 & Rank 3 avatars with prize pool</span><span class="screen-element-tag">Timeframe tabs (All time, This Week, This Month)</span><span class="screen-element-tag">Runner-up ranked rows with prize tags</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="calendar-day-agenda">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <div>
+              <div style="font-size:10px;color:#64748B;font-weight:700;">TODAY</div>
+              <div style="font-size:16px;font-weight:900;">Wednesday, Oct 11</div>
+            </div>
+            <span style="font-size:14px;">📅</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:#EFF6FF;border-left:4px solid #3B82F6;border-radius:12px;padding:12px;">
+              <div style="font-size:11px;color:#1D4ED8;font-weight:700;">10:00 AM - 11:00 AM</div>
+              <div style="font-size:13px;font-weight:900;">Product Sprint Kickoff</div>
+            </div>
+            <div style="background:#F0FDF4;border-left:4px solid #10B981;border-radius:12px;padding:12px;">
+              <div style="font-size:11px;color:#15803D;font-weight:700;">02:30 PM - 03:15 PM</div>
+              <div style="font-size:13px;font-weight:900;">RentenPe UI Kit Review</div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 2 OF 12 • REF PIN_45</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Agenda Planner — Day View & Meetings</h3>
+            </div>
+            <span class="screen-info-badge">warm-planner</span>
+          </div>
+          <p class="screen-info-desc">Day view "Thursday 25 JANUARY", Today/Tomorrow/All pill tabs, meeting cards with attendee avatars.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Good Morning, Aditya header</span><span class="screen-element-tag">Thursday 25 JANUARY display</span><span class="screen-element-tag">Today / Tomorrow / All tabs</span><span class="screen-element-tag">Meeting at Lotte Lounge (10.45) with avatars</span><span class="screen-element-tag">Lunch W/ Client card (12.10)</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="calendar-week-timeblocks">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="font-weight:900;font-size:15px;margin-bottom:12px;">Weekly Timeblock Matrix</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center;font-size:10px;font-weight:700;margin-bottom:12px;">
+            <div style="padding:6px;background:#E2E8F0;border-radius:8px;">Mon</div>
+            <div style="padding:6px;background:#E2E8F0;border-radius:8px;">Tue</div>
+            <div style="padding:6px;background:#0F172A;color:#fff;border-radius:8px;">Wed</div>
+            <div style="padding:6px;background:#E2E8F0;border-radius:8px;">Thu</div>
+            <div style="padding:6px;background:#E2E8F0;border-radius:8px;">Fri</div>
+          </div>
+          <div style="flex:1;background:#fff;border:1px solid #E2E8F0;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#EFF6FF;color:#1E40AF;padding:8px;border-radius:8px;font-size:11px;font-weight:700;">09:00 - Deep Focus Block</div>
+            <div style="background:#FEF3C7;color:#92400E;padding:8px;border-radius:8px;font-size:11px;font-weight:700;">14:00 - Design Review</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 3 OF 12 • REF PIN_45</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Agenda Planner — Weekly Timeblock Matrix</h3>
+            </div>
+            <span class="screen-info-badge">warm-planner</span>
+          </div>
+          <p class="screen-info-desc">Colored daily timeblock rows (SAT 27 JAN, SUN 28 JAN, MON 29 JAN) with 3-column time slots.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Month switcher (DEC < JAN > FEB)</span><span class="screen-element-tag">Colored daily block rows</span><span class="screen-element-tag">Time slots (09.00, 12.00, 19.00)</span><span class="screen-element-tag">+ add event buttons</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="calendar-year-grid">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:15px;margin-bottom:12px;">Annual 12-Month Grid</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:10px;">
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Jan</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Feb</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Mar</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Apr</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">May</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Jun</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Jul</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Aug</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Sep</div>
+            <div style="background:#0F172A;color:#fff;border-radius:10px;padding:8px;text-align:center;font-weight:800;">Oct (Current)</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Nov</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center;font-weight:700;">Dec</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 4 OF 12 • REF PIN_45</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Agenda Planner — 12-Month Color Grid</h3>
+            </div>
+            <span class="screen-info-badge">warm-planner</span>
+          </div>
+          <p class="screen-info-desc">Overview screen displaying all 12 months in distinct pastel color-coded miniature calendar matrices.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Search bar for events</span><span class="screen-element-tag">12 colored month cards (Jan green, Feb purple, Mar burgundy, Apr teal...)</span><span class="screen-element-tag">Active date indicators</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="task-manager-dark">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+            <span style="font-weight:900;font-size:16px;">Task Board</span>
+            <span style="font-size:12px;background:#27272A;padding:3px 8px;border-radius:99px;">3 Pending</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;font-weight:700;">Ship PayDash v2 Preview</span>
+              <span style="font-size:10px;color:#10B981;">Done</span>
+            </div>
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;font-weight:700;">Generate All 125 Screen Renderers</span>
+              <span style="font-size:10px;color:#F59E0B;">In Progress</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 5 OF 12 • REF PIN_11</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Task Board — Dark Calendar Strip & Tasks</h3>
+            </div>
+            <span class="screen-info-badge">tactile-dark</span>
+          </div>
+          <p class="screen-info-desc">Horizontal calendar date strip, project priority cards, progress meters, and timeline schedule.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Horizontal date strip</span><span class="screen-element-tag">Priority task cards with tags</span><span class="screen-element-tag">Progress completion bars</span><span class="screen-element-tag">Team assignee avatars</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="deployment-status-split">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0B0F19;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="font-weight:900;font-size:15px;margin-bottom:14px;">DevOps Deployment Matrix</div>
+            <div style="background:#111827;border:1px solid #1F2937;border-radius:16px;padding:14px;margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-size:12px;font-weight:800;">Production (us-east-1)</span>
+                <span style="font-size:10px;color:#10B981;font-weight:800;">HEALTHY (v2.4.0)</span>
+              </div>
+              <div style="font-size:10px;color:#6B7280;">Uptime 99.99% • Latency 14ms</div>
+            </div>
+            <div style="background:#111827;border:1px solid #1F2937;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-size:12px;font-weight:800;">Staging (ap-south-1)</span>
+                <span style="font-size:10px;color:#3B82F6;font-weight:800;">BUILDING (commit #f89a)</span>
+              </div>
+              <div style="font-size:10px;color:#6B7280;">Running test suite: 124/125 passed</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#3B82F6;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Promote Staging to Production</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 6 OF 12 • REF PIN_10</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">DevOps — Light/Dark Deployment Matrix</h3>
+            </div>
+            <span class="screen-info-badge">split-theme</span>
+          </div>
+          <p class="screen-info-desc">Split-card layout showing build statuses, git commit hashes, environment indicators, and error telemetry.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Environment cards (Production, Staging, Dev)</span><span class="screen-element-tag">Git commit hash badges</span><span class="screen-element-tag">Build status chips (Success, Building, Failed)</span><span class="screen-element-tag">Latency sparklines</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="data-usage-gauge">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;">
+          <div style="font-weight:800;font-size:15px;">5G Data Plan Usage</div>
+          <!-- Semi-Circle Gauge -->
+          <svg viewBox="0 0 200 120" style="width:160px;height:100px;">
+            <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="#E2E8F0" stroke-width="16" fill="none" stroke-linecap="round"/>
+            <path d="M 20 100 A 80 80 0 0 1 148 40" stroke="#3B82F6" stroke-width="16" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div style="font-size:26px;font-weight:900;">38.4 GB</div>
+            <div style="font-size:11px;color:#64748B;">used of 50.0 GB (11 days left)</div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Add 10GB Booster Pack</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 7 OF 12 • REF PIN_12</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Telemetry — 3D Apple-Style Data Gauge</h3>
+            </div>
+            <span class="screen-info-badge">apple-light</span>
+          </div>
+          <p class="screen-info-desc">Apple-style 3D layered ring gauge displaying cellular data bandwidth, roll-over GB, and speed benchmark.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">3D layered circular ring gauge</span><span class="screen-element-tag">Remaining data readout (42.5 GB / 50 GB)</span><span class="screen-element-tag">Rollover data indicator</span><span class="screen-element-tag">Billing cycle days remaining</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="transaction-table-dark">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:14px;">Dense Ledger Feed</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:11px;">
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;">
+              <span>TX-8821 • Stripe Payout</span>
+              <span style="color:#10B981;font-weight:800;">+$4,210.00</span>
+            </div>
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;">
+              <span>TX-8820 • AWS Infrastructure</span>
+              <span style="color:#EF4444;font-weight:800;">-$840.20</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 8 OF 12 • REF PIN_14</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Finance SaaS — Dense Data Table & Search</h3>
+            </div>
+            <span class="screen-info-badge">cyber-dark</span>
+          </div>
+          <p class="screen-info-desc">Dense tabular ledger with column sorting, status chips, multi-row selection, and command palette integration.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Command palette search bar</span><span class="screen-element-tag">Dense data table with zebra striping</span><span class="screen-element-tag">Status indicator badges (Paid, Pending, Overdue)</span><span class="screen-element-tag">Row checkbox selectors</span><span class="screen-element-tag">Export CSV action</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="fitness-dashboard-dark">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:14px;">Telemetry Rings SaaS</div>
+          <div style="background:#18181B;border:1px solid #27272A;border-radius:20px;padding:16px;margin-bottom:12px;">
+            <div style="font-size:11px;color:#A1A1AA;">ATHLETE VO2 MAX</div>
+            <div style="font-size:28px;font-weight:900;color:#10B981;margin:4px 0;">58.4 <span style="font-size:12px;color:#71717A;">ml/kg/min</span></div>
+            <div style="font-size:10px;color:#10B981;">Superior (Top 5% of age bracket)</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 9 OF 12 • REF PIN_21</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Health SaaS — Multi-Metric Ring Dashboard</h3>
+            </div>
+            <span class="screen-info-badge">cyber-dark</span>
+          </div>
+          <p class="screen-info-desc">Dark theme wellness metrics with calorie expenditure ring, step histogram, and resting heart rate tracker.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Calorie burn circular ring</span><span class="screen-element-tag">Step count histogram</span><span class="screen-element-tag">Resting heart rate BPM graph</span><span class="screen-element-tag">Sleep quality score pill</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="brandbuzz-agency-hero">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FF5722;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div></div>
+          <div>
+            <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;line-height:1.1;margin-bottom:10px;">Scale Your Brand With Impact</div>
+            <div style="font-size:12px;color:#FFCCBC;line-height:1.5;">Award-winning creative design agency building next-generation digital products.</div>
+          </div>
+          <button style="width:100%;padding:16px;background:#000;color:#fff;border:none;border-radius:18px;font-weight:900;font-size:13px;cursor:pointer;">Start a Project</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 10 OF 12 • REF PIN_60</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">BrandBuzz — Agency Landing Page Hero</h3>
+            </div>
+            <span class="screen-info-badge">orange-modern</span>
+          </div>
+          <p class="screen-info-desc">Navbar (BrandBuzz, Services, Blog, Sign Up), Hero headline with 3D characters, and services grid.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Top navigation bar</span><span class="screen-element-tag">Hero: We create solutions for your business</span><span class="screen-element-tag">Services grid (SEO/SEM, Marketing, Viral Campaign)</span><span class="screen-element-tag">4-step process stepper (Contact, Consult, Order, Payment)</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="brandbuzz-testimonials">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="font-weight:900;font-size:16px;margin-bottom:16px;">Client Testimonials</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:18px;">
+              <div style="font-size:16px;color:#F59E0B;margin-bottom:8px;">★★★★★</div>
+              <div style="font-size:12px;font-style:italic;line-height:1.5;margin-bottom:12px;">"RentenPe UI Kit completely transformed our mobile app turnaround time. Simply the highest quality system on the web."</div>
+              <div style="font-size:11px;font-weight:800;">— David Miller, VP of Product</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Read All 50+ Case Studies</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 11 OF 12 • REF PIN_60</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">BrandBuzz — Client Testimonial Carousel</h3>
+            </div>
+            <span class="screen-info-badge">orange-modern</span>
+          </div>
+          <p class="screen-info-desc">What Clients Say! 5-star testimonial card carousel, agency metrics section, and bottom CTA banner.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">What Clients Say! heading</span><span class="screen-element-tag">5-star testimonial cards with client avatars</span><span class="screen-element-tag">Our Agency data story</span><span class="screen-element-tag">Ready to get started? CTA banner</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="medical-doctor-booking">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F0FDFA;color:#134E4A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+              <span style="font-size:16px;cursor:pointer;">←</span>
+              <span style="font-weight:800;font-size:15px;">Book Specialist</span>
+              <span></span>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #CCFBF1;border-radius:20px;padding:16px;display:flex;gap:12px;align-items:center;margin-bottom:14px;">
+              <div style="width:50px;height:50px;border-radius:50%;background:#0D9488;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;">👨‍⚕️</div>
+              <div>
+                <div style="font-size:13px;font-weight:900;">Dr. Arjun Nambiar</div>
+                <div style="font-size:11px;color:#14B8A6;font-weight:700;">Cardiology Specialist • MD</div>
+                <div style="font-size:10px;color:#64748B;">Manipal Hospital Bangalore</div>
+              </div>
+            </div>
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">Available Consultation Slot</div>
+            <div style="background:#FFFFFF;border:1px solid #CCFBF1;border-radius:14px;padding:12px;font-size:12px;font-weight:700;color:#0F766E;">
+              📅 Tomorrow, Oct 12 • 11:30 AM (In-Clinic)
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0D9488;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Confirm Appointment ($40)</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 12 OF 12 • REF PIN_64</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">HealthCare — Doctor Booking & Specialists</h3>
+            </div>
+            <span class="screen-info-badge">medical-teal</span>
+          </div>
+          <p class="screen-info-desc">Specialist categories (Cardiology, Check-up, Dental), Go Premium promo card, and Doctor list with ratings.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Hi, Nicholas header</span><span class="screen-element-tag">Go Premium for Better Care promo banner</span><span class="screen-element-tag">Specialty category icons</span><span class="screen-element-tag">Mark Kaert General Practitioner card (★ 4.9)</span><span class="screen-element-tag">Filter pills (All, Cardiologists, GP, Neuro)</span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+</div>
+</body>
+</html>

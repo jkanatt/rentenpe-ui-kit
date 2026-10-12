@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Panel — Rentenpe UI Kit (PayDash Match)</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    .zoom-toolbar { display: inline-flex; align-items: center; gap: 16px; padding: 12px 20px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-full); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+    .zoom-toolbar label { font-size: 13px; font-weight: 700; color: var(--color-text-primary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .zoom-slider { cursor: pointer; width: 150px; accent-color: var(--color-primary); }
+    .zoom-value { font-size: 13px; font-weight: 600; color: var(--color-text-secondary); font-family: var(--font-mono); width: 44px; text-align: right; }
+
+    .browser-mockup-wrapper { display: flex; justify-content: center; padding: 40px; background: var(--color-surface-inset); border-radius: var(--radius-lg); overflow: hidden; min-height: 800px; border: 1px dashed var(--color-border-strong); }
+    .browser-mockup { width: 100%; max-width: 1024px; height: 768px; border: 1px solid var(--color-border-strong); border-radius: 12px; position: relative; background: #F1F5F9; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden; transform-origin: top center; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
+    .browser-header { height: 48px; background: #FFFFFF; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 16px; gap: 8px; }
+    .browser-dot { width: 12px; height: 12px; border-radius: 50%; background: #E2E8F0; }
+    .browser-dot:nth-child(1) { background: #FF5F56; }
+    .browser-dot:nth-child(2) { background: #FFBD2E; }
+    .browser-dot:nth-child(3) { background: #27C93F; }
+    .browser-content { flex: 1; position: relative; overflow: hidden; }
+
+    /* EXACT PAY-DASH AI PANEL STYLES */
+    .ai-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.25); z-index: 48; backdrop-filter: blur(3px); }
+    
+    .ai-panel {
+      position: absolute; right: 20px; top: 20px; bottom: 20px; width: 460px; z-index: 49;
+      display: flex; flex-direction: column; background: #fff;
+      border-radius: 16px; border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+      animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .ai-header { padding: 16px 20px; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    
+    .ai-icon {
+      width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg,#0F172A,#1E293B);
+      display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+    
+    .ai-title-group { flex: 1; }
+    .ai-title { font-size: 14px; font-weight: 700; color: #0F172A; }
+    .ai-subtitle { font-size: 11px; color: #10B981; display: flex; align-items: center; gap: 4px; }
+    .ai-status-dot { width: 5px; height: 5px; border-radius: 50%; background: #10B981; display: inline-block; }
+    
+    .ai-modes { display: flex; gap: 2px; background: #F1F5F9; padding: 3px; border-radius: 8px; }
+    .ai-mode-btn { padding: 5px 10px; font-size: 11px; font-weight: 500; border-radius: 6px; background: transparent; color: #64748B; border: none; cursor: pointer; transition: all 0.2s; }
+    .ai-mode-btn.active { font-weight: 600; background: #0F172A; color: #fff; }
+    
+    .ai-close { width: 30px; height: 30px; padding: 0; border-radius: 8px; background: #F1F5F9; border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; color: #64748B; }
+    
+    .ai-body { flex: 1; overflow: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+    
+    .ai-msg { max-width: 92%; padding: 11px 15px; font-size: 13px; line-height: 1.65; }
+    .ai-msg.user { align-self: flex-end; border-radius: 14px 14px 4px 14px; background: #0F172A; color: #fff; }
+    .ai-msg.bot { align-self: flex-start; border-radius: 14px 14px 14px 4px; background: #F8FAFC; color: #0F172A; border: 1px solid rgba(0,0,0,0.06); }
+    
+    .ai-insight-group { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .ai-insight { padding: 6px 10px; background: #F1F5F9; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 5px; }
+    
+    .ai-action-group { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 6px; }
+    .ai-action-btn { font-size: 11px; padding: 5px 12px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); background: #fff; cursor: pointer; font-family: inherit; font-weight: 600; }
+    
+    .ai-footer { padding: 12px 16px; border-top: 1px solid rgba(0,0,0,0.06); flex-shrink: 0; }
+    .ai-input-wrap { display: flex; gap: 8px; }
+    .ai-input { flex: 1; padding: 10px 14px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.08); outline: none; font-size: 13px; background: #FAFAFA; font-family: inherit; }
+    .ai-send { width: 40px; height: 40px; border-radius: 20px; background: #0F172A; color: #fff; border: none; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+    
+    .ai-hint { font-size: 10px; color: #94A3B8; margin-top: 6px; text-align: center; }
+
+    @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    <nav class="catalog-nav">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Overlays & Popups</div>
+        <a href="modal.html" class="catalog-nav-item">🪟 Modals</a>
+        <a href="drawer.html" class="catalog-nav-item">📂 Drawer Panel</a>
+        <a href="#aipanel" class="catalog-nav-item active">🤖 AI Panel (PayDash Match)</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="catalog-main">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">AI Panel (100% PayDash Match)</h1>
+      <p class="catalog-page-description">An exact 1:1 replica of the AIPanel.tsx component from the Pay-Dash repository. Features the floating right-side architecture, chat bubbles, insights chips, and quick action buttons.</p>
+      
+      <div class="zoom-toolbar">
+        <label for="zoomSlider">Preview Zoom</label>
+        <input type="range" id="zoomSlider" class="zoom-slider" min="0.5" max="1.5" step="0.1" value="1.0" oninput="updateZoom(this.value)">
+        <span class="zoom-value" id="zoomValue">100%</span>
+      </div>
+    </div>
+
+    <!-- ═══ PAY-DASH AI PANEL ═══ -->
+    <section class="component-section" id="aipanel">
+      <div class="component-section-header">
+        <div>
+          <span class="component-family-id">PAYDASH·AI</span>
+          <h2 class="component-family-name">Exact AIPanel.tsx</h2>
+          <p class="component-family-desc">Floating AI assistant panel with conversation states and actionable widgets.</p>
+        </div>
+      </div>
+      
+      <div class="browser-mockup-wrapper">
+        <div class="browser-mockup">
+          <div class="browser-header">
+            <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+          </div>
+          <div class="browser-content">
+            
+            <div class="ai-backdrop"></div>
+            
+            <div class="ai-panel">
+              <div class="ai-header">
+                <div class="ai-icon">🤖</div>
+                <div class="ai-title-group">
+                  <div class="ai-title">PayDash AI</div>
+                  <div class="ai-subtitle"><span class="ai-status-dot"></span>All Modules</div>
+                </div>
+                <div class="ai-modes">
+                  <button class="ai-mode-btn active">💬 Ask</button>
+                  <button class="ai-mode-btn">📖 Explain</button>
+                  <button class="ai-mode-btn">⚡ Do</button>
+                </div>
+                <button class="ai-close">✕</button>
+              </div>
+              
+              <div class="ai-body">
+                <div class="ai-msg user">Show pending PTO requests for this week.</div>
+                
+                <div style="display:flex; flex-direction:column; align-items:flex-start;">
+                  <div class="ai-msg bot">I found 2 pending PTO requests for this week that need your attention.</div>
+                  
+                  <div class="ai-insight-group">
+                    <div class="ai-insight"><span>👥</span><span style="color:#64748B">Sarah Chen:</span><strong>2 Days</strong></div>
+                    <div class="ai-insight"><span>👥</span><span style="color:#64748B">Mike Ross:</span><strong>1 Day</strong></div>
+                  </div>
+                  
+                  <div class="ai-action-group">
+                    <button class="ai-action-btn">⚡ Approve All</button>
+                    <button class="ai-action-btn">⚡ View Details</button>
+                  </div>
+                  
+                  <div style="font-size: 10px; color: #94A3B8; display: flex; gap: 10px; margin-top: 8px; margin-left: 15px;">
+                    <span>🎯 98%</span><span>📚 TimeTrackingModule</span>
+                  </div>
+                </div>
+                
+                <div class="ai-msg user">Run compliance scan on contractors</div>
+                
+                <div style="display:flex; flex-direction:column; align-items:flex-start;">
+                  <div class="ai-msg bot">Scanning 45 contractors for W-9 status, insurance validity, and 1099 classification risks...</div>
+                  
+                  <!-- Typing indicator mockup -->
+                  <div style="display: flex; gap: 8px; margin-top: 10px; align-items: center;">
+                    <div style="width: 28px; height: 28px; border-radius: 8px; background: #0F172A; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px;">🤖</div>
+                    <div style="padding: 10px 14px; border-radius: 12px; background: #F8FAFC; border: 1px solid rgba(0,0,0,0.04);">
+                      <div style="display: flex; gap: 4px;">
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #94A3B8;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #94A3B8;"></div>
+                        <div style="width: 6px; height: 6px; border-radius: 50%; background: #94A3B8;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ai-footer">
+                <div class="ai-input-wrap">
+                  <input class="ai-input" placeholder="Ask anything...">
+                  <button class="ai-send">↑</button>
+                </div>
+                <div class="ai-hint">⌘J to toggle · All platform actions available</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+  function updateZoom(value) {
+    document.querySelectorAll('.browser-mockup').forEach(mockup => {
+      mockup.style.transform = `scale(${value})`;
+    });
+    document.getElementById('zoomValue').textContent = `${Math.round(value * 100)}%`;
+  }
+</script>
+</body>
+</html>

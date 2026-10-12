@@ -1,0 +1,1679 @@
+[
+  {
+    "id": "monex-home-glow",
+    "suite": "banking",
+    "title": "Monex Home — Card Glow",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Lime gradient card",
+      "Total Balance $6,324.49",
+      "Withdraw / Top up / Exchange pills",
+      "Bolt Food & Uber transaction feed",
+      "Floating bottom dock"
+    ]
+  },
+  {
+    "id": "monex-card-reveal",
+    "suite": "banking",
+    "title": "Monex Card — Credentials Flip",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Card number 3456 5667 3211 3377 with copy icon",
+      "CVV 277 with security shield",
+      "Expiry 01/29 badge",
+      "Balance summary overlay"
+    ]
+  },
+  {
+    "id": "monex-send-money",
+    "suite": "banking",
+    "title": "Monex — Instant Send Money Keypad",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Recipient avatar stack",
+      "Quick amount chips ($50, $100, $500, $1000)",
+      "Custom glass numeric keypad (1-9, ., 0, ⌫)",
+      "Neon lime Send Money button"
+    ]
+  },
+  {
+    "id": "monex-analytics",
+    "suite": "banking",
+    "title": "Monex — Financial Analytics & Spline",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Timeframe segmented control",
+      "Glowing gradient line chart",
+      "Income $8,567 card",
+      "Overspent budget progress bar"
+    ]
+  },
+  {
+    "id": "monex-crypto",
+    "suite": "banking",
+    "title": "Monex — Crypto Asset Overview",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Crypto total balance $6,324.49 (+7.21%)",
+      "BTC sparkline card ($82,567.6)",
+      "ETH sparkline card ($1,818.6)",
+      "Trade / Send / Receive actions"
+    ]
+  },
+  {
+    "id": "monex-settings",
+    "suite": "banking",
+    "title": "Monex — Profile & Tier Management",
+    "theme": "dark-neon",
+    "pin": "pin_48",
+    "elements": [
+      "Leonard Lopez profile avatar",
+      "Standard plan badge",
+      "Referrals invite rewards card",
+      "Security & Statements menu rows"
+    ]
+  },
+  {
+    "id": "alimbank-home",
+    "suite": "banking",
+    "title": "AlimBank — Emerald Dashboard",
+    "theme": "emerald-dark",
+    "pin": "pin_30",
+    "elements": [
+      "Emerald card $2,235.1145",
+      "Eye privacy toggle",
+      "4-action matrix (Transfer, Withdraw, Deposit, Pay)",
+      "POS promo card",
+      "Glowing QR scanner dock"
+    ]
+  },
+  {
+    "id": "alimbank-receipt",
+    "suite": "banking",
+    "title": "AlimBank — Perforated Serrated Receipt",
+    "theme": "emerald-light",
+    "pin": "pin_30",
+    "elements": [
+      "Jagged serrated top & bottom edges",
+      "Success badge & Merchant TOKO HYPERSHOP",
+      "Reference number #442774356886",
+      "Total $10.525",
+      "Share & Back actions"
+    ]
+  },
+  {
+    "id": "bluebank-home",
+    "suite": "banking",
+    "title": "Sapphire Blue — Neo-Bank Home",
+    "theme": "sapphire-blue",
+    "pin": "pin_34",
+    "elements": [
+      "Balance $3,567 (+$223.74)",
+      "FlexPerks Mastercard 3759..2100",
+      "Deposit & Insurance 3D feature cards",
+      "History vs Statistics tabs",
+      "Shopping & Internet expenses"
+    ]
+  },
+  {
+    "id": "salung-savings",
+    "suite": "banking",
+    "title": "Salung — Savings Goals Hub",
+    "theme": "minimal-light",
+    "pin": "pin_4",
+    "elements": [
+      "Black card $23,400.00",
+      "Summer vacation goal ($15,000 / $50,000 - 40%)",
+      "Real estate goal ($60,500 / $230,000)",
+      "Education goal progress bar",
+      "Bottom pill dock"
+    ]
+  },
+  {
+    "id": "salung-goal-detail",
+    "suite": "banking",
+    "title": "Salung — Goal Analytics & Top-Up",
+    "theme": "minimal-light",
+    "pin": "pin_4",
+    "elements": [
+      "+112.00% growth indicator",
+      "Stipple texture bar chart",
+      "Average per month $1,202",
+      "Goal top up transaction row",
+      "Sticky + Top up CTA"
+    ]
+  },
+  {
+    "id": "monero-wallet",
+    "suite": "banking",
+    "title": "Monero — Dark Privacy Wallet",
+    "theme": "pure-black",
+    "pin": "pin_5",
+    "elements": [
+      "Pure black container",
+      "$63,000 (210.43 XMR)",
+      "Receive / (+) / Send pill dock",
+      "• Synchronized status pill",
+      "Tether & Ethereum token cards"
+    ]
+  },
+  {
+    "id": "shipping-wallet",
+    "suite": "banking",
+    "title": "Logistics — Shipping Balance & Tracker",
+    "theme": "clean-mono",
+    "pin": "pin_2",
+    "elements": [
+      "Balance $245.00",
+      "New Shipping & Track Shipping pills",
+      "Live tracking ID PAQ-327-P21",
+      "3-step delivery progress bar",
+      "Rider chat & call buttons"
+    ]
+  },
+  {
+    "id": "pastel-finance-home",
+    "suite": "banking",
+    "title": "Pastel Minimal — Bento Financial Overview",
+    "theme": "soft-pastel",
+    "pin": "pin_50",
+    "elements": [
+      "Mint activity bar chart",
+      "Peach sales card $280.99",
+      "Lavender revenue card",
+      "Nike & Pepsi transaction feed",
+      "Floating light nav"
+    ]
+  },
+  {
+    "id": "pastel-finance-chart",
+    "suite": "banking",
+    "title": "Pastel Minimal — Income Spline & Trades",
+    "theme": "soft-pastel",
+    "pin": "pin_50",
+    "elements": [
+      "Total Income $6,289.00",
+      "Savings spline area card $2,738.00",
+      "Chart / Table toggle",
+      "Buy BTC +0.82 card",
+      "Sell BTC +0.98 card"
+    ]
+  },
+  {
+    "id": "trantor-dashboard",
+    "suite": "crypto",
+    "title": "Trantor — Portfolio & Candlestick",
+    "theme": "cyber-dark",
+    "pin": "pin_18",
+    "elements": [
+      "Current Value $12,788.56",
+      "Transfer ⇋ Receive connected pill",
+      "ETH 7-day candlestick chart",
+      "Bitcoin & Ethereum balance rows",
+      "Curved bottom nav dock"
+    ]
+  },
+  {
+    "id": "trantor-swap",
+    "suite": "crypto",
+    "title": "Trantor — Exchange Rate Timer & Swap",
+    "theme": "cyber-dark",
+    "pin": "pin_18",
+    "elements": [
+      "Rate lock countdown 00:08:43",
+      "USDT 300.00 Pay card",
+      "BNB 1.37 Get card",
+      "Center interlocking coin icon",
+      "Swipe to Swap slider"
+    ]
+  },
+  {
+    "id": "trantor-goal-pool",
+    "suite": "crypto",
+    "title": "Trantor — Collaborative Savings Pool",
+    "theme": "cyber-dark",
+    "pin": "pin_18",
+    "elements": [
+      "For Dream pool 50,000.00 USDT",
+      "Progress bar 27% >> 73%",
+      "Your top-ups 9,230.55",
+      "16 Additions participants avatar stack",
+      "USDT 250 Top-up card"
+    ]
+  },
+  {
+    "id": "web3-onboard-cards",
+    "suite": "crypto",
+    "title": "Web3 — Stacked Glass Asset Onboarding",
+    "theme": "deep-space",
+    "pin": "pin_27",
+    "elements": [
+      "Stacked Satya, Jay, Rico asset cards",
+      "Neon curved bottom boundary",
+      "Your journey into crypto starts here",
+      "Get Started CTA button"
+    ]
+  },
+  {
+    "id": "web3-nft-gallery",
+    "suite": "crypto",
+    "title": "Web3 — Bored Ape Curated Gallery",
+    "theme": "deep-space",
+    "pin": "pin_27",
+    "elements": [
+      "Tilted 3D Bored Ape character cards",
+      "Buy Now tooltip indicator",
+      "Your Journey Into Crypto Starts Here",
+      "Glass Get Started button"
+    ]
+  },
+  {
+    "id": "web3-purple-auth",
+    "suite": "crypto",
+    "title": "Web3 — Lavender SSO & Account Creation",
+    "theme": "deep-space",
+    "pin": "pin_27",
+    "elements": [
+      "Google SSO single-tap button",
+      "Username input field",
+      "Email & Password fields",
+      "Already have an account link"
+    ]
+  },
+  {
+    "id": "fuse-plus-membership",
+    "suite": "crypto",
+    "title": "Fuse Plus — Solana VIP Membership Sheet",
+    "theme": "luxury-obsidian",
+    "pin": "pin_28",
+    "elements": [
+      "Sparkle logo & Fuse Plus Membership",
+      "Free Transactions Solana card",
+      "Free Off-Ramps up to $25K/month card",
+      "Deposit $100+ into Earn criteria",
+      "Deposit and get Fuse+ glowing CTA"
+    ]
+  },
+  {
+    "id": "crypto-wallet-skeuo",
+    "suite": "crypto",
+    "title": "Wallet — 3D Skeuomorphic Leather Stack",
+    "theme": "tactile-3d",
+    "pin": "pin_6",
+    "elements": [
+      "Stitched leather texture",
+      "Stacked embossed credit cards",
+      "Tactile card pull animation",
+      "Balance readout"
+    ]
+  },
+  {
+    "id": "crypto-bento-card",
+    "suite": "crypto",
+    "title": "Web3 — Bento High-Yield Protocol Card",
+    "theme": "vision-glass",
+    "pin": "pin_16",
+    "elements": [
+      "Frosted glass backdrop",
+      "High-Yield APY counter",
+      "Specular border highlight",
+      "Invest now CTA"
+    ]
+  },
+  {
+    "id": "crypto-integrations",
+    "suite": "crypto",
+    "title": "Web3 — Multi-Chain Integration Hub",
+    "theme": "vision-glass",
+    "pin": "pin_20",
+    "elements": [
+      "Floating network tokens",
+      "Glass border container",
+      "One-click wallet connect",
+      "Active status badge"
+    ]
+  },
+  {
+    "id": "findora-welcome",
+    "suite": "realestate",
+    "title": "Findora — Full-Bleed Welcome & Hero",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Full-bleed architectural house image",
+      "Findora Dream House round mark",
+      "Curved white bottom sheet",
+      "Login dark pill CTA",
+      "Sign Up outlined pill CTA"
+    ]
+  },
+  {
+    "id": "findora-discovery-home",
+    "suite": "realestate",
+    "title": "Findora — Property Discovery & Grid",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Kochi, Kerala location badge",
+      "Search Place... with filter button",
+      "Rental House / Apartment / Rooms pills",
+      "Georgie House (10,000/ Month, ★ 4.5)",
+      "Max House (12,000/ Month)",
+      "Bottom 4-tab nav"
+    ]
+  },
+  {
+    "id": "findora-property-detail",
+    "suite": "realestate",
+    "title": "Findora — Property Gallery & Specifications",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Multi-photo carousel",
+      "Verified Landlord seal",
+      "BHK & square footage specs",
+      "Monthly rent breakdown",
+      "Book Inspection CTA"
+    ]
+  },
+  {
+    "id": "findora-lease-signing",
+    "suite": "realestate",
+    "title": "Findora — Digital Lease & E-Signature",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Digital contract clauses",
+      "Security deposit escrow badge",
+      "Landlord & tenant terms",
+      "Tactile E-signature canvas",
+      "Confirm & Pay First Rent"
+    ]
+  },
+  {
+    "id": "findora-rent-split",
+    "suite": "realestate",
+    "title": "Findora — Roommate Rent Splitter",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Total apartment rent ₹45,000",
+      "Roommate share breakdown",
+      "Roommate payment status chips",
+      "Remind via WhatsApp button",
+      "UPI Autopay toggle"
+    ]
+  },
+  {
+    "id": "findora-tenant-screening",
+    "suite": "realestate",
+    "title": "Findora — Instant Tenant Screening Score",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Trust Score 820/900",
+      "Employment verified badge",
+      "Rental history timeline",
+      "Background verification shield"
+    ]
+  },
+  {
+    "id": "findora-move-in-checklist",
+    "suite": "realestate",
+    "title": "Findora — Move-In Condition Checklist",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Room checklist (Living room, Kitchen, Master Bedroom)",
+      "Photo upload zone",
+      "Electricity meter reading input",
+      "Landlord digital sign-off"
+    ]
+  },
+  {
+    "id": "findora-maintenance-req",
+    "suite": "realestate",
+    "title": "Findora — 1-Tap Maintenance Request",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Urgency toggle (Standard / Urgent)",
+      "Category picker (Plumbing, Electrical, AC)",
+      "Live technician ETA map",
+      "Track repair status"
+    ]
+  },
+  {
+    "id": "findora-rewards-hub",
+    "suite": "realestate",
+    "title": "Findora — On-Time Rent Cashback Rewards",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "RentCoins balance 2,450",
+      "On-time rent streak: 8 months",
+      "Cashback scratch card",
+      "Brand gift vouchers"
+    ]
+  },
+  {
+    "id": "findora-neighborhood-guide",
+    "suite": "realestate",
+    "title": "Findora — Commute & Neighborhood Index",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Metro station: 400m (5 min walk)",
+      "Safety index: 9.2/10",
+      "Zomato/Blinkit delivery: 8 mins",
+      "Quiet residential zone badge"
+    ]
+  },
+  {
+    "id": "findora-deposit-escrow",
+    "suite": "realestate",
+    "title": "Findora — Deposit Shield & Zero-Deposit Bond",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Interest-earning escrow account",
+      "Annual return: 6.5%",
+      "Zero-deposit bond option",
+      "Instant return guarantee"
+    ]
+  },
+  {
+    "id": "findora-owner-analytics",
+    "suite": "realestate",
+    "title": "Findora — Property Owner Yield Dashboard",
+    "theme": "clean-architectural",
+    "pin": "pin_43",
+    "elements": [
+      "Portfolio value ₹3.2 Cr",
+      "Occupancy rate: 100%",
+      "Net annual yield: 7.8%",
+      "Export tax report PDF"
+    ]
+  },
+  {
+    "id": "gobus-splash",
+    "suite": "transport",
+    "title": "GoBus — Splash & Brand Launch",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "GoBus brand mark",
+      "Minimal orange canvas",
+      "Smooth load transition"
+    ]
+  },
+  {
+    "id": "gobus-onboard-1",
+    "suite": "transport",
+    "title": "GoBus — Onboarding 1: Real-Time Tracking",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Bus shelter illustration",
+      "Quick and Reliable Bus Tracking",
+      "Skip text link",
+      "Circular arrow next CTA"
+    ]
+  },
+  {
+    "id": "gobus-onboard-2",
+    "suite": "transport",
+    "title": "GoBus — Onboarding 2: Fleet Welcome",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Interstate bus illustration",
+      "Welcome to GoBus!",
+      "Pagination dots",
+      "Circular arrow CTA"
+    ]
+  },
+  {
+    "id": "gobus-onboard-3",
+    "suite": "transport",
+    "title": "GoBus — Onboarding 3: Effortless Payments",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Mobile wallet illustration",
+      "Effortless Payments",
+      "Get Started primary CTA"
+    ]
+  },
+  {
+    "id": "gobus-search-home",
+    "suite": "transport",
+    "title": "GoBus — Origin & Destination Booking Hub",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Where would you like to go? header",
+      "From & To location inputs with ⇅ swap",
+      "Date picker calendar strip",
+      "Search buses button",
+      "Recent Search list",
+      "Popular routes chips"
+    ]
+  },
+  {
+    "id": "gobus-bus-results",
+    "suite": "transport",
+    "title": "GoBus — Live Bus Results & Timetable",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Search results count",
+      "Bus No. 37 (12 min away)",
+      "Kadamwadi to Binduchowk",
+      "Departure & arrival times",
+      "Filter & Sort actions"
+    ]
+  },
+  {
+    "id": "gobus-gps-route-map",
+    "suite": "transport",
+    "title": "GoBus — Live GPS Bus Tracking Map",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Interactive GPS route map",
+      "Live moving bus marker",
+      "Intermediate stop pins",
+      "Estimated arrival time: 10:25 AM",
+      "Share trip link"
+    ]
+  },
+  {
+    "id": "gobus-notifications",
+    "suite": "transport",
+    "title": "GoBus — Transit Alerts & Delay Feed",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Bus arriving in 5 min alert",
+      "Delay notice due to heavy traffic",
+      "Yesterday departure logs",
+      "Clear all notifications"
+    ]
+  },
+  {
+    "id": "gobus-passenger-config",
+    "suite": "transport",
+    "title": "GoBus — Passenger & Fare Calculator",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Adult quantity stepper (- 1 +)",
+      "Child quantity stepper",
+      "Base fare Rs. 35 breakdown",
+      "Terms and conditions link",
+      "Pay Rs. 35 sticky action"
+    ]
+  },
+  {
+    "id": "gobus-payment-success",
+    "suite": "transport",
+    "title": "GoBus — Payment Success Celebration",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Success confetti illustration",
+      "Payment Successful! title",
+      "Continue Tracking Bus primary CTA",
+      "Download Ticket outline button"
+    ]
+  },
+  {
+    "id": "gobus-route-detail",
+    "suite": "transport",
+    "title": "GoBus — Route 101 Stop-by-Stop Timeline",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Route No: 101 Kolhapur to Sangli",
+      "Driver Yusuf Pathan",
+      "Stop timeline with green passed stops",
+      "Next stop ETA: 9:45 AM"
+    ]
+  },
+  {
+    "id": "gobus-routes-directory",
+    "suite": "transport",
+    "title": "GoBus — Regional Bus Directory",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Search route number or name",
+      "Route No: 101 to Belgaum",
+      "Route No: 101 to Pune",
+      "Route No: 101 to Mumbai",
+      "Arrow detail triggers"
+    ]
+  },
+  {
+    "id": "gobus-pass-catalog",
+    "suite": "transport",
+    "title": "GoBus — Transit Pass Types",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Point-to-Point Pass card",
+      "Student Pass discounted card",
+      "Unlimited Rides Pass card",
+      "Senior Citizen Pass card"
+    ]
+  },
+  {
+    "id": "gobus-package-selector",
+    "suite": "transport",
+    "title": "GoBus — Pass Package Duration & Buy",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Weekly Pass Rs. 100 card",
+      "Monthly Pass Rs. 600 best value card",
+      "Route details summary",
+      "Instant Buy CTA"
+    ]
+  },
+  {
+    "id": "gobus-trip-planner",
+    "suite": "transport",
+    "title": "GoBus — Route & Stop Lookup",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Route number input: 506",
+      "Start stop: Nagala park",
+      "Destination: Rankala Lake",
+      "Next button"
+    ]
+  },
+  {
+    "id": "gobus-route-autocomplete",
+    "suite": "transport",
+    "title": "GoBus — Live Route Autocomplete Search",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Search bar with active focus",
+      "Live matching route results",
+      "Quick tap selection"
+    ]
+  },
+  {
+    "id": "gobus-student-pass",
+    "suite": "transport",
+    "title": "GoBus — Student Concession Pass",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Student ID verified badge",
+      "1 Month Rs. 200 card",
+      "3 Month Rs. 600 card",
+      "6 Month Rs. 1200 card",
+      "Buy Pass button"
+    ]
+  },
+  {
+    "id": "gobus-qr-ticket",
+    "suite": "transport",
+    "title": "GoBus — High-Res Digital QR Ticket Pass",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Bus 01 Kadamwadi to Binduchowk",
+      "Departure 10:20 AM - Arrival 10:45 AM",
+      "High-density QR code for conductor scanning",
+      "Ticket ID & Security hash"
+    ]
+  },
+  {
+    "id": "gobus-account",
+    "suite": "transport",
+    "title": "GoBus — My Account & Preferences",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Ashna Khan profile card",
+      "My bookings menu item",
+      "Language & Location options",
+      "Refer & Earn rewards",
+      "Help & Call Support"
+    ]
+  },
+  {
+    "id": "gobus-emergency-contacts",
+    "suite": "transport",
+    "title": "GoBus — Emergency SOS Contact Config",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Emergency message: \"I am in danger. Please help me.\"",
+      "Configured contacts (Mr. Khan, Mrs. Khan)",
+      "+ Add Contact button",
+      "Send Alert trigger"
+    ]
+  },
+  {
+    "id": "gobus-phone-login",
+    "suite": "transport",
+    "title": "GoBus — Mobile OTP Login & SSO",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Phone number input",
+      "Continue CTA button",
+      "Or Sign Up with divider",
+      "Google / Facebook / Apple SSO buttons",
+      "Continue as guest link"
+    ]
+  },
+  {
+    "id": "gobus-pass-congrats",
+    "suite": "transport",
+    "title": "GoBus — Monthly Pass Issued Celebration",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Package active illustration",
+      "Go Back To Home primary button",
+      "Download Pass PDF option"
+    ]
+  },
+  {
+    "id": "gobus-sos-active",
+    "suite": "transport",
+    "title": "GoBus — Active Emergency SOS Screen",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Urgent red beacon animation",
+      "Broadcast SMS dispatched",
+      "Share live bus GPS location",
+      "Cancel within 5 seconds countdown"
+    ]
+  },
+  {
+    "id": "gobus-drawer-menu",
+    "suite": "transport",
+    "title": "GoBus — Slide-Out Navigation Drawer",
+    "theme": "gobus-orange",
+    "pin": "pin_51",
+    "elements": [
+      "Profile header with View Profile",
+      "Tickets & Passes link",
+      "Wallet balance shortcut",
+      "Card Recharge trigger",
+      "SOS emergency quick tap"
+    ]
+  },
+  {
+    "id": "fitfuel-onboard",
+    "suite": "fitness",
+    "title": "FitFuel — Light Fitness Onboarding",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Athlete hero visual",
+      "Your Fitness Journey Starts Here",
+      "Get Started arrow CTA",
+      "Join Over 2M+ Users avatar stack"
+    ]
+  },
+  {
+    "id": "fitfuel-home",
+    "suite": "fitness",
+    "title": "FitFuel — Health & Activity Dashboard",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Hi, Alex greeting",
+      "75% circular progress ring (45 min, 520 kcal, 8,752 steps)",
+      "Weekly activity bar graph",
+      "Quick action bento grid",
+      "Bottom nav dock"
+    ]
+  },
+  {
+    "id": "fitfuel-workouts",
+    "suite": "fitness",
+    "title": "FitFuel — Workout Library & Filters",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Search workouts input",
+      "Category filter pills",
+      "Full Body Strength card",
+      "HIIT Burn card",
+      "Core Crusher card"
+    ]
+  },
+  {
+    "id": "fitfuel-workout-detail",
+    "suite": "fitness",
+    "title": "FitFuel — Exercise Session & Rep List",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Video demo thumbnail with play button",
+      "Duration 45 min & 320 kcal stats",
+      "Goblet Squat (4 Sets × 12 Reps)",
+      "Push Ups & Bent Over Row rows",
+      "Start Workout action bar"
+    ]
+  },
+  {
+    "id": "fitfuel-activity-rings",
+    "suite": "fitness",
+    "title": "FitFuel — Apple-Style Activity Rings & Spline",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Day / Week / Month / Year tabs",
+      "Calories Burned 2,450 kcal spline chart",
+      "Move, Exercise, Stand triple rings",
+      "Steps bar chart (8,752 Steps)"
+    ]
+  },
+  {
+    "id": "fitfuel-nutrition",
+    "suite": "fitness",
+    "title": "FitFuel — Macros Bento & Meal Diary",
+    "theme": "apple-light",
+    "pin": "pin_44",
+    "elements": [
+      "Calorie Goal 2,000 kcal meter",
+      "Carbs 180g (45%), Protein 120g, Fats 60g cards",
+      "Breakfast Oatmeal with Fruits (450 kcal ✓)",
+      "Lunch Grilled Chicken Salad (550 kcal ✓)",
+      "Log Food peach CTA"
+    ]
+  },
+  {
+    "id": "credfit-browse",
+    "suite": "fitness",
+    "title": "CRED Fitness — Neon Lime Workout Grid",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Neon lime pill tabs",
+      "Filters / Sorting / Search bar",
+      "Home Chest Workout video card",
+      "Complete Home Leg Workout card",
+      "CRED neon glowing accents"
+    ]
+  },
+  {
+    "id": "credfit-splash",
+    "suite": "fitness",
+    "title": "CRED Fitness — Minimalist Neon Splash",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Full neon lime viewport",
+      "Ultra-bold black typography: \"Get ready\""
+    ]
+  },
+  {
+    "id": "credfit-activity",
+    "suite": "fitness",
+    "title": "CRED Fitness — Daily Activity & Step Goal",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Hello Lester! greeting with trophy icon",
+      "Steps 11,000 / 16,000 neon bar",
+      "Concentric lime activity rings",
+      "Indoor Walk & Running logs"
+    ]
+  },
+  {
+    "id": "credfit-booking-confirmed",
+    "suite": "fitness",
+    "title": "CRED Fitness — Neon Lime Confirmation Card",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Neon lime modal card",
+      "Giant checkmark icon",
+      "Confirmation email note",
+      "Close button"
+    ]
+  },
+  {
+    "id": "credfit-workout-detail",
+    "suite": "fitness",
+    "title": "CRED Fitness — Calisthenics Routine Specs",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Home Chest Workout hero photo",
+      "45 min & 381 Cal pills",
+      "Level AAA Hard indicator",
+      "Chris Heria trainer card"
+    ]
+  },
+  {
+    "id": "credfit-exercise-timer",
+    "suite": "fitness",
+    "title": "CRED Fitness — Giant Countdown Rep Timer",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Giant neon numeral 10",
+      "Explosive neg. Push Ups label",
+      "Previous & Next navigation buttons"
+    ]
+  },
+  {
+    "id": "credfit-trainer-profile",
+    "suite": "fitness",
+    "title": "CRED Fitness — Chris Heria Trainer Profile",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "Chris Heria portrait",
+      "Experience / Completed / Clients stats",
+      "Calisthenics bio summary",
+      "Online Programs trigger"
+    ]
+  },
+  {
+    "id": "credfit-reviews",
+    "suite": "fitness",
+    "title": "CRED Fitness — Rating Breakdown & Exercise List",
+    "theme": "cred-dark",
+    "pin": "pin_53",
+    "elements": [
+      "4.6 rating histogram",
+      "David Lewis review card",
+      "Push Ups (20 reps) thumbnail row",
+      "90° Hold (20 sec) row"
+    ]
+  },
+  {
+    "id": "fitbite-onboard",
+    "suite": "fitness",
+    "title": "FitBite — Smarter Eating Food Scanning",
+    "theme": "apple-light",
+    "pin": "pin_59",
+    "elements": [
+      "Your Daily Guide to Smarter Eating",
+      "Floating calorie callout pins",
+      "Slide to Get Started button"
+    ]
+  },
+  {
+    "id": "fitbite-dashboard",
+    "suite": "fitness",
+    "title": "FitBite — Daily Nutrition & Water Counter",
+    "theme": "apple-light",
+    "pin": "pin_59",
+    "elements": [
+      "Good morning! Sajibur Rahman header",
+      "Lime weekly progress card",
+      "Step to walk 5,500 steps",
+      "Drink Water 12 glass counter",
+      "Camera meal scanner button"
+    ]
+  },
+  {
+    "id": "leafora-splash",
+    "suite": "botanical",
+    "title": "Leafora — Frosted Glass Welcome",
+    "theme": "emerald-glass",
+    "pin": "pin_49",
+    "elements": [
+      "Dark green leaf photography",
+      "Frosted glass container",
+      "Leafora - Bring Nature Home",
+      "Get Started → action pill",
+      "3-dot carousel"
+    ]
+  },
+  {
+    "id": "leafora-shop-home",
+    "suite": "botanical",
+    "title": "Leafora — Botanical Shop & Best Sellers",
+    "theme": "emerald-glass",
+    "pin": "pin_49",
+    "elements": [
+      "Bring Greenery to Life hero card",
+      "Category pills (All Plants, Indoor, Outdoor, Pet Friendly)",
+      "Snake Plant $24.99 card",
+      "ZZ Plant $23.99 card",
+      "Bottom nav with cart count"
+    ]
+  },
+  {
+    "id": "leafora-product-detail",
+    "suite": "botanical",
+    "title": "Leafora — Snake Plant Care Specs & Buy",
+    "theme": "emerald-glass",
+    "pin": "pin_49",
+    "elements": [
+      "Sansevieria trifasciata photo",
+      "Rating ★ 4.8 (120)",
+      "Care specs: Water 2-3 weeks, Low light, Pet friendly Yes",
+      "Price $24.99",
+      "Add to Cart sticky bar"
+    ]
+  },
+  {
+    "id": "leafora-cart-checkout",
+    "suite": "botanical",
+    "title": "Leafora — My Cart & Order Breakdown",
+    "theme": "emerald-glass",
+    "pin": "pin_49",
+    "elements": [
+      "Cart items (Snake Plant, Pothos, Ceramic Pot)",
+      "Quantity steppers (- 1 +)",
+      "Promo Code input + Apply",
+      "Total $62.96",
+      "🔒 Secure Checkout Proceed CTA"
+    ]
+  },
+  {
+    "id": "plantcare-home",
+    "suite": "botanical",
+    "title": "PlantCare IoT — My Plants Carousel",
+    "theme": "clean-green",
+    "pin": "pin_61",
+    "elements": [
+      "My plants (3) carousel",
+      "Status warning on Cactus",
+      "Explore catalog (Gazania $12, Bamboo $20)",
+      "Adjust the watering of plants pill"
+    ]
+  },
+  {
+    "id": "plantcare-detail",
+    "suite": "botanical",
+    "title": "PlantCare IoT — Soil & Moisture Telemetry",
+    "theme": "clean-green",
+    "pin": "pin_61",
+    "elements": [
+      "Calathea photo",
+      "Humidity 19% & Fertilizer 86%",
+      "Next watering in 36 min",
+      "Water tank 10% ⚠️ warning card",
+      "Statistics / Information tabs"
+    ]
+  },
+  {
+    "id": "coffee-shop-home",
+    "suite": "botanical",
+    "title": "Artisan Coffee — Dark Roast Home",
+    "theme": "coffee-dark",
+    "pin": "pin_38",
+    "elements": [
+      "Find the best coffee for you",
+      "Search field",
+      "Cappuccino (orange active dot) / Espresso / Latte tabs",
+      "Cappuccino With Oat Milk $4.20 card",
+      "Orange [+] add button"
+    ]
+  },
+  {
+    "id": "coffee-shop-detail",
+    "suite": "botanical",
+    "title": "Artisan Coffee — Cup Detail & Size Picker",
+    "theme": "coffee-dark",
+    "pin": "pin_38",
+    "elements": [
+      "Overhead latte art saucer",
+      "Cappuccino with Oat Milk overlay",
+      "Coffee & Milk droplet badges",
+      "Size selector (S, M, L)",
+      "Price $4.20 + Buy Now warm orange button"
+    ]
+  },
+  {
+    "id": "coffee-landing-desktop",
+    "suite": "botanical",
+    "title": "Artisan Coffee — Desktop Responsive Showcase",
+    "theme": "coffee-warm",
+    "pin": "pin_58",
+    "elements": [
+      "Desktop navigation",
+      "Hero: Savor the Perfect Brew!",
+      "Features: Espresso, Latte, Cold Brew",
+      "Why Choose Us split banner",
+      "Morning Happy gallery"
+    ]
+  },
+  {
+    "id": "gourmet-food-home",
+    "suite": "botanical",
+    "title": "Gourmet Food — Ramen & Sushi Discovery",
+    "theme": "minimal-light",
+    "pin": "pin_26",
+    "elements": [
+      "Location: New York",
+      "Popular Food category pills",
+      "Discount 50% bento banner",
+      "Ichiraku Ramen ($15.00, ★ 4.5)",
+      "Philadelphia roll ($9.50, ★ 4.8)"
+    ]
+  },
+  {
+    "id": "moonie-splash",
+    "suite": "sleep",
+    "title": "Moonie — Night Sky Splash & Cottage",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "Full moon & starlight night sky",
+      "Illuminated cottage illustration",
+      "Moonie brand title",
+      "Better with headphones note"
+    ]
+  },
+  {
+    "id": "moonie-name-input",
+    "suite": "sleep",
+    "title": "Moonie — Name Input with Frosted Keyboard",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "Welcome to Moonie! header",
+      "What do your friends call you?",
+      "Name input: Lizzie",
+      "Frosted iOS qwerty keyboard",
+      "Purple gradient Continue CTA"
+    ]
+  },
+  {
+    "id": "moonie-interests",
+    "suite": "sleep",
+    "title": "Moonie — Interest Selection Cards",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "2x2 interest grid",
+      "Sleep tracking card with crescent moon",
+      "Calm sounds card with glowing pink border",
+      "Meditations lotus card",
+      "Visual art card"
+    ]
+  },
+  {
+    "id": "moonie-personalize",
+    "suite": "sleep",
+    "title": "Moonie — Wellness Goal Checkboxes",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "Personalization checklist",
+      "Trouble falling asleep pill with check",
+      "Calming a busy mind pill",
+      "Reduce stress or anxiety pill",
+      "Continue CTA"
+    ]
+  },
+  {
+    "id": "moonie-time-picker",
+    "suite": "sleep",
+    "title": "Moonie — Bedtime Frosted Wheel Dial",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "What time do you want to try sleep sound?",
+      "Cylindrical wheel dial (10:00 am, 11:00 pm, 12:00 am)",
+      "People who set reminders fall asleep 83% faster",
+      "Save & Skip actions"
+    ]
+  },
+  {
+    "id": "moonie-paywall",
+    "suite": "sleep",
+    "title": "Moonie PLUS — Sleeping Fox Paywall",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "Sleeping fox illustration",
+      "Leave stress behind title",
+      "5-star rating by Annie",
+      "Monthly 2,99 $ vs Yearly 19,99 $ (SAVE 51%)",
+      "Try free and subscribe button"
+    ]
+  },
+  {
+    "id": "moonie-color-palette",
+    "suite": "sleep",
+    "title": "Moonie — Calming Palette Selector",
+    "theme": "night-sky",
+    "pin": "pin_47",
+    "elements": [
+      "Color palette selection prompt",
+      "Interactive calming swatches",
+      "Ambient gradient preview"
+    ]
+  },
+  {
+    "id": "habit-timeline",
+    "suite": "sleep",
+    "title": "Daily Routine — Color-Coded Habit Timeline",
+    "theme": "tactile-dark",
+    "pin": "pin_1",
+    "elements": [
+      "Vertical timeline axis with connecting line",
+      "22:10 Sleep with moon icon",
+      "06:30 Walk 7.5K with running icon",
+      "08:30 Workout details (Chin-Up, Dumbbell Row)",
+      "10:09 Nutrition breakdown (Macros P15g C10g F3g)"
+    ]
+  },
+  {
+    "id": "neumorphic-widget",
+    "suite": "sleep",
+    "title": "Neumorphic White — Analog Clock & Audio Player",
+    "theme": "neumorphic-white",
+    "pin": "pin_52",
+    "elements": [
+      "Soft embossed shadow container",
+      "Inset concave analog clock with hands",
+      "Track 099 / New audio player with heart",
+      "Dual capsule playback triggers (◀ ▶)",
+      "Inset upload pill button"
+    ]
+  },
+  {
+    "id": "mood-diary-suite",
+    "suite": "sleep",
+    "title": "Mood Diary — Gamified Journey & World Clock",
+    "theme": "warm-cream",
+    "pin": "pin_56",
+    "elements": [
+      "Circular peephole magnifying glass",
+      "Month/Year selector pills",
+      "Emoji mood list rows",
+      "Milestone journey path",
+      "World clock & Alarm toggles (12:00, 13:20, 14:50)"
+    ]
+  },
+  {
+    "id": "minecraft-store",
+    "suite": "gaming",
+    "title": "Minecraft Store — 3D Game Carousel",
+    "theme": "gamer-dark",
+    "pin": "pin_9",
+    "elements": [
+      "Search your Games field",
+      "Category tabs (Action, Survival, Adventure, Casual)",
+      "Minecraft 3D cover card with play button",
+      "Bottom dock with center raised (+) action"
+    ]
+  },
+  {
+    "id": "minecraft-detail",
+    "suite": "gaming",
+    "title": "Minecraft Detail — Trailer & Player Stats",
+    "theme": "gamer-dark",
+    "pin": "pin_9",
+    "elements": [
+      "Gameplay video trailer",
+      "Minecraft - Mobile - Multiplayer",
+      "55/80 Achievements badge",
+      "16.2 Hours played & 5 Dec Last played",
+      "Play Now primary button + Download & Heart"
+    ]
+  },
+  {
+    "id": "music-festival-timeline",
+    "suite": "gaming",
+    "title": "Music Festival — Date Axis & Event Cards",
+    "theme": "clean-coral",
+    "pin": "pin_35",
+    "elements": [
+      "Vertical calendar timeline line",
+      "17 AUG date indicator",
+      "Fuji Rock Festival 2019 card (PREMIUM)",
+      "Ultra Music Festival card (VIP)",
+      "Floating coral bottom nav"
+    ]
+  },
+  {
+    "id": "music-festival-invites",
+    "suite": "gaming",
+    "title": "Music Festival — Hero RSVP & Upcoming Events",
+    "theme": "clean-coral",
+    "pin": "pin_35",
+    "elements": [
+      "Bumbershoot 2019 hero invite card",
+      "You are invited notification",
+      "Going dark pill RSVP button",
+      "Upcoming events list with Going buttons"
+    ]
+  },
+  {
+    "id": "music-festival-directory",
+    "suite": "gaming",
+    "title": "Music Festival — Attendee Stacks & Filter Tabs",
+    "theme": "clean-coral",
+    "pin": "pin_35",
+    "elements": [
+      "Category tabs (All, Now, Past, Draft)",
+      "Going NOW attendee avatar stack",
+      "Event cards with attendee count",
+      "Floating (+) action button"
+    ]
+  },
+  {
+    "id": "sports-booking-home",
+    "suite": "gaming",
+    "title": "Sports League — Sunset Orange Match Booking",
+    "theme": "sunset-orange",
+    "pin": "pin_39",
+    "elements": [
+      "Hey Alex greeting + settings",
+      "Search: Browse games near you",
+      "Horizontal day selector (Wed 24 active orange)",
+      "Friday Night League (€12.50, 12/16 players)",
+      "Courtside Futsal Night card + Join Game button"
+    ]
+  },
+  {
+    "id": "event-marketplace-home",
+    "suite": "gaming",
+    "title": "Event Market — Buy Tickets & Featured Fest",
+    "theme": "sage-light",
+    "pin": "pin_63",
+    "elements": [
+      "Hello, Reginald header",
+      "Search with filter square button",
+      "Buy, Book & Host hero banner",
+      "3 Action cards (Buy Tickets, Explore Vendors, Host Event)",
+      "Motorbikes & FoodFest card ($5,000)"
+    ]
+  },
+  {
+    "id": "event-marketplace-vendors",
+    "suite": "gaming",
+    "title": "Event Market — Vendor Discovery & Ratings",
+    "theme": "sage-light",
+    "pin": "pin_63",
+    "elements": [
+      "Category pills (All Vendors, Caterers, Photographers)",
+      "Mama Tee's Catering (★ 5.0, bookmark icon)",
+      "The Golden Spoon (★ 4.5)",
+      "Everlasting Events Co. (★ 4.4)"
+    ]
+  },
+  {
+    "id": "leaderboard-podium",
+    "suite": "dashboards",
+    "title": "3D Podium — Gamified Leaderboard",
+    "theme": "gold-spotlight",
+    "pin": "pin_40",
+    "elements": [
+      "September 2026 Spotlight header",
+      "3D Podium with Rank 1 (Designer eno. $500)",
+      "Rank 2 & Rank 3 avatars with prize pool",
+      "Timeframe tabs (All time, This Week, This Month)",
+      "Runner-up ranked rows with prize tags"
+    ]
+  },
+  {
+    "id": "calendar-day-agenda",
+    "suite": "dashboards",
+    "title": "Agenda Planner — Day View & Meetings",
+    "theme": "warm-planner",
+    "pin": "pin_45",
+    "elements": [
+      "Good Morning, Aditya header",
+      "Thursday 25 JANUARY display",
+      "Today / Tomorrow / All tabs",
+      "Meeting at Lotte Lounge (10.45) with avatars",
+      "Lunch W/ Client card (12.10)"
+    ]
+  },
+  {
+    "id": "calendar-week-timeblocks",
+    "suite": "dashboards",
+    "title": "Agenda Planner — Weekly Timeblock Matrix",
+    "theme": "warm-planner",
+    "pin": "pin_45",
+    "elements": [
+      "Month switcher (DEC < JAN > FEB)",
+      "Colored daily block rows",
+      "Time slots (09.00, 12.00, 19.00)",
+      "+ add event buttons"
+    ]
+  },
+  {
+    "id": "calendar-year-grid",
+    "suite": "dashboards",
+    "title": "Agenda Planner — 12-Month Color Grid",
+    "theme": "warm-planner",
+    "pin": "pin_45",
+    "elements": [
+      "Search bar for events",
+      "12 colored month cards (Jan green, Feb purple, Mar burgundy, Apr teal...)",
+      "Active date indicators"
+    ]
+  },
+  {
+    "id": "task-manager-dark",
+    "suite": "dashboards",
+    "title": "Task Board — Dark Calendar Strip & Tasks",
+    "theme": "tactile-dark",
+    "pin": "pin_11",
+    "elements": [
+      "Horizontal date strip",
+      "Priority task cards with tags",
+      "Progress completion bars",
+      "Team assignee avatars"
+    ]
+  },
+  {
+    "id": "deployment-status-split",
+    "suite": "dashboards",
+    "title": "DevOps — Light/Dark Deployment Matrix",
+    "theme": "split-theme",
+    "pin": "pin_10",
+    "elements": [
+      "Environment cards (Production, Staging, Dev)",
+      "Git commit hash badges",
+      "Build status chips (Success, Building, Failed)",
+      "Latency sparklines"
+    ]
+  },
+  {
+    "id": "data-usage-gauge",
+    "suite": "dashboards",
+    "title": "Telemetry — 3D Apple-Style Data Gauge",
+    "theme": "apple-light",
+    "pin": "pin_12",
+    "elements": [
+      "3D layered circular ring gauge",
+      "Remaining data readout (42.5 GB / 50 GB)",
+      "Rollover data indicator",
+      "Billing cycle days remaining"
+    ]
+  },
+  {
+    "id": "transaction-table-dark",
+    "suite": "dashboards",
+    "title": "Finance SaaS — Dense Data Table & Search",
+    "theme": "cyber-dark",
+    "pin": "pin_14",
+    "elements": [
+      "Command palette search bar",
+      "Dense data table with zebra striping",
+      "Status indicator badges (Paid, Pending, Overdue)",
+      "Row checkbox selectors",
+      "Export CSV action"
+    ]
+  },
+  {
+    "id": "fitness-dashboard-dark",
+    "suite": "dashboards",
+    "title": "Health SaaS — Multi-Metric Ring Dashboard",
+    "theme": "cyber-dark",
+    "pin": "pin_21",
+    "elements": [
+      "Calorie burn circular ring",
+      "Step count histogram",
+      "Resting heart rate BPM graph",
+      "Sleep quality score pill"
+    ]
+  },
+  {
+    "id": "brandbuzz-agency-hero",
+    "suite": "dashboards",
+    "title": "BrandBuzz — Agency Landing Page Hero",
+    "theme": "orange-modern",
+    "pin": "pin_60",
+    "elements": [
+      "Top navigation bar",
+      "Hero: We create solutions for your business",
+      "Services grid (SEO/SEM, Marketing, Viral Campaign)",
+      "4-step process stepper (Contact, Consult, Order, Payment)"
+    ]
+  },
+  {
+    "id": "brandbuzz-testimonials",
+    "suite": "dashboards",
+    "title": "BrandBuzz — Client Testimonial Carousel",
+    "theme": "orange-modern",
+    "pin": "pin_60",
+    "elements": [
+      "What Clients Say! heading",
+      "5-star testimonial cards with client avatars",
+      "Our Agency data story",
+      "Ready to get started? CTA banner"
+    ]
+  },
+  {
+    "id": "medical-doctor-booking",
+    "suite": "dashboards",
+    "title": "HealthCare — Doctor Booking & Specialists",
+    "theme": "medical-teal",
+    "pin": "pin_64",
+    "elements": [
+      "Hi, Nicholas header",
+      "Go Premium for Better Care promo banner",
+      "Specialty category icons",
+      "Mark Kaert General Practitioner card (★ 4.9)",
+      "Filter pills (All, Cardiologists, GP, Neuro)"
+    ]
+  },
+  {
+    "id": "dark-curl-login",
+    "suite": "security",
+    "title": "Auth — Dark Corner-Curl Reveal Login",
+    "theme": "tactile-dark",
+    "pin": "pin_54",
+    "elements": [
+      "Brand insignia",
+      "Username & Password fields with icons",
+      "Neon blue SIGN IN button",
+      "Curled bottom corner revealing gear icon",
+      "Not a member? Sign up now link"
+    ]
+  },
+  {
+    "id": "otp-bottom-sheet",
+    "suite": "security",
+    "title": "Auth — 4-Digit OTP Verification Sheet",
+    "theme": "pure-black",
+    "pin": "pin_8",
+    "elements": [
+      "Slide-up sheet modal backdrop",
+      "Verification Code title",
+      "4 discrete input boxes with active border glow",
+      "Resend code in 0:45 countdown",
+      "Verify & Proceed action"
+    ]
+  },
+  {
+    "id": "biometric-faceid",
+    "suite": "security",
+    "title": "Security — Apple FaceID Authentication",
+    "theme": "vision-glass",
+    "pin": "pin_48",
+    "elements": [
+      "Frosted glass backdrop",
+      "Animated FaceID vector glyph",
+      "Scanning state indicator",
+      "Authenticate with Passcode fallback"
+    ]
+  },
+  {
+    "id": "passkey-enrollment",
+    "suite": "security",
+    "title": "Security — WebAuthn Passkey Registration",
+    "theme": "vision-glass",
+    "pin": "pin_48",
+    "elements": [
+      "Hardware security shield icon",
+      "Create Passkey for Rentenpe",
+      "Synced with iCloud Keychain badge",
+      "Continue with Touch/Face ID"
+    ]
+  },
+  {
+    "id": "kyc-id-scanner",
+    "suite": "security",
+    "title": "KYC — Government ID Card Scanner",
+    "theme": "vision-glass",
+    "pin": "pin_48",
+    "elements": [
+      "Camera viewport overlay",
+      "Corner alignment brackets",
+      "Glares & Blur auto-detection chip",
+      "Take Photo tactile shutter button"
+    ]
+  },
+  {
+    "id": "kyc-selfie-liveness",
+    "suite": "security",
+    "title": "KYC — Biometric Liveness Selfie",
+    "theme": "vision-glass",
+    "pin": "pin_48",
+    "elements": [
+      "Oval facial guide",
+      "Instruction prompt: \"Blink slowly\"",
+      "Liveness verification score 99.4%",
+      "Confirm Identity button"
+    ]
+  },
+  {
+    "id": "pin-lock-dial",
+    "suite": "security",
+    "title": "Security — 6-Digit App Security Lock",
+    "theme": "pure-black",
+    "pin": "pin_48",
+    "elements": [
+      "Enter Rentenpe Security PIN",
+      "6 circular pin state dots",
+      "3x4 numeric button matrix with haptic clicks",
+      "Forgot PIN recovery link"
+    ]
+  },
+  {
+    "id": "session-devices",
+    "suite": "security",
+    "title": "Security — Active Sessions & Device Revoke",
+    "theme": "tactile-dark",
+    "pin": "pin_48",
+    "elements": [
+      "This Device: iPhone 16 Pro (Active now)",
+      "MacBook Pro — Bengaluru, India",
+      "Revoke All Other Sessions red button",
+      "Two-Factor Authentication toggle"
+    ]
+  }
+]

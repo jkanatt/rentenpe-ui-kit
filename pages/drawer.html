@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawer Panel — Rentenpe UI Kit (PayDash Match)</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    /* Zoom Controls */
+    .zoom-toolbar { display: inline-flex; align-items: center; gap: 16px; padding: 12px 20px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-full); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+    .zoom-toolbar label { font-size: 13px; font-weight: 700; color: var(--color-text-primary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .zoom-slider { cursor: pointer; width: 150px; accent-color: var(--color-primary); }
+    .zoom-value { font-size: 13px; font-weight: 600; color: var(--color-text-secondary); font-family: var(--font-mono); width: 44px; text-align: right; }
+
+    /* Desktop/Tablet Mockup Window */
+    .browser-mockup-wrapper {
+      display: flex; justify-content: center; padding: 40px; background: var(--color-surface-inset);
+      border-radius: var(--radius-lg); overflow: hidden; min-height: 800px; border: 1px dashed var(--color-border-strong);
+    }
+    
+    .browser-mockup {
+      width: 100%; max-width: 1024px; height: 768px; border: 1px solid var(--color-border-strong);
+      border-radius: 12px; position: relative; background: var(--color-background);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;
+      transform-origin: top center; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; flex-direction: column;
+    }
+    
+    .browser-header {
+      height: 48px; background: var(--color-surface); border-bottom: 1px solid var(--color-border);
+      display: flex; align-items: center; padding: 0 16px; gap: 8px;
+    }
+    .browser-dot { width: 12px; height: 12px; border-radius: 50%; background: #E2E8F0; }
+    .browser-dot:nth-child(1) { background: #FF5F56; }
+    .browser-dot:nth-child(2) { background: #FFBD2E; }
+    .browser-dot:nth-child(3) { background: #27C93F; }
+    
+    .browser-content { flex: 1; position: relative; background: var(--color-background); overflow: hidden; }
+
+    /* EXACT PAY-DASH DRAWER STYLES */
+    .pd-drawer-backdrop {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(4px);
+      z-index: 100; animation: drawerFadeIn 0.2s ease-out; display: flex; justify-content: flex-end;
+    }
+    
+    .pd-drawer {
+      width: 540px; max-width: 95vw; height: 100%; background: #FFFFFF;
+      border-left: 4px solid #000000; box-shadow: -12px 0 0px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column;
+      animation: drawerSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .pd-drawer-header {
+      padding: 24px 28px; background: #000000; display: flex; align-items: center; gap: 14px;
+      flex-shrink: 0; border-bottom: 4px solid #000000; color: white;
+    }
+    
+    .pd-drawer-icon {
+      width: 44px; height: 44px; background: #FFFFFF; border: 2px solid #000000;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; color: #000000;
+    }
+    
+    .pd-drawer-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+    .pd-drawer-subtitle { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+    
+    .pd-drawer-close {
+      width: 34px; height: 34px; border: 2px solid #FFFFFF; background: transparent;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      font-size: 16px; font-weight: 900; color: #FFFFFF; transition: all 0.15s; margin-left: auto;
+    }
+    .pd-drawer-close:hover { background: #FFFFFF; color: #000000; }
+    
+    .pd-drawer-body { flex: 1; overflow: auto; padding: 28px; color: #000; }
+    
+    .pd-drawer-footer {
+      padding: 20px 28px; border-top: 4px solid #000000; background: #FFFFFF; flex-shrink: 0;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+
+    .pd-footer-brand { display: flex; align-items: center; gap: 8px; font-weight: 900; letter-spacing: -0.02em; font-size: 16px; color: #000; }
+    .pd-footer-logo { width: 24px; height: 24px; background: #000; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; }
+    
+    .pd-btn { border: 2px solid #000; font-weight: 700; padding: 8px 16px; cursor: pointer; font-family: inherit; font-size: 14px; }
+    .pd-btn-outline { background: #FFF; color: #000; }
+    .pd-btn-solid { background: #000; color: #FFF; }
+
+    @keyframes drawerFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes drawerSlideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    <nav class="catalog-nav">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Overlays & Popups</div>
+        <a href="modal.html" class="catalog-nav-item">🪟 Modals</a>
+        <a href="#drawer" class="catalog-nav-item active">📂 Drawer Panel (PayDash Match)</a>
+        <a href="ai-panel.html" class="catalog-nav-item">🤖 AI Panel</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="catalog-main">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">Drawer Panel (100% PayDash Match)</h1>
+      <p class="catalog-page-description">An exact 1:1 replica of the Neo-Brutalist DrawerPanel component from the Pay-Dash repository. Features sharp borders, solid black headers, and a fixed footer.</p>
+      
+      <div class="zoom-toolbar">
+        <label for="zoomSlider">Preview Zoom</label>
+        <input type="range" id="zoomSlider" class="zoom-slider" min="0.5" max="1.5" step="0.1" value="1.0" oninput="updateZoom(this.value)">
+        <span class="zoom-value" id="zoomValue">100%</span>
+      </div>
+    </div>
+
+    <!-- ═══ PAY-DASH DRAWER ═══ -->
+    <section class="component-section" id="drawer">
+      <div class="component-section-header">
+        <div>
+          <span class="component-family-id">PAYDASH·DRAWER</span>
+          <h2 class="component-family-name">Exact DrawerPanel.tsx</h2>
+          <p class="component-family-desc">Premium slide-in panel from the right. Black header, white body, fixed footer architecture.</p>
+        </div>
+      </div>
+      
+      <div class="browser-mockup-wrapper">
+        <div class="browser-mockup">
+          <div class="browser-header">
+            <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+          </div>
+          <div class="browser-content">
+            <!-- Mock Content behind drawer -->
+            <div style="padding: 40px; font-family: sans-serif;">
+              <h2 style="font-size: 24px; font-weight: 800; color: #000;">Dashboard</h2>
+            </div>
+            
+            <!-- Exact Drawer Overlay -->
+            <div class="pd-drawer-backdrop">
+              <div class="pd-drawer">
+                
+                <div class="pd-drawer-header">
+                  <div class="pd-drawer-icon">📄</div>
+                  <div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                      <h3 class="pd-drawer-title">Document Viewer</h3>
+                      <span style="font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: rgba(255,255,255,0.15); color: white;">v2.1</span>
+                    </div>
+                    <div class="pd-drawer-subtitle">Lease Agreement - 12B Baker St</div>
+                  </div>
+                  <button class="pd-drawer-close">✕</button>
+                </div>
+                
+                <div class="pd-drawer-body">
+                  <div style="width: 100%; height: 200px; background: #F1F5F9; border: 2px solid #E2E8F0; display:flex; align-items:center; justify-content:center; margin-bottom: 24px;">
+                    <span style="color:#94A3B8; font-weight:600">Document Preview Area</span>
+                  </div>
+                  <h4 style="font-size:16px; font-weight:700; margin-bottom:12px">Document Details</h4>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; font-size:14px; margin-bottom: 24px;">
+                    <div><div style="color:#64748B; margin-bottom:4px">Created</div><div style="font-weight:600">Oct 10, 2026</div></div>
+                    <div><div style="color:#64748B; margin-bottom:4px">Status</div><div style="font-weight:600; color:#10B981">Signed</div></div>
+                  </div>
+                </div>
+                
+                <div class="pd-drawer-footer">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="pd-footer-brand">
+                      <div class="pd-footer-logo">P</div>
+                      PAYDASH
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                      <button class="pd-btn pd-btn-outline">Download</button>
+                      <button class="pd-btn pd-btn-solid">Send Email</button>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+  function updateZoom(value) {
+    document.querySelectorAll('.browser-mockup').forEach(mockup => {
+      mockup.style.transform = `scale(${value})`;
+    });
+    document.getElementById('zoomValue').textContent = `${Math.round(value * 100)}%`;
+  }
+</script>
+</body>
+</html>

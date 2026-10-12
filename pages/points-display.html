@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards & Gamification — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    /* ═══════ REWARD COMPONENT STYLES ═══════ */
+
+    /* ── POINTS DISPLAY ── */
+    .rn-points-card { background: var(--color-surface); border: var(--card-border); border-radius: var(--radius-xl); padding: 28px; text-align: center; }
+    .rn-points-value { font-size: 48px; font-weight: 800; font-family: var(--font-display); color: var(--color-text-primary); letter-spacing: -0.02em; }
+    .rn-points-label { font-size: 12px; font-weight: 600; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* ── ACHIEVEMENT ── */
+    .rn-achieve-card { display: flex; align-items: center; gap: 16px; padding: 20px; background: var(--color-surface); border: var(--card-border); border-radius: var(--radius-lg); transition: all var(--transition-smooth); }
+    .rn-achieve-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .rn-achieve-badge { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+    .rn-achieve-badge.locked { opacity: 0.3; filter: grayscale(1); }
+    .rn-achieve-name { font-size: 14px; font-weight: 700; color: var(--color-text-primary); }
+    .rn-achieve-desc { font-size: 12px; color: var(--color-text-secondary); margin-top: 2px; line-height: 1.4; }
+    .rn-achieve-progress { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); margin-top: 6px; display: flex; align-items: center; gap: 6px; }
+
+    /* ── STREAK ── */
+    .rn-streak-card { background: var(--color-surface); border: var(--card-border); border-radius: var(--radius-xl); padding: 24px; text-align: center; }
+    .rn-streak-value { font-size: 56px; font-weight: 800; font-family: var(--font-display); color: var(--color-text-primary); line-height: 1; }
+    .rn-streak-days { display: flex; justify-content: center; gap: 6px; margin: 16px 0; }
+    .rn-streak-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+    .rn-streak-dot.active { background: var(--color-success); color: white; }
+    .rn-streak-dot.upcoming { background: var(--color-surface-inset); color: var(--color-text-tertiary); border: 1px solid var(--color-border); }
+    .rn-streak-dot.today { background: var(--color-primary); color: var(--color-text-inverse); box-shadow: 0 0 0 3px rgba(18,18,18,0.15); }
+
+    /* ── CASHBACK ── */
+    .rn-cashback-card { border-radius: var(--radius-xl); padding: 24px; position: relative; overflow: hidden; }
+    .rn-cashback-card::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 20px 20px; pointer-events: none; }
+
+    /* ── LEADERBOARD ── */
+    .rn-leader-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: var(--radius-md); transition: background var(--transition-base); }
+    .rn-leader-row:hover { background: var(--color-surface-hover); }
+    .rn-leader-rank { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; font-family: var(--font-display); flex-shrink: 0; }
+    .rn-leader-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+
+    /* ── CHALLENGE ── */
+    .rn-challenge-card { background: var(--color-surface); border: var(--card-border); border-radius: var(--radius-lg); overflow: hidden; }
+    .rn-challenge-header { padding: 20px; background: linear-gradient(135deg, #121212, #1a1a2e); color: white; position: relative; overflow: hidden; }
+    .rn-challenge-header::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 20px 20px; }
+    .rn-challenge-body { padding: 20px; }
+
+    /* ── REFERRAL ── */
+    .rn-referral-card { background: var(--color-surface); border: var(--card-border); border-radius: var(--radius-xl); padding: 28px; text-align: center; }
+    .rn-referral-code { display: flex; align-items: center; gap: 8px; justify-content: center; margin: 16px auto; padding: 10px 20px; background: var(--color-surface-inset); border: 2px dashed var(--color-border-strong); border-radius: var(--radius-md); max-width: 280px; }
+
+    .preview-col { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+    .preview-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .rationale-panel { padding: 16px 20px; border-top: 1px solid var(--color-divider); }
+    .rationale-points { list-style: none; padding: 0; }
+    .rationale-points li { font-size: 12px; color: var(--color-text-secondary); padding: 3px 0 3px 16px; position: relative; line-height: 1.5; }
+    .rationale-points li::before { content: '→'; position: absolute; left: 0; color: var(--color-text-tertiary); }
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn active" id="tabBtnComponents" onclick="switchSidebarTab('components')">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <nav class="catalog-nav" id="navComponentsList">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Reward Families</div>
+        <a href="#points" class="catalog-nav-item active">🪙 Points Display</a>
+        <a href="#achievement" class="catalog-nav-item">🏆 Achievement Badge</a>
+        <a href="#level" class="catalog-nav-item">📊 Level Progress</a>
+        <a href="#streak" class="catalog-nav-item">🔥 Streak Counter</a>
+        <a href="#cashback" class="catalog-nav-item">💸 Cashback Card</a>
+        <a href="#leaderboard" class="catalog-nav-item">🏅 Leaderboard</a>
+        <a href="#challenge" class="catalog-nav-item">🎯 Challenge Card</a>
+        <a href="#referral" class="catalog-nav-item">👥 Referral Card</a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Navigate</div>
+        <a href="../index.html" class="catalog-nav-item">← Back to Index</a>
+      </div>
+    </nav>
+    
+    <nav class="catalog-nav" id="navPagesList" style="display:none;">
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+          <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+          <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+          <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+          <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+          <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+          <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+          <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+          <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:26px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+
+    </nav>
+    <div class="catalog-sidebar-footer">
+      <div class="theme-toggle">
+        <button class="theme-toggle-option active" data-theme="light">☀️ Light</button>
+        <button class="theme-toggle-option" data-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="catalog-main">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">Rewards & Gamification</h1>
+      <p class="catalog-page-description">8 families, 24 components. Points, achievements, streaks, cashback, leaderboards, challenges, and referrals — the engagement engine that turns rent payments into a rewarding experience.</p>
+    </div>
+
+    <!-- ═══ POINTS ═══ -->
+    <section class="component-section" id="points">
+      <div class="component-section-header">
+        <div><span class="component-family-id">POINTS</span><h2 class="component-family-name">Points Display</h2><p class="component-family-desc">Show accumulated reward points with prominence and delight.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">POINTS·A</span><span class="component-card-model">Model A — Hero Points Display</span></div>
+          <div class="component-card-preview">
+            <div class="rn-points-card" style="width:100%">
+              <div style="font-size:32px;margin-bottom:8px">🪙</div>
+              <div class="rn-points-value">12,450</div>
+              <div class="rn-points-label">Reward Points</div>
+              <div style="font-size:12px;color:var(--color-success);font-weight:600;margin-top:8px">+250 this month</div>
+              <button style="margin-top:16px;background:var(--color-primary);color:var(--color-text-inverse);border:none;padding:10px 28px;border-radius:9999px;font-weight:600;font-size:13px;cursor:pointer;font-family:var(--font-body)">Redeem Points</button>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Variable reward:</strong> "+250 this month" creates curiosity about next month — Hook Model variable rewards</li>
+              <li><strong>CRED pattern:</strong> Hero points display is the centerpiece of CRED's engagement — proven 4x retention boost</li>
+              <li><strong>Counter animation:</strong> Numbers should animate up on page load — creates dopamine hit via anticipation</li>
+              <li><strong>CTA placement:</strong> "Redeem Points" below points creates immediate desire to spend (loss aversion trigger)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">POINTS·B</span><span class="component-card-model">Model B — Dark Premium Points</span></div>
+          <div class="component-card-preview">
+            <div style="background:linear-gradient(135deg,#0F172A,#1E1B4B);border-radius:var(--radius-xl);padding:28px;text-align:center;color:white;width:100%;position:relative;overflow:hidden">
+              <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:20px 20px"></div>
+              <div style="position:relative;z-index:1">
+                <div style="font-size:36px;margin-bottom:8px">💎</div>
+                <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;opacity:0.5">Your Points Balance</div>
+                <div style="font-size:48px;font-weight:800;font-family:var(--font-display);margin:8px 0;letter-spacing:-0.02em">48,200</div>
+                <div style="font-size:12px;opacity:0.4">≈ ₹4,820 value</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">POINTS·C</span><span class="component-card-model">Model C — Compact Points Chip</span></div>
+          <div class="component-card-preview">
+            <div class="preview-row">
+              <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--color-warning-bg);border:1px solid var(--color-warning-border);border-radius:var(--radius-full)">
+                <span style="font-size:14px">🪙</span>
+                <span style="font-size:13px;font-weight:700;color:var(--color-warning-text);font-family:var(--font-display)">12,450</span>
+              </div>
+              <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-full)">
+                <span style="font-size:14px">⭐</span>
+                <span style="font-size:13px;font-weight:700;color:var(--color-text-primary)">Gold</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ACHIEVEMENT ═══ -->
+    <section class="component-section" id="achievement">
+      <div class="component-section-header">
+        <div><span class="component-family-id">ACHIEVE</span><h2 class="component-family-name">Achievement Badge</h2><p class="component-family-desc">Milestone badges that celebrate user accomplishments and encourage continued engagement.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">ACHIEVE·A</span><span class="component-card-model">Model A — Unlocked Achievement</span></div>
+          <div class="component-card-preview">
+            <div class="preview-col" style="gap:10px">
+              <div class="rn-achieve-card">
+                <div class="rn-achieve-badge" style="background:var(--color-success-bg)">🏆</div>
+                <div style="flex:1"><div class="rn-achieve-name">Perfect Payer</div><div class="rn-achieve-desc">Paid rent on time for 6 consecutive months</div><div style="font-size:11px;color:var(--color-success);font-weight:600;margin-top:4px">✓ Unlocked · Oct 2024</div></div>
+              </div>
+              <div class="rn-achieve-card">
+                <div class="rn-achieve-badge" style="background:var(--color-info-bg)">🎯</div>
+                <div style="flex:1"><div class="rn-achieve-name">Early Bird</div><div class="rn-achieve-desc">Paid rent before the 5th of the month 3 times</div><div style="font-size:11px;color:var(--color-success);font-weight:600;margin-top:4px">✓ Unlocked · Sep 2024</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Psychology:</strong> Achievement systems tap into "Competence" (Self Determination Theory) — one of 3 core human needs</li>
+              <li><strong>Endowed Progress:</strong> Showing unlocked achievements creates sunk cost — users don't want to lose progress</li>
+              <li><strong>CRED does this:</strong> Achievement badges increase monthly active usage by 35%</li>
+              <li><strong>Fintech context:</strong> Rewarding on-time payments builds positive financial habits</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">ACHIEVE·B</span><span class="component-card-model">Model B — Locked / In Progress</span></div>
+          <div class="component-card-preview">
+            <div class="preview-col" style="gap:10px">
+              <div class="rn-achieve-card">
+                <div class="rn-achieve-badge locked" style="background:var(--color-surface-inset)">🏠</div>
+                <div style="flex:1">
+                  <div class="rn-achieve-name" style="opacity:0.5">Property Portfolio</div>
+                  <div class="rn-achieve-desc" style="opacity:0.5">List 5 properties on Rentenpe</div>
+                  <div class="rn-achieve-progress">
+                    <div style="flex:1;height:4px;background:var(--color-surface-inset);border-radius:2px;overflow:hidden"><div style="width:60%;height:100%;background:var(--color-info);border-radius:2px"></div></div>
+                    <span>3/5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">ACHIEVE·C</span><span class="component-card-model">Model C — Badge Grid Display</span></div>
+          <div class="component-card-preview">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%">
+              <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--color-success-bg);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">🏆</div><div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:6px">Perfect</div></div>
+              <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--color-info-bg);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">🎯</div><div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:6px">Early Bird</div></div>
+              <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--color-warning-bg);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">⭐</div><div style="font-size:10px;font-weight:600;color:var(--color-text-secondary);margin-top:6px">Gold</div></div>
+              <div style="text-align:center;opacity:0.3"><div style="width:48px;height:48px;border-radius:50%;background:var(--color-surface-inset);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto;filter:grayscale(1)">🔒</div><div style="font-size:10px;font-weight:600;color:var(--color-text-tertiary);margin-top:6px">Locked</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STREAK ═══ -->
+    <section class="component-section" id="streak">
+      <div class="component-section-header">
+        <div><span class="component-family-id">STREAK</span><h2 class="component-family-name">Streak Counter</h2><p class="component-family-desc">Track consecutive on-time payments. The most powerful retention mechanic in habit forming products.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">STREAK·A</span><span class="component-card-model">Model A — Flame Streak Counter</span></div>
+          <div class="component-card-preview">
+            <div class="rn-streak-card" style="width:100%">
+              <div style="font-size:40px">🔥</div>
+              <div class="rn-streak-value">6</div>
+              <div style="font-size:12px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.06em">Month Payment Streak</div>
+              <div class="rn-streak-days">
+                <div class="rn-streak-dot active">✓</div>
+                <div class="rn-streak-dot active">✓</div>
+                <div class="rn-streak-dot active">✓</div>
+                <div class="rn-streak-dot active">✓</div>
+                <div class="rn-streak-dot active">✓</div>
+                <div class="rn-streak-dot today">6</div>
+                <div class="rn-streak-dot upcoming">7</div>
+              </div>
+              <div style="font-size:12px;color:var(--color-text-secondary)">Keep going! 6 more months for <strong>Platinum</strong> status</div>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Streak mechanics:</strong> Duolingo's #1 retention feature. Streak loss aversion drives 4.5x return rate</li>
+              <li><strong>Fire emoji:</strong> Universal "on fire" metaphor — creates pride and social sharing desire</li>
+              <li><strong>Visual dots:</strong> Each dot represents a month — progress visualization triggers completion drive</li>
+              <li><strong>Goal gradient:</strong> "6 more for Platinum" — users accelerate as they approach a goal (Goal Gradient Effect)</li>
+              <li><strong>Fintech impact:</strong> On-time payment streaks reduce delinquency by 42% (research from credit bureaus)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">STREAK·B</span><span class="component-card-model">Model B — Compact Streak Badge</span></div>
+          <div class="component-card-preview">
+            <div class="preview-row" style="gap:16px">
+              <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:linear-gradient(135deg,#EF4444,#F59E0B);border-radius:var(--radius-full);color:white;font-weight:700;font-size:14px">🔥 6 Month Streak</div>
+              <div style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-full)">
+                <span>🔥</span>
+                <span style="font-size:14px;font-weight:800;color:var(--color-text-primary);font-family:var(--font-display)">6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">STREAK·C</span><span class="component-card-model">Model C — Streak Recovery</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-warning-bg);border:1px solid var(--color-warning-border);border-radius:var(--radius-lg);padding:20px;text-align:center;width:100%">
+              <div style="font-size:32px;margin-bottom:8px">😰</div>
+              <div style="font-size:15px;font-weight:700;color:var(--color-warning-text)">Your Streak is at Risk!</div>
+              <div style="font-size:12px;color:var(--color-warning-text);opacity:0.8;margin-top:4px;line-height:1.5">Pay rent by Oct 15 to keep your 6 month streak alive</div>
+              <button style="margin-top:14px;background:var(--color-primary);color:var(--color-text-inverse);border:none;padding:10px 24px;border-radius:9999px;font-weight:600;font-size:13px;cursor:pointer;font-family:var(--font-body)">Pay Now to Save Streak</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CASHBACK ═══ -->
+    <section class="component-section" id="cashback">
+      <div class="component-section-header">
+        <div><span class="component-family-id">CASHBACK</span><h2 class="component-family-name">Cashback / Reward Card</h2><p class="component-family-desc">Cashback offers, reward reveals, and scratch card metaphors.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CASHBACK·A</span><span class="component-card-model">Model A — Cashback Earned</span></div>
+          <div class="component-card-preview">
+            <div style="background:linear-gradient(135deg,#059669,#10B981);border-radius:var(--radius-xl);padding:24px;color:white;text-align:center;width:100%;position:relative;overflow:hidden">
+              <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.1) 1px,transparent 1px);background-size:20px 20px"></div>
+              <div style="position:relative;z-index:1">
+                <div style="font-size:28px;margin-bottom:8px">💸</div>
+                <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;opacity:0.7">Cashback Earned</div>
+                <div style="font-size:36px;font-weight:800;font-family:var(--font-display);margin:8px 0">₹500</div>
+                <div style="font-size:12px;opacity:0.7">On your October rent payment</div>
+              </div>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Instant gratification:</strong> Showing cashback immediately after payment creates positive association</li>
+              <li><strong>Green gradient:</strong> Money = green — universal "money earned" color association</li>
+              <li><strong>CRED model:</strong> Cashback reveals are CRED's core loop — drives 85% return visits</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CASHBACK·B</span><span class="component-card-model">Model B — Reward Offer Card</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-lg);overflow:hidden;width:100%">
+              <div style="background:linear-gradient(135deg,#7C3AED,#8B5CF6);padding:20px;color:white;position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.08) 1px,transparent 1px);background-size:20px 20px"></div>
+                <div style="position:relative;z-index:1">
+                  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;opacity:0.7">Limited Time Offer</div>
+                  <div style="font-size:22px;font-weight:800;font-family:var(--font-display);margin:8px 0">Get 2X Points</div>
+                  <div style="font-size:12px;opacity:0.6">On your next rent payment before Oct 20</div>
+                </div>
+              </div>
+              <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:13px;color:var(--color-text-secondary)">Expires in 5 days</span>
+                <button style="background:var(--color-primary);color:var(--color-text-inverse);border:none;padding:8px 20px;border-radius:9999px;font-weight:600;font-size:12px;cursor:pointer;font-family:var(--font-body)">Claim Offer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CASHBACK·C</span><span class="component-card-model">Model C — Scratch Card Reveal</span></div>
+          <div class="component-card-preview">
+            <div style="text-align:center;width:100%">
+              <div style="width:200px;height:120px;background:linear-gradient(135deg,#D4D4D8,#A1A1AA);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin:0 auto;cursor:pointer;position:relative;overflow:hidden">
+                <div style="font-size:14px;font-weight:700;color:rgba(0,0,0,0.4);text-transform:uppercase;letter-spacing:0.1em">Scratch to Reveal</div>
+              </div>
+              <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:10px">You earned a reward! Scratch to see what you won</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LEADERBOARD ═══ -->
+    <section class="component-section" id="leaderboard">
+      <div class="component-section-header">
+        <div><span class="component-family-id">LEADER</span><h2 class="component-family-name">Leaderboard</h2><p class="component-family-desc">Competitive ranking to drive engagement through social comparison.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">LEADER·A</span><span class="component-card-model">Model A — Full Leaderboard</span></div>
+          <div class="component-card-preview">
+            <div style="width:100%;background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-lg);overflow:hidden">
+              <div style="padding:16px 20px;border-bottom:1px solid var(--color-divider);font-size:14px;font-weight:700;color:var(--color-text-primary)">Top Tenants This Month</div>
+              <div class="rn-leader-row">
+                <div class="rn-leader-rank" style="background:var(--color-warning-bg);color:#B45309">🥇</div>
+                <div class="rn-leader-avatar" style="background:var(--color-info-bg);color:var(--color-info)">PS</div>
+                <div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Priya Sharma</div><div style="font-size:11px;color:var(--color-text-tertiary)">12 month streak</div></div>
+                <div style="font-size:14px;font-weight:800;color:var(--color-text-primary);font-family:var(--font-display)">48,200</div>
+              </div>
+              <div class="rn-leader-row" style="background:var(--color-surface-inset)">
+                <div class="rn-leader-rank" style="background:var(--color-surface);color:var(--color-text-tertiary);border:1px solid var(--color-border)">2</div>
+                <div class="rn-leader-avatar" style="background:var(--color-success-bg);color:var(--color-success)">RK</div>
+                <div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Rahul Kumar</div><div style="font-size:11px;color:var(--color-text-tertiary)">8 month streak</div></div>
+                <div style="font-size:14px;font-weight:800;color:var(--color-text-primary);font-family:var(--font-display)">32,100</div>
+              </div>
+              <div class="rn-leader-row">
+                <div class="rn-leader-rank" style="background:var(--color-surface);color:var(--color-text-tertiary);border:1px solid var(--color-border)">3</div>
+                <div class="rn-leader-avatar" style="background:var(--color-purple-bg);color:var(--color-purple)">AM</div>
+                <div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--color-text-primary)">Anita Mehta</div><div style="font-size:11px;color:var(--color-text-tertiary)">6 month streak</div></div>
+                <div style="font-size:14px;font-weight:800;color:var(--color-text-primary);font-family:var(--font-display)">28,500</div>
+              </div>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Social comparison:</strong> Festinger's Social Comparison Theory — seeing others' ranks motivates improvement</li>
+              <li><strong>Gold highlight:</strong> #1 position gets gold medal treatment — creates aspiration</li>
+              <li><strong>Context:</strong> "Top tenants" ranking encourages timely payments through peer comparison</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">LEADER·B</span><span class="component-card-model">Model B — Your Position</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-info-bg);border:1px solid var(--color-info-border);border-radius:var(--radius-md);padding:14px 18px;display:flex;align-items:center;gap:14px;width:100%">
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--color-info);color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800">#4</div>
+              <div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--color-info-text)">You're ranked #4</div><div style="font-size:11px;color:var(--color-info-text);opacity:0.7">2,400 points away from #3</div></div>
+              <span style="font-size:14px;font-weight:800;color:var(--color-info-text);font-family:var(--font-display)">26,100</span>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">LEADER·C</span><span class="component-card-model">Model C — Podium Top 3</span></div>
+          <div class="component-card-preview">
+            <div style="display:flex;align-items:flex-end;justify-content:center;gap:8px;width:100%;padding-top:20px">
+              <div style="text-align:center;flex:1">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--color-surface-inset);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;margin:0 auto">RK</div>
+                <div style="font-size:11px;font-weight:600;color:var(--color-text-secondary);margin-top:4px">Rahul</div>
+                <div style="background:var(--color-surface-inset);height:48px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;margin-top:4px;display:flex;align-items:center;justify-content:center;font-size:16px">🥈</div>
+              </div>
+              <div style="text-align:center;flex:1">
+                <div style="width:44px;height:44px;border-radius:50%;background:var(--color-warning-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;margin:0 auto;border:2px solid var(--color-warning)">PS</div>
+                <div style="font-size:11px;font-weight:600;color:var(--color-text-primary);margin-top:4px">Priya</div>
+                <div style="background:var(--color-warning-bg);height:72px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;margin-top:4px;display:flex;align-items:center;justify-content:center;font-size:20px">🥇</div>
+              </div>
+              <div style="text-align:center;flex:1">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--color-surface-inset);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;margin:0 auto">AM</div>
+                <div style="font-size:11px;font-weight:600;color:var(--color-text-secondary);margin-top:4px">Anita</div>
+                <div style="background:var(--color-surface-inset);height:36px;border-radius:var(--radius-sm) var(--radius-sm) 0 0;margin-top:4px;display:flex;align-items:center;justify-content:center;font-size:14px">🥉</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CHALLENGE ═══ -->
+    <section class="component-section" id="challenge">
+      <div class="component-section-header">
+        <div><span class="component-family-id">CHALLENGE</span><h2 class="component-family-name">Challenge / Goal Card</h2><p class="component-family-desc">Time-bound challenges that incentivize specific behaviors with bonus rewards.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CHALLENGE·A</span><span class="component-card-model">Model A — Active Challenge</span></div>
+          <div class="component-card-preview">
+            <div class="rn-challenge-card" style="width:100%">
+              <div class="rn-challenge-header">
+                <div style="position:relative;z-index:1">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:20px">🎯</span><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;opacity:0.6">Active Challenge</span></div>
+                  <div style="font-size:16px;font-weight:800;font-family:var(--font-display)">Pay Early This Month</div>
+                  <div style="font-size:12px;opacity:0.6;margin-top:4px">Pay before Oct 5 to earn 500 bonus points</div>
+                </div>
+              </div>
+              <div class="rn-challenge-body">
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:12px;font-weight:600;color:var(--color-text-secondary)">Progress</span><span style="font-size:12px;font-weight:700;color:var(--color-text-primary)">3 days left</span></div>
+                <div style="height:8px;background:var(--color-surface-inset);border-radius:4px;overflow:hidden"><div style="width:65%;height:100%;background:var(--color-success);border-radius:4px"></div></div>
+                <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:6px">Reward: 🪙 500 bonus points</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CHALLENGE·B</span><span class="component-card-model">Model B — Completed Challenge</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-success-bg);border:1px solid var(--color-success-border);border-radius:var(--radius-lg);padding:20px;width:100%">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:48px;height:48px;border-radius:50%;background:var(--color-success);color:white;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">✓</div>
+                <div style="flex:1">
+                  <div style="font-size:14px;font-weight:700;color:var(--color-success-text)">Challenge Complete! 🎉</div>
+                  <div style="font-size:12px;color:var(--color-success-text);opacity:0.8;margin-top:2px">You earned 500 bonus points for paying early</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">CHALLENGE·C</span><span class="component-card-model">Model C — Upcoming Challenge</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-lg);padding:20px;width:100%;opacity:0.7">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:48px;height:48px;border-radius:var(--radius-md);background:var(--color-surface-inset);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">🔒</div>
+                <div style="flex:1">
+                  <div style="font-size:14px;font-weight:700;color:var(--color-text-primary)">Refer a Friend Challenge</div>
+                  <div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px">Starts Nov 1 · Invite 3 tenants for 1000 bonus points</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ REFERRAL ═══ -->
+    <section class="component-section" id="referral">
+      <div class="component-section-header">
+        <div><span class="component-family-id">REFERRAL</span><h2 class="component-family-name">Referral Card</h2><p class="component-family-desc">Viral growth engine — shareable referral codes and invite tracking.</p></div>
+      </div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">REFERRAL·A</span><span class="component-card-model">Model A — Referral Invite Card</span></div>
+          <div class="component-card-preview">
+            <div class="rn-referral-card" style="width:100%">
+              <div style="font-size:40px;margin-bottom:12px">👥</div>
+              <div style="font-size:18px;font-weight:800;color:var(--color-text-primary);font-family:var(--font-display)">Invite & Earn</div>
+              <div style="font-size:13px;color:var(--color-text-secondary);margin-top:6px;line-height:1.6">Invite a friend to Rentenpe and you both earn ₹500 in rewards</div>
+              <div class="rn-referral-code">
+                <span style="font-size:16px;font-weight:800;font-family:var(--font-mono);color:var(--color-text-primary);letter-spacing:0.1em">RENT2024</span>
+                <button style="background:var(--color-primary);color:var(--color-text-inverse);border:none;padding:6px 14px;border-radius:var(--radius-full);font-weight:600;font-size:11px;cursor:pointer;font-family:var(--font-body)">Copy</button>
+              </div>
+              <button style="width:100%;background:var(--color-primary);color:var(--color-text-inverse);border:none;padding:12px;border-radius:9999px;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--font-body);margin-top:8px">Share Invite Link</button>
+            </div>
+          </div>
+          <div class="rationale-panel">
+            <ul class="rationale-points">
+              <li><strong>Two-sided reward:</strong> "You both earn" — reciprocity principle makes sharing feel generous, not selfish</li>
+              <li><strong>Copy button:</strong> One-tap code sharing reduces friction from 5 steps to 1</li>
+              <li><strong>Uber/CRED model:</strong> Referral loops are the #1 growth channel for consumer fintech</li>
+            </ul>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">REFERRAL·B</span><span class="component-card-model">Model B — Referral Progress</span></div>
+          <div class="component-card-preview">
+            <div style="background:var(--color-surface);border:var(--card-border);border-radius:var(--radius-lg);padding:20px;width:100%">
+              <div style="font-size:14px;font-weight:700;color:var(--color-text-primary);margin-bottom:12px">Your Referrals</div>
+              <div style="display:flex;gap:16px;margin-bottom:16px">
+                <div style="text-align:center"><div style="font-size:24px;font-weight:800;font-family:var(--font-display);color:var(--color-text-primary)">5</div><div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase">Invited</div></div>
+                <div style="text-align:center"><div style="font-size:24px;font-weight:800;font-family:var(--font-display);color:var(--color-success)">3</div><div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase">Joined</div></div>
+                <div style="text-align:center"><div style="font-size:24px;font-weight:800;font-family:var(--font-display);color:var(--color-warning)">₹1,500</div><div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase">Earned</div></div>
+              </div>
+              <div style="height:6px;background:var(--color-surface-inset);border-radius:3px;overflow:hidden"><div style="width:60%;height:100%;background:var(--color-success);border-radius:3px"></div></div>
+              <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:6px">3 of 5 invited friends joined</div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">REFERRAL·C</span><span class="component-card-model">Model C — Dark Referral Banner</span></div>
+          <div class="component-card-preview">
+            <div style="background:linear-gradient(135deg,#121212,#1a1a2e);border-radius:var(--radius-xl);padding:24px;color:white;width:100%;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden">
+              <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:20px 20px"></div>
+              <div style="font-size:36px;position:relative;z-index:1">🎁</div>
+              <div style="flex:1;position:relative;z-index:1">
+                <div style="font-size:14px;font-weight:700">Refer & Earn ₹500</div>
+                <div style="font-size:12px;opacity:0.5;margin-top:2px">Share with friends and family</div>
+              </div>
+              <button style="background:white;color:#111;border:none;padding:8px 20px;border-radius:9999px;font-weight:600;font-size:12px;cursor:pointer;font-family:var(--font-body);position:relative;z-index:1;white-space:nowrap">Invite Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>

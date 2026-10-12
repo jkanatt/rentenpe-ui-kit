@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate & Rental Suites — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/screens-data.js"></script>
+  <script src="../js/screen-renderers.js"></script>
+  <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+<div class="catalog-shell">
+  <!-- Sidebar -->
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div style="margin-bottom: 12px; display:flex; align-items:center; justify-content:space-between;">
+        <a href="../index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+          <div style="width:28px; height:28px; border-radius:8px; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;">R</div>
+          <span style="font-size: 15px; font-weight: 800; color: var(--color-text-primary);">RentenPe</span>
+        </a>
+        <span style="font-size: 10px; font-weight: 800; color: #10B981; background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:99px;">PRO 2.0</span>
+      </div>
+
+      <!-- Search Input -->
+      <div class="sidebar-search" style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 10px; font-size: 14px; color: #94A3B8;">🔍</span>
+        <input type="text" id="catalogSearch" placeholder="Search pages or components..." style="width: 100%; padding: 10px 10px 10px 36px; background: var(--color-surface-sunken, #F1F5F9); border: none; border-radius: 8px; font-size: 13px; outline: none;">
+      </div>
+    </div>
+
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn" id="tabBtnComponents" onclick="window.location.href='../index.html#components'">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn active" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="catalog-nav" id="navPagesList" style="display:block;">
+      
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+    
+        <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+      
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+      
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+      
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+      
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item active" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+    
+        <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+    
+        <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+      
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+      
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+      
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+      
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+      
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+      
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+      
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+      
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+      
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+      
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+      
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+      
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+      
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+      
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+      
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+      
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <div class="catalog-sidebar-footer">
+      <button onclick="window.openThemePicker()" style="width: 100%; margin-bottom: 12px; padding: 10px; background: var(--color-surface, #FFFFFF); border: 1px solid var(--color-border, #E2E8F0); border-radius: 10px; color: var(--color-text-primary, #0F172A); font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        🎨 Customize Tokens
+      </button>
+      <div class="theme-toggle">
+        <button class="theme-toggle-option active" data-theme="light">☀️ Light</button>
+        <button class="theme-toggle-option" data-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="catalog-main" style="background: var(--color-surface-sunken, #F8FAFC); padding: 32px 48px;">
+    <!-- Suite Header Banner -->
+    <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <a href="../index.html#pages" style="color:#94A3B8; text-decoration:none; font-size:12px; font-weight:700;">← All Suites</a>
+          <span style="color:#64748B;">/</span>
+          <span style="color:#38BDF8; font-size:12px; font-weight:700;">Real Estate & Rental Suites</span>
+        </div>
+        <h1 style="font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 10px 0;">🏠 Real Estate & Rental Suites</h1>
+        <p style="font-size:14px; color:#94A3B8; margin:0; max-width:600px; line-height:1.6;">The complete Findora Dream House rental experience tailored for Rentenpe property management.</p>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-size:36px; font-weight:900; color:#38BDF8;">12</div>
+        <div style="font-size:11px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Interactive Screens</div>
+      </div>
+    </div>
+
+    <!-- Screens Gallery Grid -->
+    <div class="screens-gallery-grid">
+      
+      <div class="screen-card-container" id="findora-welcome">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#000; color:#fff; border-radius:36px; overflow:hidden; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); position:relative;">
+          <!-- Top Architectural House Background -->
+          <div style="height:55%; background:linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%), #1E293B; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; position:relative;">
+            <div style="width:70px; height:70px; border-radius:50%; background:#fff; color:#0F172A; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 10px 25px rgba(0,0,0,0.3); margin-bottom:12px;">
+              <span style="font-size:24px;">🏠</span>
+              <span style="font-size:7px; font-weight:900; letter-spacing:0.1em; text-transform:uppercase;">RentenPe</span>
+            </div>
+            <div style="font-size:22px; font-weight:900; letter-spacing:-0.02em;">FINDORA</div>
+            <div style="font-size:11px; color:#CBD5E1; letter-spacing:0.1em; text-transform:uppercase;">Dream Rental House</div>
+          </div>
+
+          <!-- Curved White Bottom Sheet -->
+          <div style="height:50%; background:#fff; color:#0F172A; border-top-left-radius:36px; border-top-right-radius:36px; margin-top:-20px; z-index:2; padding:32px 24px; display:flex; flex-direction:column; justify-content:space-between; text-align:center;">
+            <div>
+              <h2 style="font-size:24px; font-weight:900; letter-spacing:-0.03em; margin:0 0 8px 0;">WELCOME</h2>
+              <p style="font-size:13px; color:#64748B; margin:0; line-height:1.5;">Find your next space, feel at home.<br>Where comfort meets convenience.</p>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <button style="width:100%; padding:14px 0; background:#0F172A; color:#fff; border:none; border-radius:16px; font-weight:800; font-size:14px; cursor:pointer;">
+                Login
+              </button>
+              <button style="width:100%; padding:14px 0; background:#fff; color:#0F172A; border:1px solid #CBD5E1; border-radius:16px; font-weight:800; font-size:14px; cursor:pointer;">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 1 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Full-Bleed Welcome & Hero</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Modern Scandinavian black home photo, brand insignia, curved bottom sheet, and dual Login/Sign Up CTAs.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Full-bleed architectural house image</span><span class="screen-element-tag">Findora Dream House round mark</span><span class="screen-element-tag">Curved white bottom sheet</span><span class="screen-element-tag">Login dark pill CTA</span><span class="screen-element-tag">Sign Up outlined pill CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-discovery-home">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FAFAFA; color:#0F172A; border-radius:36px; padding:20px 16px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.15);">
+          <div>
+            <!-- Header -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <div style="display:flex; align-items:center; gap:6px; background:#0F172A; color:#fff; padding:6px 12px; border-radius:99px; font-size:11px; font-weight:700;">
+                <span>📍</span> Kochi, Kerala
+              </div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <div style="width:34px; height:34px; border-radius:50%; background:#F1F5F9; display:flex; align-items:center; justify-content:center; font-size:13px;">🔔</div>
+                <div style="width:34px; height:34px; border-radius:50%; background:#3B82F6; color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; font-size:12px;">JK</div>
+              </div>
+            </div>
+
+            <!-- Title & Search -->
+            <h1 style="font-size:20px; font-weight:900; letter-spacing:-0.03em; margin:0 0 12px 0;">Discover<br>Your New House</h1>
+
+            <div style="display:flex; gap:8px; margin-bottom:14px;">
+              <div style="flex:1; background:#fff; border:1px solid #E2E8F0; border-radius:12px; padding:10px 12px; display:flex; align-items:center; gap:8px;">
+                <span style="color:#94A3B8; font-size:13px;">🔍</span>
+                <input type="text" placeholder="Search Place..." style="border:none; outline:none; font-size:12px; width:100%;">
+              </div>
+              <button style="width:40px; height:40px; border-radius:12px; background:#0F172A; color:#fff; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                ⚙️
+              </button>
+            </div>
+
+            <!-- Category Pills -->
+            <div style="display:flex; gap:6px; margin-bottom:16px; overflow-x:auto;">
+              <span style="background:#0F172A; color:#fff; font-size:11px; font-weight:700; padding:6px 12px; border-radius:99px; white-space:nowrap;">Rental House</span>
+              <span style="background:#F1F5F9; color:#64748B; font-size:11px; font-weight:600; padding:6px 12px; border-radius:99px; white-space:nowrap;">Apartment</span>
+              <span style="background:#F1F5F9; color:#64748B; font-size:11px; font-weight:600; padding:6px 12px; border-radius:99px; white-space:nowrap;">Houses</span>
+              <span style="background:#F1F5F9; color:#64748B; font-size:11px; font-weight:600; padding:6px 12px; border-radius:99px; white-space:nowrap;">Rooms</span>
+            </div>
+
+            <!-- Property Cards Grid -->
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <div style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
+                <div style="height:85px; background:linear-gradient(135deg, #334155, #1E293B); position:relative; padding:6px;">
+                  <span style="background:#3B82F6; color:#fff; font-size:8px; font-weight:800; padding:2px 6px; border-radius:4px;">✓ Verified</span>
+                  <span style="position:absolute; right:6px; top:6px; background:rgba(0,0,0,0.6); color:#fff; font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px;">₹10,000/mo</span>
+                </div>
+                <div style="padding:8px 10px;">
+                  <div style="font-size:11px; font-weight:800;">Georgie House</div>
+                  <div style="font-size:9px; color:#64748B;">📍 Kochi, Kerala</div>
+                  <div style="font-size:9px; color:#F59E0B; font-weight:700; margin-top:4px;">★ 4.5</div>
+                </div>
+              </div>
+
+              <div style="background:#fff; border:1px solid #E2E8F0; border-radius:16px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,0.02);">
+                <div style="height:85px; background:linear-gradient(135deg, #475569, #334155); position:relative; padding:6px;">
+                  <span style="background:#3B82F6; color:#fff; font-size:8px; font-weight:800; padding:2px 6px; border-radius:4px;">✓ Verified</span>
+                  <span style="position:absolute; right:6px; top:6px; background:rgba(0,0,0,0.6); color:#fff; font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px;">₹12,000/mo</span>
+                </div>
+                <div style="padding:8px 10px;">
+                  <div style="font-size:11px; font-weight:800;">Max Luxury House</div>
+                  <div style="font-size:9px; color:#64748B;">📍 Edappally, Kerala</div>
+                  <div style="font-size:9px; color:#F59E0B; font-weight:700; margin-top:4px;">★ 4.8</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Nav -->
+          <div style="background:#fff; border-top:1px solid #E2E8F0; padding:10px 16px; display:flex; justify-content:space-around; align-items:center; border-radius:20px; margin-top:12px;">
+            <div style="color:#0F172A; font-size:18px;">🏠</div>
+            <div style="color:#94A3B8; font-size:18px;">📍</div>
+            <div style="color:#94A3B8; font-size:18px;">💬</div>
+            <div style="color:#94A3B8; font-size:18px;">⚙️</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 2 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Property Discovery & Grid</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Location selector (Kochi, Kerala), Search bar with filter tile, Rental House category pills, and verified property cards.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Kochi, Kerala location badge</span><span class="screen-element-tag">Search Place... with filter button</span><span class="screen-element-tag">Rental House / Apartment / Rooms pills</span><span class="screen-element-tag">Georgie House (10,000/ Month, ★ 4.5)</span><span class="screen-element-tag">Max House (12,000/ Month)</span><span class="screen-element-tag">Bottom 4-tab nav</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-property-detail">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:0;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,#1E293B,#334155);height:180px;position:relative;">
+            <div style="position:absolute;top:16px;left:16px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;">←</div>
+            <div style="position:absolute;top:16px;right:16px;display:flex;gap:8px;">
+              <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;">🤍</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;">📤</div>
+            </div>
+            <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:4px;">
+              <div style="width:20px;height:3px;border-radius:99px;background:#fff;"></div>
+              <div style="width:8px;height:3px;border-radius:99px;background:rgba(255,255,255,0.4);"></div>
+              <div style="width:8px;height:3px;border-radius:99px;background:rgba(255,255,255,0.4);"></div>
+            </div>
+            <div style="position:absolute;bottom:-1px;left:0;right:0;height:24px;background:#fff;border-radius:24px 24px 0 0;"></div>
+          </div>
+          <div style="padding:0 20px 20px 20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <h3 style="font-size:18px;font-weight:900;margin:0;">Modern Loft</h3>
+              <span style="font-size:16px;font-weight:900;color:#3B82F6;">$1,850<span style="font-size:10px;color:#94A3B8;font-weight:600;">/mo</span></span>
+            </div>
+            <div style="font-size:11px;color:#64748B;margin-bottom:12px;">📍 Indiranagar, Bengaluru</div>
+            <div style="display:flex;gap:12px;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:4px;font-size:11px;color:#64748B;"><span>🛏️</span>2 Beds</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:11px;color:#64748B;"><span>🚿</span>1 Bath</div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:11px;color:#64748B;"><span>📐</span>850 sqft</div>
+            </div>
+            <div style="font-size:12px;font-weight:700;margin-bottom:6px;">Description</div>
+            <div style="font-size:11px;color:#64748B;line-height:1.6;margin-bottom:16px;">Beautifully renovated loft with exposed brick, floor-to-ceiling windows, and premium finishes throughout.</div>
+            <div style="font-size:12px;font-weight:700;margin-bottom:8px;">Amenities</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">
+              <span style="background:#F0FDF4;color:#059669;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:600;">🅿️ Parking</span>
+              <span style="background:#EFF6FF;color:#3B82F6;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:600;">🏋️ Gym</span>
+              <span style="background:#FEF3C7;color:#D97706;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:600;">🏊 Pool</span>
+            </div>
+            <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:14px;cursor:pointer;margin-top:auto;">Schedule Tour</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 3 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Property Gallery & Specifications</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">High-res image carousel, host verification seal, room amenities grid, and interactive rent calculator.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Multi-photo carousel</span><span class="screen-element-tag">Verified Landlord seal</span><span class="screen-element-tag">BHK & square footage specs</span><span class="screen-element-tag">Monthly rent breakdown</span><span class="screen-element-tag">Book Inspection CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-lease-signing">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="cursor:pointer;">←</span>
+            <span style="font-weight:700;font-size:15px;">Lease Agreement</span>
+            <span style="font-size:14px;">📄</span>
+          </div>
+          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:14px;padding:14px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+            <div style="font-size:20px;">✅</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#166534;">Ready to Sign</div>
+              <div style="font-size:11px;color:#15803D;">All documents verified</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:12px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;">
+                <span style="color:#64748B;">Property</span>
+                <span style="font-weight:700;">Modern Loft, Indiranagar</span>
+              </div>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:12px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;">
+                <span style="color:#64748B;">Duration</span>
+                <span style="font-weight:700;">12 months</span>
+              </div>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:12px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;">
+                <span style="color:#64748B;">Monthly Rent</span>
+                <span style="font-weight:700;color:#3B82F6;">$1,850.00</span>
+              </div>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:12px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;">
+                <span style="color:#64748B;">Security Deposit</span>
+                <span style="font-weight:700;">$3,700.00</span>
+              </div>
+            </div>
+          </div>
+          <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:12px;margin-bottom:16px;">
+            <div style="font-size:11px;color:#92400E;font-weight:600;">⚠️ Please review all terms before signing</div>
+          </div>
+          <div style="border:2px dashed #CBD5E1;border-radius:16px;padding:20px;text-align:center;margin-bottom:16px;">
+            <div style="font-size:11px;color:#94A3B8;margin-bottom:4px;">Sign here</div>
+            <div style="font-family:cursive;font-size:20px;color:#3B82F6;font-style:italic;">John Doe</div>
+          </div>
+          <button style="width:100%;padding:14px;background:#10B981;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:14px;cursor:pointer;margin-top:auto;">Sign & Submit Lease</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 4 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Digital Lease & E-Signature</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Legally binding e-lease contract viewer with clause checklist, deposit escrow terms, and tactile signature pad.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Digital contract clauses</span><span class="screen-element-tag">Security deposit escrow badge</span><span class="screen-element-tag">Landlord & tenant terms</span><span class="screen-element-tag">Tactile E-signature canvas</span><span class="screen-element-tag">Confirm & Pay First Rent</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-rent-split">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="font-weight:700;font-size:16px;margin-bottom:16px;">💰 Split Rent</div>
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:18px;margin-bottom:16px;text-align:center;">
+            <div style="font-size:11px;color:#64748B;">Total Rent</div>
+            <div style="font-size:28px;font-weight:900;margin-top:4px;">$1,850</div>
+            <div style="font-size:11px;color:#10B981;margin-top:4px;">Due Nov 1, 2026</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#3B82F6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;">J</div>
+              <div style="flex:1;"><div style="font-size:13px;font-weight:700;">You</div><div style="font-size:10px;color:#64748B;">Primary tenant</div></div>
+              <div style="text-align:right;">
+                <div style="font-size:14px;font-weight:900;">$925</div>
+                <div style="font-size:10px;color:#10B981;font-weight:600;">Paid ✓</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#EC4899;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;">S</div>
+              <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Sarah</div><div style="font-size:10px;color:#64748B;">Roommate</div></div>
+              <div style="text-align:right;">
+                <div style="font-size:14px;font-weight:900;">$925</div>
+                <div style="font-size:10px;color:#F59E0B;font-weight:600;">Pending</div>
+              </div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">Send Reminder to Sarah</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 5 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Roommate Rent Splitter</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Collaborative apartment rent split calculator with roommate avatars, UPI autopay toggles, and payment status.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Total apartment rent ₹45,000</span><span class="screen-element-tag">Roommate share breakdown</span><span class="screen-element-tag">Roommate payment status chips</span><span class="screen-element-tag">Remind via WhatsApp button</span><span class="screen-element-tag">UPI Autopay toggle</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-tenant-screening">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Tenant Screening</span>
+            <span style="font-size:12px;background:#DCFCE7;color:#15803D;padding:3px 8px;border-radius:99px;font-weight:700;">PASSED</span>
+          </div>
+          <div style="text-align:center;padding:16px 0;border-bottom:1px solid #F1F5F9;margin-bottom:16px;">
+            <div style="width:72px;height:72px;border-radius:50%;background:#EFF6FF;border:4px solid #3B82F6;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:24px;font-weight:900;color:#1D4ED8;">
+              840
+            </div>
+            <div style="font-size:14px;font-weight:800;">Exceptional RentenPe Score</div>
+            <div style="font-size:11px;color:#64748B;">Top 2% of reliable urban tenants</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:#475569;">CIBIL / Experian Credit</span>
+              <span style="font-size:12px;font-weight:800;color:#0F172A;">790 (Tier 1)</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:#475569;">Income-to-Rent Ratio</span>
+              <span style="font-size:12px;font-weight:800;color:#10B981;">4.2x (Req: 3x)</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:#475569;">Past Eviction History</span>
+              <span style="font-size:12px;font-weight:800;color:#10B981;">Clean (0 Records)</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;justify-content:space-between;">
+              <span style="font-size:12px;color:#475569;">Employer Verification</span>
+              <span style="font-size:12px;font-weight:800;color:#0F172A;">Google India Pvt Ltd</span>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">Issue Pre-Approved Lease</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 6 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Instant Tenant Screening Score</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Comprehensive tenant trust report with Experian credit score, employment verification, and landlord references.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Trust Score 820/900</span><span class="screen-element-tag">Employment verified badge</span><span class="screen-element-tag">Rental history timeline</span><span class="screen-element-tag">Background verification shield</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-move-in-checklist">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Move-In Inspection</span>
+            <span style="font-size:11px;color:#3B82F6;font-weight:700;">4/6 Checked</span>
+          </div>
+          <div style="background:#EFF6FF;border-radius:16px;padding:14px;margin-bottom:16px;">
+            <div style="font-size:12px;font-weight:800;color:#1E40AF;margin-bottom:2px;">Apt 402 — Skyline Residency</div>
+            <div style="font-size:10px;color:#60A5FA;">Digital timestamp stored on IPFS with landlord signature</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;align-items:center;justify-content:space-between;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="color:#10B981;font-size:16px;">✅</span>
+                <span style="font-size:12px;font-weight:700;">Hardwood Floor Pristine</span>
+              </div>
+              <span style="font-size:10px;color:#64748B;">2 Photos</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;align-items:center;justify-content:between;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="color:#10B981;font-size:16px;">✅</span>
+                <span style="font-size:12px;font-weight:700;">HVAC & Thermostat Operable</span>
+              </div>
+              <span style="font-size:10px;color:#64748B;">Video Verified</span>
+            </div>
+            <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:14px;padding:12px;display:flex;align-items:center;justify-content:space-between;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="color:#F59E0B;font-size:16px;">⚠️</span>
+                <span style="font-size:12px;font-weight:700;color:#92400E;">Minor scratch on kitchen sink</span>
+              </div>
+              <span style="font-size:10px;color:#B45309;font-weight:700;">Flagged</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;align-items:center;justify-content:space-between;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="color:#94A3B8;font-size:16px;">⚪</span>
+                <span style="font-size:12px;color:#64748B;">Electrical Sockets Test</span>
+              </div>
+              <span style="font-size:10px;color:#3B82F6;font-weight:700;cursor:pointer;">+ Add Photo</span>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">Sign & Lock Condition Report</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 7 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Move-In Condition Checklist</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Room-by-room inspection camera tool with timestamped photos, meter readings, and maintenance sign-off.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Room checklist (Living room, Kitchen, Master Bedroom)</span><span class="screen-element-tag">Photo upload zone</span><span class="screen-element-tag">Electricity meter reading input</span><span class="screen-element-tag">Landlord digital sign-off</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-maintenance-req">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">1-Tap Maintenance</span>
+            <span style="font-size:12px;color:#64748B;">History</span>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;font-weight:700;color:#475569;display:block;margin-bottom:6px;">Issue Category</label>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <button style="padding:10px;border-radius:12px;background:#EFF6FF;border:2px solid #3B82F6;color:#1D4ED8;font-weight:700;font-size:11px;cursor:pointer;">🚰 Plumbing</button>
+              <button style="padding:10px;border-radius:12px;background:#F8FAFC;border:1px solid #E2E8F0;color:#64748B;font-weight:600;font-size:11px;cursor:pointer;">⚡ Electrical</button>
+              <button style="padding:10px;border-radius:12px;background:#F8FAFC;border:1px solid #E2E8F0;color:#64748B;font-weight:600;font-size:11px;cursor:pointer;">❄️ HVAC / AC</button>
+              <button style="padding:10px;border-radius:12px;background:#F8FAFC;border:1px solid #E2E8F0;color:#64748B;font-weight:600;font-size:11px;cursor:pointer;">🔑 Locks & Keys</button>
+            </div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;font-weight:700;color:#475569;display:block;margin-bottom:6px;">Urgency Level</label>
+            <div style="display:flex;gap:8px;">
+              <button style="flex:1;padding:8px;border-radius:10px;background:#FEF2F2;border:1px solid #F87171;color:#B91C1C;font-size:10px;font-weight:700;">🚨 Emergency</button>
+              <button style="flex:1;padding:8px;border-radius:10px;background:#F1F5F9;border:1px solid #E2E8F0;color:#475569;font-size:10px;font-weight:600;">Within 24h</button>
+              <button style="flex:1;padding:8px;border-radius:10px;background:#F1F5F9;border:1px solid #E2E8F0;color:#475569;font-size:10px;font-weight:600;">Standard</button>
+            </div>
+          </div>
+          <div style="margin-bottom:16px;">
+            <label style="font-size:11px;font-weight:700;color:#475569;display:block;margin-bottom:6px;">Description & Attachments</label>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:12px;font-size:11px;color:#64748B;min-height:50px;">
+              Kitchen sink drain is leaking under the counter...
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#EF4444;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">Dispatch Plumber Now</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 8 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — 1-Tap Maintenance Request</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Emergency plumber/electrician booking screen with issue photo upload, urgency selector, and live technician ETA.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Urgency toggle (Standard / Urgent)</span><span class="screen-element-tag">Category picker (Plumbing, Electrical, AC)</span><span class="screen-element-tag">Live technician ETA map</span><span class="screen-element-tag">Track repair status</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-rewards-hub">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0F172A;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="font-weight:800;font-size:16px;">RentenPe Rewards</span>
+            <span style="font-size:11px;background:#334155;color:#FACC15;padding:4px 10px;border-radius:99px;font-weight:800;">★ GOLD TIER</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#D97706,#B45309);border-radius:24px;padding:20px;margin-bottom:16px;box-shadow:0 12px 30px rgba(217,119,6,0.25);">
+            <div style="font-size:11px;font-weight:700;color:#FEF3C7;">Available Reward Coins</div>
+            <div style="font-size:34px;font-weight:900;letter-spacing:-0.03em;color:#FFF;margin:4px 0;">18,450</div>
+            <div style="font-size:11px;color:#FEF3C7;font-weight:600;">≈ ₹1,845 Cashback value on next rent</div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Exclusive Partner Vouchers</div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="background:#1E293B;border:1px solid #334155;border-radius:16px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;">🛋️</div>
+                <div>
+                  <div style="font-size:12px;font-weight:800;">IKEA Furnishing</div>
+                  <div style="font-size:10px;color:#94A3B8;">₹2,000 Off on ₹10,000+</div>
+                </div>
+              </div>
+              <button style="padding:6px 12px;background:#FACC15;color:#000;border:none;border-radius:8px;font-weight:800;font-size:10px;cursor:pointer;">Claim</button>
+            </div>
+            <div style="background:#1E293B;border:1px solid #334155;border-radius:16px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;">🧹</div>
+                <div>
+                  <div style="font-size:12px;font-weight:800;">Urban Company Deep Clean</div>
+                  <div style="font-size:10px;color:#94A3B8;">Flat 25% Off Voucher</div>
+                </div>
+              </div>
+              <button style="padding:6px 12px;background:#FACC15;color:#000;border:none;border-radius:8px;font-weight:800;font-size:10px;cursor:pointer;">Claim</button>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 9 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — On-Time Rent Cashback Rewards</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Gamified reward center earning RentCoins on every rent payment with partner brand vouchers (IKEA, Urban Company).</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">RentCoins balance 2,450</span><span class="screen-element-tag">On-time rent streak: 8 months</span><span class="screen-element-tag">Cashback scratch card</span><span class="screen-element-tag">Brand gift vouchers</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-neighborhood-guide">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Koramangala 4th Block</span>
+            <span style="font-size:14px;">📍</span>
+          </div>
+          <!-- Neighborhood Score Card -->
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <span style="font-size:12px;font-weight:800;">Livability Index</span>
+              <span style="font-size:14px;font-weight:900;color:#10B981;">9.4 / 10</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;">
+              <div style="background:#fff;padding:8px;border-radius:10px;border:1px solid #F1F5F9;">🚇 Metro: 400m walk</div>
+              <div style="background:#fff;padding:8px;border-radius:10px;border:1px solid #F1F5F9;">☕ Cafes: 34 within 1km</div>
+              <div style="background:#fff;padding:8px;border-radius:10px;border:1px solid #F1F5F9;">🌳 Parks: 3 Jogging Tracks</div>
+              <div style="background:#fff;padding:8px;border-radius:10px;border:1px solid #F1F5F9;">🏥 Hospital: 1.2km away</div>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Commute Times to Major Tech Parks</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#F8FAFC;border-radius:12px;">
+              <span style="font-size:12px;font-weight:600;">Embassy Golf Links (EGL)</span>
+              <span style="font-size:12px;font-weight:800;color:#3B82F6;">12 mins by cab</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#F8FAFC;border-radius:12px;">
+              <span style="font-size:12px;font-weight:600;">Bagmane Tech Park</span>
+              <span style="font-size:12px;font-weight:800;color:#3B82F6;">18 mins by metro</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#F8FAFC;border-radius:12px;">
+              <span style="font-size:12px;font-weight:600;">Ecospace Outer Ring Rd</span>
+              <span style="font-size:12px;font-weight:800;color:#F59E0B;">25 mins peak</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 10 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Commute & Neighborhood Index</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Proximity radar displaying metro station distance, grocery delivery speed, safety index, and noise levels.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Metro station: 400m (5 min walk)</span><span class="screen-element-tag">Safety index: 9.2/10</span><span class="screen-element-tag">Zomato/Blinkit delivery: 8 mins</span><span class="screen-element-tag">Quiet residential zone badge</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-deposit-escrow">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0F172A;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-weight:800;font-size:15px;">Deposit Shield Escrow</span>
+              <span style="font-size:10px;background:#10B981;color:#000;padding:3px 8px;border-radius:99px;font-weight:800;">ZERO-DEPOSIT ACTIVE</span>
+            </div>
+            <div style="background:#1E293B;border:1px solid #334155;border-radius:24px;padding:20px;margin-bottom:20px;">
+              <div style="font-size:11px;color:#94A3B8;margin-bottom:4px;">Institutional Guarantee Bond</div>
+              <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;color:#10B981;margin-bottom:10px;">₹1,50,000</div>
+              <div style="font-size:11px;color:#CBD5E1;line-height:1.4;">Backed by HDFC Ergo Insurance. Tenant paid ₹0 upfront security deposit.</div>
+            </div>
+            <div style="font-size:12px;font-weight:800;margin-bottom:12px;">Escrow Rules & Protections</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:11px;color:#CBD5E1;">
+              <div style="display:flex;gap:10px;align-items:center;background:#1E293B;padding:10px 12px;border-radius:12px;">
+                <span>🛡️</span>
+                <span>Landlord covered up to 6 months unpaid rent</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:center;background:#1E293B;padding:10px 12px;border-radius:12px;">
+                <span>⚖️</span>
+                <span>Fair arbitrated deduction for property damage</span>
+              </div>
+              <div style="display:flex;gap:10px;align-items:center;background:#1E293B;padding:10px 12px;border-radius:12px;">
+                <span>⚡</span>
+                <span>Immediate bond return on lease completion</span>
+              </div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#10B981;color:#064E3B;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">View Legal Guarantee Policy</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 11 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Deposit Shield & Zero-Deposit Bond</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Security deposit interest accrual tracker and alternative zero-deposit rental guarantee bond enrollment.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Interest-earning escrow account</span><span class="screen-element-tag">Annual return: 6.5%</span><span class="screen-element-tag">Zero-deposit bond option</span><span class="screen-element-tag">Instant return guarantee</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="findora-owner-analytics">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="font-weight:800;font-size:16px;">Owner Portfolio Yield</span>
+            <span style="font-size:11px;background:#27272A;padding:4px 10px;border-radius:99px;color:#A1A1AA;">8 Units</span>
+          </div>
+          <div style="background:linear-gradient(135deg,#18181B,#27272A);border:1px solid #3F3F46;border-radius:24px;padding:20px;margin-bottom:16px;">
+            <div style="font-size:11px;color:#A1A1AA;font-weight:600;">Monthly Rental Revenue</div>
+            <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;color:#FFF;margin:4px 0;">₹4,25,000</div>
+            <div style="display:flex;gap:10px;margin-top:10px;font-size:11px;">
+              <span style="color:#10B981;font-weight:700;">100% Occupancy</span>
+              <span style="color:#71717A;">•</span>
+              <span style="color:#38BDF8;font-weight:700;">Avg Yield: 6.8%</span>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Unit Collection Status</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:12px;font-weight:800;">Apt 402, Skyline Tower</div>
+                <div style="font-size:10px;color:#71717A;">Tenant: Joshua K.</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:12px;font-weight:800;color:#10B981;">₹65,000 Paid</div>
+                <div style="font-size:9px;color:#71717A;">Auto-Debited Oct 1</div>
+              </div>
+            </div>
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:12px;font-weight:800;">Villa 12, Palm Meadows</div>
+                <div style="font-size:10px;color:#71717A;">Tenant: Natasha P.</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:12px;font-weight:800;color:#10B981;">₹1,40,000 Paid</div>
+                <div style="font-size:9px;color:#71717A;">Auto-Debited Oct 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 12 OF 12 • REF PIN_43</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Findora — Property Owner Yield Dashboard</h3>
+            </div>
+            <span class="screen-info-badge">clean-architectural</span>
+          </div>
+          <p class="screen-info-desc">Multi-unit portfolio overview with occupancy rate, rent collection health, tax deduction summary, and net yield.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Portfolio value ₹3.2 Cr</span><span class="screen-element-tag">Occupancy rate: 100%</span><span class="screen-element-tag">Net annual yield: 7.8%</span><span class="screen-element-tag">Export tax report PDF</span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+</div>
+</body>
+</html>

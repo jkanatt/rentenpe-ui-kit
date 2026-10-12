@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoBus Transport & Travel Suite — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/screens-data.js"></script>
+  <script src="../js/screen-renderers.js"></script>
+  <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+<div class="catalog-shell">
+  <!-- Sidebar -->
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div style="margin-bottom: 12px; display:flex; align-items:center; justify-content:space-between;">
+        <a href="../index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+          <div style="width:28px; height:28px; border-radius:8px; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;">R</div>
+          <span style="font-size: 15px; font-weight: 800; color: var(--color-text-primary);">RentenPe</span>
+        </a>
+        <span style="font-size: 10px; font-weight: 800; color: #10B981; background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:99px;">PRO 2.0</span>
+      </div>
+
+      <!-- Search Input -->
+      <div class="sidebar-search" style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 10px; font-size: 14px; color: #94A3B8;">🔍</span>
+        <input type="text" id="catalogSearch" placeholder="Search pages or components..." style="width: 100%; padding: 10px 10px 10px 36px; background: var(--color-surface-sunken, #F1F5F9); border: none; border-radius: 8px; font-size: 13px; outline: none;">
+      </div>
+    </div>
+
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn" id="tabBtnComponents" onclick="window.location.href='../index.html#components'">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn active" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="catalog-nav" id="navPagesList" style="display:block;">
+      
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+    
+        <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+      
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+      
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+      
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+      
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item active" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+    
+        <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+    
+        <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+      
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+      
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+      
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+      
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+      
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+      
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+      
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+      
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+      
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+      
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+      
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+      
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+      
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+      
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+      
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+      
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <div class="catalog-sidebar-footer">
+      <button onclick="window.openThemePicker()" style="width: 100%; margin-bottom: 12px; padding: 10px; background: var(--color-surface, #FFFFFF); border: 1px solid var(--color-border, #E2E8F0); border-radius: 10px; color: var(--color-text-primary, #0F172A); font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        🎨 Customize Tokens
+      </button>
+      <div class="theme-toggle">
+        <button class="theme-toggle-option active" data-theme="light">☀️ Light</button>
+        <button class="theme-toggle-option" data-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="catalog-main" style="background: var(--color-surface-sunken, #F8FAFC); padding: 32px 48px;">
+    <!-- Suite Header Banner -->
+    <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <a href="../index.html#pages" style="color:#94A3B8; text-decoration:none; font-size:12px; font-weight:700;">← All Suites</a>
+          <span style="color:#64748B;">/</span>
+          <span style="color:#38BDF8; font-size:12px; font-weight:700;">GoBus Transport & Travel Suite</span>
+        </div>
+        <h1 style="font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 10px 0;">🚌 GoBus Transport & Travel Suite</h1>
+        <p style="font-size:14px; color:#94A3B8; margin:0; max-width:600px; line-height:1.6;">The complete end-to-end GoBus public transit app extracted from 24 detailed pin screens.</p>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-size:36px; font-weight:900; color:#38BDF8;">24</div>
+        <div style="font-size:11px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Interactive Screens</div>
+      </div>
+    </div>
+
+    <!-- Screens Gallery Grid -->
+    <div class="screens-gallery-grid">
+      
+      <div class="screen-card-container" id="gobus-splash">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F97316;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="font-size:64px;margin-bottom:16px;">🚌</div>
+          <div style="font-size:32px;font-weight:900;letter-spacing:-0.02em;">GoBus</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.8);margin-top:8px;">Quick and Reliable Bus Tracking</div>
+          <div style="display:flex;gap:6px;margin-top:24px;">
+            <div style="width:24px;height:4px;border-radius:99px;background:#fff;"></div>
+            <div style="width:8px;height:4px;border-radius:99px;background:rgba(255,255,255,0.4);"></div>
+            <div style="width:8px;height:4px;border-radius:99px;background:rgba(255,255,255,0.4);"></div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 1 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Splash & Brand Launch</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Vibrant orange splash screen with iconic bus glyph and clean brand typography.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">GoBus brand mark</span><span class="screen-element-tag">Minimal orange canvas</span><span class="screen-element-tag">Smooth load transition</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-onboard-1">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div style="display:flex;justify-content:flex-end;"><span style="font-size:12px;color:#94A3B8;font-weight:700;cursor:pointer;">Skip</span></div>
+          <div>
+            <div style="width:120px;height:120px;border-radius:30px;background:#FFF7ED;border:2px solid #FFEDD5;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:54px;box-shadow:0 12px 30px rgba(249,115,22,0.15);">
+              🚌
+            </div>
+            <div style="font-size:24px;font-weight:900;color:#0F172A;letter-spacing:-0.02em;margin-bottom:10px;">Live GPS Bus Tracking</div>
+            <div style="font-size:12px;color:#64748B;line-height:1.5;padding:0 12px;">Track your bus down to the exact second. Know arrival times with precision radar algorithms.</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:center;gap:6px;margin-bottom:24px;">
+              <div style="width:24px;height:6px;border-radius:99px;background:#F97316;"></div>
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+            </div>
+            <button style="width:100%;padding:16px;background:#F97316;color:#fff;border:none;border-radius:18px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 10px 25px rgba(249,115,22,0.3);">Continue</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 2 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Onboarding 1: Real-Time Tracking</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Bus stop waiting shelter illustration with GPS live ETA description and circular next arrow button.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Bus shelter illustration</span><span class="screen-element-tag">Quick and Reliable Bus Tracking</span><span class="screen-element-tag">Skip text link</span><span class="screen-element-tag">Circular arrow next CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-onboard-2">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div style="display:flex;justify-content:flex-end;"><span style="font-size:12px;color:#94A3B8;font-weight:700;cursor:pointer;">Skip</span></div>
+          <div>
+            <div style="width:120px;height:120px;border-radius:30px;background:#FFF7ED;border:2px solid #FFEDD5;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:54px;box-shadow:0 12px 30px rgba(249,115,22,0.15);">
+              💺
+            </div>
+            <div style="font-size:24px;font-weight:900;color:#0F172A;letter-spacing:-0.02em;margin-bottom:10px;">Guaranteed AC Seats</div>
+            <div style="font-size:12px;color:#64748B;line-height:1.5;padding:0 12px;">Pre-book your favorite window seat in premium Volvo electric express coaches.</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:center;gap:6px;margin-bottom:24px;">
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+              <div style="width:24px;height:6px;border-radius:99px;background:#F97316;"></div>
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+            </div>
+            <button style="width:100%;padding:16px;background:#F97316;color:#fff;border:none;border-radius:18px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 10px 25px rgba(249,115,22,0.3);">Continue</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 3 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Onboarding 2: Fleet Welcome</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Modern interstate transit coach illustration with fleet network introduction.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Interstate bus illustration</span><span class="screen-element-tag">Welcome to GoBus!</span><span class="screen-element-tag">Pagination dots</span><span class="screen-element-tag">Circular arrow CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-onboard-3">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div style="display:flex;justify-content:flex-end;"><span style="font-size:12px;color:#94A3B8;font-weight:700;cursor:pointer;">Skip</span></div>
+          <div>
+            <div style="width:120px;height:120px;border-radius:30px;background:#FFF7ED;border:2px solid #FFEDD5;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:54px;box-shadow:0 12px 30px rgba(249,115,22,0.15);">
+              📲
+            </div>
+            <div style="font-size:24px;font-weight:900;color:#0F172A;letter-spacing:-0.02em;margin-bottom:10px;">Tap-and-Go QR Pass</div>
+            <div style="font-size:12px;color:#64748B;line-height:1.5;padding:0 12px;">No paper tickets. Seamless NFC and dynamic QR passes with zero conductor hassle.</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:center;gap:6px;margin-bottom:24px;">
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+              <div style="width:6px;height:6px;border-radius:99px;background:#E2E8F0;"></div>
+              <div style="width:24px;height:6px;border-radius:99px;background:#F97316;"></div>
+            </div>
+            <button style="width:100%;padding:16px;background:#F97316;color:#fff;border:none;border-radius:18px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 10px 25px rgba(249,115,22,0.3);">Get Started</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 4 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Onboarding 3: Effortless Payments</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Digital smartphone payments illustration with 1-tap pass recharge and ticket booking introduction.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Mobile wallet illustration</span><span class="screen-element-tag">Effortless Payments</span><span class="screen-element-tag">Get Started primary CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-search-home">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:32px;height:32px;border-radius:10px;background:#F97316;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;">🚌</div>
+              <span style="font-weight:900;font-size:16px;letter-spacing:-0.02em;">GoBus Daily</span>
+            </div>
+            <div style="width:32px;height:32px;border-radius:50%;background:#FFF;border:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;font-size:14px;">🔔</div>
+          </div>
+          <!-- Route Search Card -->
+          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:24px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,0.04);margin-bottom:16px;">
+            <div style="display:flex;flex-direction:column;gap:12px;position:relative;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:10px;height:10px;border-radius:50%;background:#10B981;"></div>
+                <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:10px 14px;">
+                  <div style="font-size:9px;color:#94A3B8;font-weight:700;">PICKUP STOP</div>
+                  <div style="font-size:12px;font-weight:800;">Indiranagar 100ft Rd</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:10px;height:10px;border-radius:50%;background:#EF4444;"></div>
+                <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:10px 14px;">
+                  <div style="font-size:9px;color:#94A3B8;font-weight:700;">DESTINATION</div>
+                  <div style="font-size:12px;font-weight:800;">Electronic City Phase 1</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:14px;">
+              <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:10px 12px;font-size:11px;font-weight:700;">
+                📅 Today, Oct 11
+              </div>
+              <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:12px;padding:10px 12px;font-size:11px;font-weight:700;">
+                👤 1 Passenger
+              </div>
+            </div>
+            <button style="width:100%;margin-top:16px;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 8px 20px rgba(249,115,22,0.3);">Find Live Buses</button>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Recent Commutes</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border:1px solid #F1F5F9;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:12px;font-weight:700;">Koramangala ⇄ Whitefield</div>
+                <div style="font-size:10px;color:#94A3B8;">Route 500-D • Every 10 mins</div>
+              </div>
+              <span style="font-size:12px;color:#F97316;font-weight:800;">Book →</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 5 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Origin & Destination Booking Hub</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Where would you like to go? From/To inputs with swap arrows, date picker, recent searches, and popular routes.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Where would you like to go? header</span><span class="screen-element-tag">From & To location inputs with ⇅ swap</span><span class="screen-element-tag">Date picker calendar strip</span><span class="screen-element-tag">Search buses button</span><span class="screen-element-tag">Recent Search list</span><span class="screen-element-tag">Popular routes chips</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-bus-results">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Available Buses (4)</span>
+            <span style="font-size:12px;color:#F97316;font-weight:700;">Filter</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:#FFFFFF;border:2px solid #F97316;border-radius:20px;padding:16px;box-shadow:0 8px 20px rgba(249,115,22,0.1);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:13px;font-weight:900;color:#F97316;">BUS #101-EXPRESS</span>
+                <span style="font-size:10px;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:800;">Arriving in 4 mins</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <div>
+                  <div style="font-size:16px;font-weight:900;">08:45 AM → 09:25 AM</div>
+                  <div style="font-size:10px;color:#64748B;">40 mins non-stop via Flyover</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:18px;font-weight:900;color:#0F172A;">₹65</div>
+                  <div style="font-size:9px;color:#10B981;font-weight:700;">12 Seats left</div>
+                </div>
+              </div>
+              <button style="width:100%;padding:10px;background:#F97316;color:#fff;border:none;border-radius:12px;font-weight:800;font-size:11px;cursor:pointer;">Reserve Seat Now</button>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:13px;font-weight:900;color:#0F172A;">BUS #101-REGULAR</span>
+                <span style="font-size:10px;background:#F1F5F9;color:#64748B;padding:2px 8px;border-radius:99px;font-weight:700;">In 14 mins</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                <div>
+                  <div style="font-size:16px;font-weight:900;">08:55 AM → 09:45 AM</div>
+                  <div style="font-size:10px;color:#64748B;">50 mins • 6 intermediate stops</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:18px;font-weight:900;color:#0F172A;">₹45</div>
+                  <div style="font-size:9px;color:#64748B;">28 Seats left</div>
+                </div>
+              </div>
+              <button style="width:100%;padding:10px;background:#F1F5F9;color:#0F172A;border:none;border-radius:12px;font-weight:800;font-size:11px;cursor:pointer;">Select</button>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 6 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Live Bus Results & Timetable</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Recommended bus options with distance away, departure timetable, pricing, and AC/Non-AC filter pills.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Search results count</span><span class="screen-element-tag">Bus No. 37 (12 min away)</span><span class="screen-element-tag">Kadamwadi to Binduchowk</span><span class="screen-element-tag">Departure & arrival times</span><span class="screen-element-tag">Filter & Sort actions</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-gps-route-map">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#1E293B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;">
+          <!-- Mock Map Canvas -->
+          <div style="position:absolute;inset:0;background:#0F172A;opacity:0.9;">
+            <svg viewBox="0 0 400 600" style="width:100%;height:100%;position:absolute;top:0;left:0;">
+              <!-- Road Paths -->
+              <path d="M 50 100 Q 150 250 220 350 T 350 500" stroke="#334155" stroke-width="24" fill="none" stroke-linecap="round"/>
+              <path d="M 50 100 Q 150 250 220 350 T 350 500" stroke="#F97316" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <!-- Bus Pin -->
+              <circle cx="220" cy="350" r="14" fill="#F97316" stroke="#FFFFFF" stroke-width="4"/>
+              <!-- Stops -->
+              <circle cx="50" cy="100" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2"/>
+              <circle cx="350" cy="500" r="8" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+            </svg>
+          </div>
+          <!-- Top Floating Bar -->
+          <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;">
+            <div style="background:rgba(15,23,42,0.8);backdrop-filter:blur(10px);border:1px solid #334155;border-radius:99px;padding:8px 14px;display:flex;align-items:center;gap:8px;">
+              <span style="font-size:12px;">←</span>
+              <span style="font-size:12px;font-weight:800;">Live Bus #101 Tracker</span>
+            </div>
+            <div style="background:#10B981;color:#000;font-size:10px;font-weight:800;padding:6px 12px;border-radius:99px;">
+              ● 38 km/h
+            </div>
+          </div>
+          <!-- Bottom ETA Sheet -->
+          <div style="position:relative;z-index:2;background:#FFFFFF;color:#0F172A;border-radius:24px;padding:18px;box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <div>
+                <div style="font-size:10px;color:#64748B;font-weight:700;">NEXT STOP</div>
+                <div style="font-size:14px;font-weight:900;">Sony World Junction (200m)</div>
+              </div>
+              <div style="background:#FFF7ED;color:#F97316;padding:6px 12px;border-radius:12px;font-weight:900;font-size:13px;">
+                ETA 2 min
+              </div>
+            </div>
+            <div style="height:4px;background:#F1F5F9;border-radius:99px;overflow:hidden;margin-bottom:12px;">
+              <div style="width:70%;height:100%;background:#F97316;border-radius:99px;"></div>
+            </div>
+            <button style="width:100%;padding:12px;background:#0F172A;color:#fff;border:none;border-radius:14px;font-weight:800;font-size:12px;cursor:pointer;">Get Off Alert Ring</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 7 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Live GPS Bus Tracking Map</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Interactive map with moving bus position, route line, stop markers, and real-time traffic delay indicator.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Interactive GPS route map</span><span class="screen-element-tag">Live moving bus marker</span><span class="screen-element-tag">Intermediate stop pins</span><span class="screen-element-tag">Estimated arrival time: 10:25 AM</span><span class="screen-element-tag">Share trip link</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-notifications">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="font-weight:700;font-size:16px;margin-bottom:16px;">🔔 Notifications</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:12px 14px;">
+              <div style="font-size:12px;font-weight:700;margin-bottom:4px;">Bus arriving in 5 min</div>
+              <div style="font-size:10px;color:#64748B;">Bus #37 at your current stop. Be ready!</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:4px;">2 min ago</div>
+            </div>
+            <div style="background:#FEF2F2;border-left:3px solid #EF4444;border-radius:0 12px 12px 0;padding:12px 14px;">
+              <div style="font-size:12px;font-weight:700;margin-bottom:4px;">Bus route 101 experiencing delay</div>
+              <div style="font-size:10px;color:#64748B;">Due to road construction. Expect 15 min delay.</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:4px;">15 min ago</div>
+            </div>
+            <div style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:12px 14px;">
+              <div style="font-size:12px;font-weight:700;margin-bottom:4px;">Payment successful</div>
+              <div style="font-size:10px;color:#64748B;">Monthly pass activated. Valid until Nov 10.</div>
+              <div style="font-size:9px;color:#94A3B8;margin-top:4px;">1 hr ago</div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 8 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Transit Alerts & Delay Feed</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Chronological feed of bus arrival reminders, traffic congestion alerts, and scheduled departure updates.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Bus arriving in 5 min alert</span><span class="screen-element-tag">Delay notice due to heavy traffic</span><span class="screen-element-tag">Yesterday departure logs</span><span class="screen-element-tag">Clear all notifications</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-passenger-config">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-size:16px;cursor:pointer;">←</span>
+              <span style="font-weight:800;font-size:15px;">Passenger & Fares</span>
+              <span style="font-size:12px;color:#F97316;font-weight:700;">Clear</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:13px;font-weight:800;">Adult (Regular)</div>
+                  <div style="font-size:10px;color:#64748B;">₹65 per ticket</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <button style="width:28px;height:28px;border-radius:8px;background:#E2E8F0;border:none;font-weight:800;cursor:pointer;">-</button>
+                  <span style="font-weight:900;font-size:14px;">2</span>
+                  <button style="width:28px;height:28px;border-radius:8px;background:#F97316;color:#fff;border:none;font-weight:800;cursor:pointer;">+</button>
+                </div>
+              </div>
+              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:13px;font-weight:800;">Senior Citizen</div>
+                  <div style="font-size:10px;color:#64748B;">50% Concession • ₹32</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <button style="width:28px;height:28px;border-radius:8px;background:#E2E8F0;border:none;font-weight:800;cursor:pointer;">-</button>
+                  <span style="font-weight:900;font-size:14px;">1</span>
+                  <button style="width:28px;height:28px;border-radius:8px;background:#F97316;color:#fff;border:none;font-weight:800;cursor:pointer;">+</button>
+                </div>
+              </div>
+              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:13px;font-weight:800;">Child (Below 12)</div>
+                  <div style="font-size:10px;color:#64748B;">Complimentary</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <button style="width:28px;height:28px;border-radius:8px;background:#E2E8F0;border:none;font-weight:800;cursor:pointer;">-</button>
+                  <span style="font-weight:900;font-size:14px;">0</span>
+                  <button style="width:28px;height:28px;border-radius:8px;background:#F97316;color:#fff;border:none;font-weight:800;cursor:pointer;">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #F1F5F9;padding-top:16px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="font-size:12px;color:#64748B;">Total Fare (3 Passengers)</span>
+              <span style="font-size:18px;font-weight:900;color:#0F172A;">₹162.00</span>
+            </div>
+            <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Proceed to Seat Selection</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 9 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Passenger & Fare Calculator</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Adult and child quantity steppers, base fare, surcharge breakdown, and Pay Rs. 35 bottom bar.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Adult quantity stepper (- 1 +)</span><span class="screen-element-tag">Child quantity stepper</span><span class="screen-element-tag">Base fare Rs. 35 breakdown</span><span class="screen-element-tag">Terms and conditions link</span><span class="screen-element-tag">Pay Rs. 35 sticky action</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-payment-success">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="width:80px;height:80px;border-radius:50%;background:#F0FDF4;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:20px;border:3px solid #BBF7D0;">✅</div>
+          <div style="font-size:22px;font-weight:900;margin-bottom:8px;">Payment Successful!</div>
+          <div style="font-size:13px;color:#64748B;margin-bottom:24px;">Your ticket has been booked</div>
+          <div style="background:#FFF7ED;border:1px solid #FDBA74;border-radius:16px;padding:16px;width:100%;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px;">
+              <span style="color:#64748B;">Route</span><span style="font-weight:700;">Kathmandu → Biratnagar</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:6px;">
+              <span style="color:#64748B;">Bus</span><span style="font-weight:700;">Bus No. 37</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;">
+              <span style="color:#64748B;">Amount</span><span style="font-weight:800;color:#F97316;">Rs. 350</span>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:14px;cursor:pointer;margin-bottom:8px;">Continue Tracking Bus</button>
+          <button style="width:100%;padding:14px;background:transparent;color:#F97316;border:1px solid #FDBA74;border-radius:16px;font-weight:700;font-size:13px;cursor:pointer;">Download Ticket</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 10 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Payment Success Celebration</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Celebratory ticket confirmation with Continue Tracking Bus and Download Ticket PDF actions.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Success confetti illustration</span><span class="screen-element-tag">Payment Successful! title</span><span class="screen-element-tag">Continue Tracking Bus primary CTA</span><span class="screen-element-tag">Download Ticket outline button</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-route-detail">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Route 101 Stops</span>
+            <span style="font-size:12px;background:#FFF7ED;color:#F97316;padding:2px 8px;border-radius:99px;font-weight:700;">Active</span>
+          </div>
+          <!-- Stop Timeline -->
+          <div style="position:relative;padding-left:24px;border-left:3px solid #F97316;margin-left:10px;display:flex;flex-direction:column;gap:20px;margin-bottom:20px;">
+            <div style="position:relative;">
+              <div style="position:absolute;left:-31px;top:2px;width:12px;height:12px;border-radius:50%;background:#10B981;border:2px solid #fff;"></div>
+              <div style="font-size:13px;font-weight:800;">Majestic Central Station (Origin)</div>
+              <div style="font-size:10px;color:#64748B;">Dep: 08:00 AM • Platform 4</div>
+            </div>
+            <div style="position:relative;">
+              <div style="position:absolute;left:-31px;top:2px;width:12px;height:12px;border-radius:50%;background:#F97316;border:2px solid #fff;"></div>
+              <div style="font-size:13px;font-weight:800;">Richmond Circle</div>
+              <div style="font-size:10px;color:#64748B;">08:18 AM • Rapid Transfer Point</div>
+            </div>
+            <div style="position:relative;">
+              <div style="position:absolute;left:-31px;top:2px;width:12px;height:12px;border-radius:50%;background:#F97316;border:2px solid #fff;"></div>
+              <div style="font-size:13px;font-weight:800;">Koramangala Sony World</div>
+              <div style="font-size:10px;color:#F97316;font-weight:700;">08:35 AM • Current Bus Location 🚌</div>
+            </div>
+            <div style="position:relative;">
+              <div style="position:absolute;left:-31px;top:2px;width:12px;height:12px;border-radius:50%;background:#94A3B8;border:2px solid #fff;"></div>
+              <div style="font-size:13px;font-weight:800;">Silk Board Junction</div>
+              <div style="font-size:10px;color:#64748B;">08:48 AM Est.</div>
+            </div>
+            <div style="position:relative;">
+              <div style="position:absolute;left:-31px;top:2px;width:12px;height:12px;border-radius:50%;background:#EF4444;border:2px solid #fff;"></div>
+              <div style="font-size:13px;font-weight:800;">Electronic City Phase 1 (Terminus)</div>
+              <div style="font-size:10px;color:#64748B;">09:10 AM Est.</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">View Full Timetable</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 11 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Route 101 Stop-by-Stop Timeline</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Complete timeline of Route No: 101 with driver details, bus number, and arrival times for all stops.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Route No: 101 Kolhapur to Sangli</span><span class="screen-element-tag">Driver Yusuf Pathan</span><span class="screen-element-tag">Stop timeline with green passed stops</span><span class="screen-element-tag">Next stop ETA: 9:45 AM</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-routes-directory">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:14px;">Regional Routes Directory</div>
+          <div style="background:#fff;border:1px solid #E2E8F0;border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+            <span>🔍</span>
+            <input type="text" placeholder="Search route by number or stop..." style="border:none;outline:none;font-size:11px;width:100%;background:transparent;" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-weight:900;font-size:13px;color:#F97316;">ROUTE 500-D</span>
+                <span style="font-size:10px;background:#DCFCE7;color:#15803D;padding:2px 6px;border-radius:99px;font-weight:700;">Every 8m</span>
+              </div>
+              <div style="font-size:11px;font-weight:700;">Hebbal ⇄ Central Silk Board</div>
+              <div style="font-size:10px;color:#64748B;">Outer Ring Road Volvo Express</div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-weight:900;font-size:13px;color:#F97316;">ROUTE 335-E</span>
+                <span style="font-size:10px;background:#DCFCE7;color:#15803D;padding:2px 6px;border-radius:99px;font-weight:700;">Every 12m</span>
+              </div>
+              <div style="font-size:11px;font-weight:700;">Majestic ⇄ ITPL Whitefield</div>
+              <div style="font-size:10px;color:#64748B;">Tech Corridor Direct Express</div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <span style="font-weight:900;font-size:13px;color:#F97316;">ROUTE KIA-9</span>
+                <span style="font-size:10px;background:#FEF3C7;color:#B45309;padding:2px 6px;border-radius:99px;font-weight:700;">Airport Shuttle</span>
+              </div>
+              <div style="font-size:11px;font-weight:700;">Kempegowda Int. Airport ⇄ HSR Layout</div>
+              <div style="font-size:10px;color:#64748B;">Vayu Vajra AC Coach with Luggage Racks</div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 12 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Regional Bus Directory</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">List of all intercity routes (Belgaum, Jayashingpur, Miraj, Pune, Mumbai) with daily frequencies.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Search route number or name</span><span class="screen-element-tag">Route No: 101 to Belgaum</span><span class="screen-element-tag">Route No: 101 to Pune</span><span class="screen-element-tag">Route No: 101 to Mumbai</span><span class="screen-element-tag">Arrow detail triggers</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-pass-catalog">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:14px;">Transit Pass Plans</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;border-radius:20px;padding:18px;box-shadow:0 10px 25px rgba(249,115,22,0.25);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <span style="font-size:11px;font-weight:800;letter-spacing:0.05em;">UNLIMITED MONTHLY</span>
+                <span style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:99px;font-size:9px;font-weight:800;">POPULAR</span>
+              </div>
+              <div style="font-size:26px;font-weight:900;margin-bottom:6px;">₹1,850 <span style="font-size:12px;font-weight:500;">/ month</span></div>
+              <div style="font-size:11px;color:#FED7AA;">All AC Volvo & Non-AC routes across Greater Bengaluru.</div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:18px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <span style="font-size:11px;font-weight:800;color:#64748B;">DAILY HOPPER PASS</span>
+                <span style="font-size:12px;font-weight:900;color:#0F172A;">₹140</span>
+              </div>
+              <div style="font-size:11px;color:#64748B;">24 Hours unlimited rides from time of activation.</div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:18px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                <span style="font-size:11px;font-weight:800;color:#64748B;">STUDENT CONCESSION</span>
+                <span style="font-size:12px;font-weight:900;color:#10B981;">₹650 / mo</span>
+              </div>
+              <div style="font-size:11px;color:#64748B;">For registered university & school scholars with valid ID.</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">Purchase Pass</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 13 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Transit Pass Types</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Catalog of passes: Point-to-Point Pass, Student Pass, Unlimited City Pass, Senior Citizen Super Saver Pass.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Point-to-Point Pass card</span><span class="screen-element-tag">Student Pass discounted card</span><span class="screen-element-tag">Unlimited Rides Pass card</span><span class="screen-element-tag">Senior Citizen Pass card</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-package-selector">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-size:16px;cursor:pointer;">←</span>
+              <span style="font-weight:800;font-size:15px;">Configure Pass</span>
+              <span></span>
+            </div>
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">Choose Duration</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+              <div style="border:2px solid #F97316;background:#FFF7ED;border-radius:14px;padding:12px;text-align:center;">
+                <div style="font-size:14px;font-weight:900;color:#F97316;">30 Days</div>
+                <div style="font-size:11px;font-weight:700;">₹1,850</div>
+              </div>
+              <div style="border:1px solid #E2E8F0;background:#F8FAFC;border-radius:14px;padding:12px;text-align:center;">
+                <div style="font-size:14px;font-weight:900;">90 Days</div>
+                <div style="font-size:11px;color:#64748B;">₹5,100 (Save 8%)</div>
+              </div>
+            </div>
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">Activation Date</div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+              <span style="font-size:12px;font-weight:700;">Start Immediately Today</span>
+              <input type="radio" checked style="accent-color:#F97316;" />
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+              <span style="font-size:12px;color:#64748B;">Total Payable</span>
+              <span style="font-size:18px;font-weight:900;">₹1,850.00</span>
+            </div>
+            <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Pay via RentenPe UPI</button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 14 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Pass Package Duration & Buy</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Weekly (Rs. 100), Monthly (Rs. 600), and Quarterly pass pricing cards with instant checkout.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Weekly Pass Rs. 100 card</span><span class="screen-element-tag">Monthly Pass Rs. 600 best value card</span><span class="screen-element-tag">Route details summary</span><span class="screen-element-tag">Instant Buy CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-trip-planner">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:16px;">Smart Multi-Modal Trip</div>
+          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:14px;">
+            <div style="font-size:11px;font-weight:800;color:#10B981;margin-bottom:6px;">RECOMMENDED ROUTE (FASTEST)</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;margin-bottom:8px;">
+              <span>🚶 5m</span><span>→</span><span>🚌 Bus 101 (20m)</span><span>→</span><span>🚇 Purple Metro (15m)</span>
+            </div>
+            <div style="font-size:10px;color:#64748B;">Total: 40 mins • Cost: ₹85 • 0 Transfers Walk < 200m</div>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:20px;padding:16px;">
+            <div style="font-size:11px;font-weight:800;color:#64748B;margin-bottom:6px;">DIRECT BUS ONLY (CHEAPEST)</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;margin-bottom:8px;">
+              <span>🚌 Direct Volvo 500-D (52m)</span>
+            </div>
+            <div style="font-size:10px;color:#64748B;">Total: 52 mins • Cost: ₹55 • AC Seating Guaranteed</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 15 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Route & Stop Lookup</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Fast trip lookup form with route number, start stop (Nagala Park), and destination stop (Rankala Lake).</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Route number input: 506</span><span class="screen-element-tag">Start stop: Nagala park</span><span class="screen-element-tag">Destination: Rankala Lake</span><span class="screen-element-tag">Next button</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-route-autocomplete">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="background:#F1F5F9;border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <span style="color:#64748B;">🔍</span>
+            <input type="text" value="Whitefield" style="border:none;background:transparent;outline:none;font-weight:700;font-size:13px;flex:1;" />
+            <span style="cursor:pointer;color:#94A3B8;">✕</span>
+          </div>
+          <div style="font-size:11px;color:#94A3B8;font-weight:700;margin-bottom:10px;">MATCHING BUS HUBS</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+              <span style="font-size:16px;">📍</span>
+              <div>
+                <div style="font-size:13px;font-weight:800;">Whitefield Main TTMC</div>
+                <div style="font-size:10px;color:#64748B;">Hub for 24 routes • 120 buses/hr</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+              <span style="font-size:16px;">📍</span>
+              <div>
+                <div style="font-size:13px;font-weight:800;">Whitefield Railway Station Gate 2</div>
+                <div style="font-size:10px;color:#64748B;">Suburban rail interchange</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;cursor:pointer;">
+              <span style="font-size:16px;">📍</span>
+              <div>
+                <div style="font-size:13px;font-weight:800;">ITPL Hope Farm Circle</div>
+                <div style="font-size:10px;color:#64748B;">Metro station connection</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 16 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Live Route Autocomplete Search</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Instant keyword search across all transit corridors with live highlighted search matches.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Search bar with active focus</span><span class="screen-element-tag">Live matching route results</span><span class="screen-element-tag">Quick tap selection</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-student-pass">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+              <span style="font-size:16px;cursor:pointer;">←</span>
+              <span style="font-weight:800;font-size:15px;">Student Concession</span>
+              <span style="font-size:11px;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">Verified ID</span>
+            </div>
+            <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:18px;margin-bottom:16px;">
+              <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+                <div style="width:48px;height:48px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:20px;">🎓</div>
+                <div>
+                  <div style="font-size:14px;font-weight:900;">Rohan Varma</div>
+                  <div style="font-size:11px;color:#64748B;">IISc Bangalore • Roll #220914</div>
+                </div>
+              </div>
+              <div style="font-size:11px;color:#10B981;font-weight:700;">Valid through: 31 May 2027</div>
+            </div>
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px;">Subsidized Route Access</div>
+            <div style="background:#EFF6FF;border-radius:12px;padding:12px;font-size:11px;color:#1E40AF;line-height:1.4;">
+              Unlimited free transit between Hostel Gate 4 and Malleshwaram 18th Cross.
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Renew Concession ($0 Fee)</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 17 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Student Concession Pass</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Verified student pass duration tiers: 1 Month (Rs. 200), 3 Month (Rs. 600), 6 Month (Rs. 1200).</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Student ID verified badge</span><span class="screen-element-tag">1 Month Rs. 200 card</span><span class="screen-element-tag">3 Month Rs. 600 card</span><span class="screen-element-tag">6 Month Rs. 1200 card</span><span class="screen-element-tag">Buy Pass button</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-qr-ticket">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC; color:#0F172A; border-radius:36px; padding:24px 20px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.15);">
+          <!-- Top Bar -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <span style="font-size:16px; cursor:pointer;">←</span>
+            <span style="font-weight:800; font-size:16px; color:#EA580C;">GoBus Digital Ticket</span>
+            <span style="font-size:16px;">⋮</span>
+          </div>
+
+          <!-- Digital Ticket Card -->
+          <div style="background:#fff; border-radius:24px; border:1px solid #E2E8F0; overflow:hidden; box-shadow:0 10px 25px rgba(234,88,12,0.1); position:relative;">
+            <!-- Orange Route Banner -->
+            <div style="background:linear-gradient(135deg, #EA580C 0%, #C2410C 100%); color:#fff; padding:16px 20px;">
+              <div style="font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; opacity:0.9;">Express Route</div>
+              <div style="font-size:20px; font-weight:900; margin-top:2px;">Bus No. 01</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:12px; font-weight:700;">
+                <span>Kadamwadi</span>
+                <span>→</span>
+                <span>Binduchowk</span>
+              </div>
+            </div>
+
+            <!-- Ticket Details -->
+            <div style="padding:20px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:14px; font-size:12px;">
+                <div>
+                  <div style="color:#64748B; font-size:10px;">Departure</div>
+                  <div style="font-weight:800; font-size:14px; margin-top:2px;">10:20 AM</div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="color:#64748B; font-size:10px;">Arrival (ETA)</div>
+                  <div style="font-weight:800; font-size:14px; margin-top:2px;">10:45 AM</div>
+                </div>
+              </div>
+
+              <!-- Dotted Punch Line -->
+              <div style="border-top:2px dashed #E2E8F0; margin:16px -20px;"></div>
+
+              <!-- Scannable High-Res QR Code Frame -->
+              <div style="text-align:center; padding:10px 0;">
+                <div style="width:140px; height:140px; margin:0 auto; background:#0F172A; border-radius:16px; padding:10px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+                  <!-- SVG High Density QR Code Matrix -->
+                  <svg width="120" height="120" viewBox="0 0 100 100" fill="#fff">
+                    <rect x="5" y="5" width="25" height="25" fill="#fff" />
+                    <rect x="9" y="9" width="17" height="17" fill="#0F172A" />
+                    <rect x="13" y="13" width="9" height="9" fill="#fff" />
+                    <rect x="70" y="5" width="25" height="25" fill="#fff" />
+                    <rect x="74" y="9" width="17" height="17" fill="#0F172A" />
+                    <rect x="78" y="13" width="9" height="9" fill="#fff" />
+                    <rect x="5" y="70" width="25" height="25" fill="#fff" />
+                    <rect x="9" y="74" width="17" height="17" fill="#0F172A" />
+                    <rect x="13" y="78" width="9" height="9" fill="#fff" />
+                    <rect x="36" y="10" width="8" height="8" fill="#fff" />
+                    <rect x="48" y="15" width="8" height="8" fill="#fff" />
+                    <rect x="36" y="36" width="28" height="28" fill="#fff" />
+                    <rect x="42" y="42" width="16" height="16" fill="#0F172A" />
+                    <rect x="72" y="45" width="14" height="8" fill="#fff" />
+                    <rect x="15" y="45" width="8" height="14" fill="#fff" />
+                    <rect x="45" y="75" width="18" height="8" fill="#fff" />
+                    <rect x="75" y="75" width="12" height="12" fill="#fff" />
+                  </svg>
+                </div>
+                <div style="font-size:11px; font-weight:800; color:#64748B; margin-top:8px; font-family:monospace;">TKT-8291-KLP-506</div>
+                <div style="font-size:10px; color:#10B981; font-weight:700; margin-top:2px;">● Valid for Conductor Scan</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Actions -->
+          <div style="display:flex; gap:10px; margin-top:16px;">
+            <button style="flex:1; padding:12px 0; background:#fff; border:1px solid #E2E8F0; border-radius:14px; font-weight:700; font-size:12px; cursor:pointer;">
+              Share Ticket 📤
+            </button>
+            <button style="flex:1; padding:12px 0; background:#EA580C; color:#fff; border:none; border-radius:14px; font-weight:800; font-size:12px; cursor:pointer;">
+              Live GPS Track 📍
+            </button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 18 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — High-Res Digital QR Ticket Pass</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Crisp scan-ready digital ticket with scannable QR code, route number Bus 01, validity time, and security watermark.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Bus 01 Kadamwadi to Binduchowk</span><span class="screen-element-tag">Departure 10:20 AM - Arrival 10:45 AM</span><span class="screen-element-tag">High-density QR code for conductor scanning</span><span class="screen-element-tag">Ticket ID & Security hash</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-account">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="font-weight:900;font-size:16px;margin-bottom:18px;">GoBus Account</div>
+          <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:16px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#F97316;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;">RV</div>
+            <div>
+              <div style="font-size:14px;font-weight:900;">Rohan Varma</div>
+              <div style="font-size:11px;color:#64748B;">+91 98450 12345 • Pro Commuter</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;">
+            <div style="background:#fff;border:1px solid #F1F5F9;padding:12px 14px;border-radius:14px;display:flex;justify-content:space-between;">
+              <span>🎟️ My Active Tickets (2)</span>
+              <span>→</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F1F5F9;padding:12px 14px;border-radius:14px;display:flex;justify-content:space-between;">
+              <span>💳 Transit Wallet (₹480.00)</span>
+              <span style="color:#F97316;">Top Up</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F1F5F9;padding:12px 14px;border-radius:14px;display:flex;justify-content:space-between;">
+              <span>🚨 Emergency SOS Setup</span>
+              <span>→</span>
+            </div>
+            <div style="background:#fff;border:1px solid #F1F5F9;padding:12px 14px;border-radius:14px;display:flex;justify-content:space-between;">
+              <span>⚙️ Notification Alerts</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 19 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — My Account & Preferences</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Profile screen with Ashna Khan avatar, My Bookings, Language, Location, Refer & Earn, and Call Support.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Ashna Khan profile card</span><span class="screen-element-tag">My bookings menu item</span><span class="screen-element-tag">Language & Location options</span><span class="screen-element-tag">Refer & Earn rewards</span><span class="screen-element-tag">Help & Call Support</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-emergency-contacts">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+              <span style="font-size:16px;cursor:pointer;">←</span>
+              <span style="font-weight:800;font-size:15px;">SOS Emergency Contacts</span>
+              <span style="font-size:12px;color:#F97316;font-weight:700;">+ Add</span>
+            </div>
+            <div style="font-size:11px;color:#64748B;line-height:1.4;margin-bottom:16px;">
+              In the event you trigger GoBus SOS, your live GPS telemetry and bus CCTV clip will be automatically beamed to these verified guardians.
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:12px;font-weight:800;">Mom (Anjali Varma)</div>
+                  <div style="font-size:10px;color:#64748B;">+91 94480 99881 • Primary Guardian</div>
+                </div>
+                <span style="color:#10B981;font-size:12px;">✅ Synced</span>
+              </div>
+              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:16px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <div style="font-size:12px;font-weight:800;">Transit Police Dispatch</div>
+                  <div style="font-size:10px;color:#64748B;">Dial 112 • Auto-Relay Enabled</div>
+                </div>
+                <span style="color:#10B981;font-size:12px;">✅ 24/7 Active</span>
+              </div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#F97316;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;">Save & Verify Contacts</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 20 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Emergency SOS Contact Config</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Safety setup screen for configuring emergency SMS recipients with customizable distress message.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Emergency message: "I am in danger. Please help me."</span><span class="screen-element-tag">Configured contacts (Mr. Khan, Mrs. Khan)</span><span class="screen-element-tag">+ Add Contact button</span><span class="screen-element-tag">Send Alert trigger</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-phone-login">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="width:48px;height:48px;border-radius:14px;background:#FFF7ED;border:1px solid #FFEDD5;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">
+              📱
+            </div>
+            <div style="font-size:22px;font-weight:900;letter-spacing:-0.02em;margin-bottom:6px;">Enter Mobile Number</div>
+            <div style="font-size:12px;color:#64748B;line-height:1.4;margin-bottom:24px;">We will send a 6-digit OTP code to instantly verify your commuter identity.</div>
+            <div style="display:flex;gap:10px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:14px;padding:12px 14px;align-items:center;">
+              <span style="font-weight:800;font-size:13px;">🇮🇳 +91</span>
+              <input type="tel" placeholder="98450 12345" style="border:none;background:transparent;outline:none;font-weight:800;font-size:14px;width:100%;" />
+            </div>
+          </div>
+          <div>
+            <button style="width:100%;padding:16px;background:#F97316;color:#fff;border:none;border-radius:18px;font-weight:800;font-size:14px;cursor:pointer;margin-bottom:12px;">Send Verification OTP</button>
+            <div style="text-align:center;font-size:10px;color:#94A3B8;">Powered by RentenPe Identity Cloud</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 21 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Mobile OTP Login & SSO</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Phone number entry form (+91 9482943002), Continue button, and Google / Facebook / Apple SSO options.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Phone number input</span><span class="screen-element-tag">Continue CTA button</span><span class="screen-element-tag">Or Sign Up with divider</span><span class="screen-element-tag">Google / Facebook / Apple SSO buttons</span><span class="screen-element-tag">Continue as guest link</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-pass-congrats">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div>
+            <div style="width:72px;height:72px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center;font-size:32px;margin:20px auto 16px;">
+              🎉
+            </div>
+            <div style="font-size:22px;font-weight:900;letter-spacing:-0.02em;margin-bottom:6px;">Pass Issued Successfully!</div>
+            <div style="font-size:12px;color:#64748B;margin-bottom:24px;">Your 30-Day Greater Bengaluru Transit Pass is active and ready for boarding.</div>
+            <div style="background:#F8FAFC;border:2px dashed #CBD5E1;border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px;">
+              <div style="font-size:11px;font-weight:800;color:#F97316;">DYNAMIC NFC PASS #GB-8921</div>
+              <div style="width:120px;height:120px;background:#000;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-family:monospace;">
+                [QR MATRIX]
+              </div>
+              <div style="font-size:10px;color:#94A3B8;">Refreshes every 30 seconds for fraud protection</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:16px;background:#0F172A;color:#fff;border:none;border-radius:18px;font-weight:800;font-size:14px;cursor:pointer;">Save to Apple Wallet</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 22 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Monthly Pass Issued Celebration</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Confirmation screen with celebratory illustration: "Congratulations! Your monthly package has been added successfully".</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Package active illustration</span><span class="screen-element-tag">Go Back To Home primary button</span><span class="screen-element-tag">Download Pass PDF option</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-sos-active">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#7F1D1D;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;text-align:center;">
+          <div>
+            <div style="width:72px;height:72px;border-radius:50%;background:#EF4444;border:4px solid #FCA5A5;display:flex;align-items:center;justify-content:center;font-size:32px;margin:20px auto 16px;animation:pulse 1s infinite;">
+              🚨
+            </div>
+            <div style="font-size:22px;font-weight:900;margin-bottom:6px;">EMERGENCY SOS BROADCAST</div>
+            <div style="font-size:12px;color:#FECACA;line-height:1.5;">Police Dispatch 112 alerted. Live bus coordinates transmitting every 3s.</div>
+            <div style="background:rgba(0,0,0,0.3);border-radius:16px;padding:14px;margin-top:20px;text-align:left;font-size:11px;">
+              <div style="margin-bottom:4px;">🚌 <b>Bus #101-EXPRESS</b></div>
+              <div style="margin-bottom:4px;">📍 <b>GPS:</b> 12.9352° N, 77.6245° E (Sony World)</div>
+              <div>🛡️ <b>Assigned Unit:</b> Koramangala PCR #4 (ETA 3 mins)</div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:16px;font-weight:800;font-size:12px;cursor:pointer;">False Alarm / Cancel SOS (Requires PIN)</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 23 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Active Emergency SOS Screen</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">High-urgency emergency screen with live police sharing and broadcast alert to emergency contacts.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Urgent red beacon animation</span><span class="screen-element-tag">Broadcast SMS dispatched</span><span class="screen-element-tag">Share live bus GPS location</span><span class="screen-element-tag">Cancel within 5 seconds countdown</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="gobus-drawer-menu">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0F172A;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#F97316;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;">RV</div>
+              <div>
+                <div style="font-size:14px;font-weight:900;">Rohan Varma</div>
+                <div style="font-size:10px;color:#94A3B8;">Gold Commuter Member</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:13px;font-weight:700;">
+              <div style="padding:10px 12px;background:#1E293B;border-radius:12px;color:#F97316;">🏠 Home & Booking Hub</div>
+              <div style="padding:10px 12px;border-radius:12px;color:#E2E8F0;">🎟️ My Active Passes</div>
+              <div style="padding:10px 12px;border-radius:12px;color:#E2E8F0;">🗺️ Live Network Map</div>
+              <div style="padding:10px 12px;border-radius:12px;color:#E2E8F0;">💳 Payment & Wallet</div>
+              <div style="padding:10px 12px;border-radius:12px;color:#E2E8F0;">🚨 Emergency SOS Settings</div>
+              <div style="padding:10px 12px;border-radius:12px;color:#E2E8F0;">💬 24/7 Helpline Support</div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:#64748B;">GoBus v3.4.1 • RentenPe Transit Core</div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 24 OF 24 • REF PIN_51</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">GoBus — Slide-Out Navigation Drawer</h3>
+            </div>
+            <span class="screen-info-badge">gobus-orange</span>
+          </div>
+          <p class="screen-info-desc">Comprehensive side drawer with quick links to Tickets, Wallet, Card Recharge, Stops, Offers, and SOS.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Profile header with View Profile</span><span class="screen-element-tag">Tickets & Passes link</span><span class="screen-element-tag">Wallet balance shortcut</span><span class="screen-element-tag">Card Recharge trigger</span><span class="screen-element-tag">SOS emergency quick tap</span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+</div>
+</body>
+</html>

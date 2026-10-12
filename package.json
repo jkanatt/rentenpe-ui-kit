@@ -1,0 +1,22 @@
+{
+  "name": "rentenpe-ui-kit",
+  "version": "1.0.0",
+  "description": "RentenPe High-Fidelity UI Kit & Design System (420+ Mobile Components & Screens)",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -p 3000",
+    "dev": "node -e \"const http=require('http'),fs=require('fs'),path=require('path');http.createServer((req,res)=>{let f=path.join(__dirname,req.url==='/'?'index.html':req.url);if(!fs.existsSync(f)&&fs.existsSync(f+'.html'))f+='.html';if(fs.existsSync(f)&&fs.statSync(f).isFile()){res.writeHead(200);fs.createReadStream(f).pipe(res);}else{res.writeHead(404);res.end('Not found');}}).listen(3000,()=>console.log('Serving on http://localhost:3000'));\"",
+    "build": "node generate-rich-pages.js",
+    "audit": "node deep-audit-420.js"
+  },
+  "keywords": [
+    "rentenpe",
+    "ui-kit",
+    "design-system",
+    "proptech",
+    "fintech",
+    "mobile-first"
+  ],
+  "author": "Joshua J Kanatt",
+  "license": "MIT"
+}

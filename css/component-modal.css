@@ -1,0 +1,215 @@
+/* ═══════ COMPONENT DETAILS MODAL ═══════ */
+.comp-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  z-index: 99999; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.comp-modal-overlay.active { opacity: 1; visibility: visible; }
+
+.comp-modal {
+  width: 92vw; height: 92vh; max-width: 1440px;
+  background: #fff; border-radius: 24px;
+  display: flex; flex-direction: column; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  transform: scale(0.95) translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.comp-modal-overlay.active .comp-modal { transform: scale(1) translateY(0); }
+
+.comp-modal-header {
+  padding: 20px 32px; border-bottom: 1px solid #27272A;
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(180deg, #18181B 0%, #09090B 100%); color: #fff;
+}
+.comp-modal-title-area { display: flex; align-items: center; gap: 16px; }
+.comp-modal-id { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); padding: 6px 14px; border-radius: 8px; font-family: monospace; font-size: 13px; font-weight: 700; color: #60A5FA; letter-spacing: 0.05em; }
+.comp-modal-title { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.01em; margin: 0; }
+.comp-modal-close { background: rgba(255,255,255,0.08); border: none; color: #A1A1AA; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: all 0.2s; }
+.comp-modal-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.comp-modal-body {
+  display: flex; flex: 1; overflow: hidden;
+}
+
+.comp-modal-preview-pane {
+  flex: 1; display: flex; flex-direction: column; background: #FAFAFA;
+  position: relative; overflow: hidden;
+}
+.comp-modal-toolbar {
+  padding: 12px 24px; border-bottom: 1px solid #F1F5F9; background: #fff;
+  display: flex; gap: 16px; align-items: center;
+}
+.comp-modal-canvas {
+  flex: 1; padding: 48px; overflow: auto; display: flex; align-items: center; justify-content: center;
+}
+.comp-modal-canvas > div { transform: scale(1.5); transform-origin: center; max-width: 800px; width: 100%; }
+
+.comp-modal-info-pane {
+  width: 420px; border-left: 1px solid #F1F5F9;
+  display: flex; flex-direction: column; background: #fff;
+  overflow-y: auto;
+}
+
+.comp-modal-section { padding: 32px 24px; border-bottom: 1px solid #F1F5F9; }
+.comp-modal-h4 { font-size: 11px; font-weight: 800; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; margin-top: 0; }
+
+.comp-modal-code {
+  background: #0F172A; color: #E2E8F0; padding: 20px; border-radius: 16px;
+  font-family: monospace; font-size: 13px; line-height: 1.6;
+  overflow-x: auto; white-space: pre-wrap; word-break: break-all;
+  border: 1px solid #1E293B; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.comp-modal-theme-btn {
+  padding: 6px 16px; border-radius: 8px; border: 1px solid #E2E8F0;
+  background: #fff; color: #334155; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.comp-modal-theme-btn:hover { background: #F8FAFC; border-color: #CBD5E1; }
+.comp-modal-theme-btn.active { background: #0F172A; color: #fff; border-color: #0F172A; }
+
+/* =========================================
+   DYNAMIC AESTHETIC THEMES FOR MODAL CANVAS
+   These classes use !important to override the inline styles of cloned components
+   ========================================= */
+
+/* 1. Solid (Flat) */
+.aesthetic-solid .cloned-component-inner {
+  background: var(--comp-bg-primary) !important;
+  border: 1px solid var(--comp-border) !important;
+  box-shadow: none !important;
+  color: var(--comp-text-primary) !important;
+}
+
+/* 2. Premium Glassmorphic */
+.aesthetic-glass {
+  background: radial-gradient(circle at 10% 20%, #3b82f6 0%, transparent 40%), 
+              radial-gradient(circle at 90% 80%, #db2777 0%, transparent 40%), 
+              radial-gradient(circle at 50% 50%, #8b5cf6 0%, transparent 50%),
+              #0f172a !important; 
+              
+  --comp-bg-primary: rgba(255, 255, 255, 0.08);
+  --comp-bg-secondary: rgba(255, 255, 255, 0.12);
+  --comp-bg-tertiary: rgba(255, 255, 255, 0.16);
+  --comp-bg-dark: rgba(255, 255, 255, 0.25);
+  
+  --comp-text-primary: #ffffff;
+  --comp-text-secondary: rgba(255, 255, 255, 0.85);
+  --comp-text-tertiary: rgba(255, 255, 255, 0.65);
+  --comp-text-muted: rgba(255, 255, 255, 0.45);
+  
+  --comp-border: rgba(255, 255, 255, 0.15);
+  --comp-border-light: rgba(255, 255, 255, 0.05);
+}
+
+.aesthetic-glass .cloned-component-inner {
+  background: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(40px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+}
+
+/* 3. Neumorphic (Soft UI) */
+.aesthetic-neumo {
+  background: #E0E5EC !important;
+  --comp-bg-primary: #E0E5EC;
+  --comp-bg-secondary: #E0E5EC;
+  --comp-bg-tertiary: #d1d9e6;
+  --comp-border: transparent;
+  --comp-border-light: transparent;
+  --comp-text-primary: #4D5766;
+  --comp-text-secondary: #6B778C;
+  --comp-text-tertiary: #8B9AB3;
+}
+.aesthetic-neumo .cloned-component-inner {
+  background: #E0E5EC !important;
+  border: none !important;
+  box-shadow: 12px 12px 24px rgb(163,177,198,0.7), -12px -12px 24px rgba(255,255,255,0.7) !important;
+  color: #4D5766 !important;
+}
+
+/* 4. Skeuomorphic (Tactile) */
+.aesthetic-skeuo {
+  background: #d1d5db !important;
+  --comp-bg-primary: linear-gradient(180deg, #f8f9fa 0%, #e2e8f0 100%);
+  --comp-bg-secondary: linear-gradient(180deg, #f1f5f9 0%, #cbd5e1 100%);
+  --comp-bg-dark: linear-gradient(180deg, #334155 0%, #0f172a 100%);
+  --comp-border: #9ca3af;
+  --comp-text-primary: #1e293b;
+  --comp-text-secondary: #475569;
+}
+.aesthetic-skeuo .cloned-component-inner {
+  background: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%) !important;
+  border: 1px solid #9ca3af !important;
+  border-top: 1px solid #ffffff !important;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.8), 0 12px 24px rgba(0,0,0,0.15), 0 4px 6px rgba(0,0,0,0.2) !important;
+}
+
+/* 5. CRED (Prestige Dark) */
+.aesthetic-cred {
+  background: #000000 !important;
+  --comp-bg-primary: #111111;
+  --comp-bg-secondary: #1a1a1a;
+  --comp-bg-tertiary: #222222;
+  --comp-bg-dark: #333333;
+  
+  --comp-text-primary: #ffffff;
+  --comp-text-secondary: #d4d4d4;
+  --comp-text-tertiary: #a3a3a3;
+  --comp-text-muted: #737373;
+  
+  --comp-border: rgba(255,255,255,0.1);
+  --comp-border-light: rgba(255,255,255,0.05);
+}
+.aesthetic-cred .cloned-component-inner {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-top: 1px solid rgba(255,255,255,0.2) !important;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05) !important;
+  color: #ffffff !important;
+}
+
+/* 6. Brutalist */
+.aesthetic-brutal {
+  background: #ffde00 !important;
+  --comp-bg-primary: #ffffff;
+  --comp-bg-secondary: #ffde00;
+  --comp-bg-dark: #000000;
+  --comp-border: #000000;
+  --comp-text-primary: #000000;
+}
+.aesthetic-brutal .cloned-component-inner {
+  background: #ffffff !important;
+  border: 4px solid #000000 !important;
+  box-shadow: 12px 12px 0 #000000 !important;
+  border-radius: 0 !important;
+  color: #000000 !important;
+  transform: translate(-6px, -6px) !important;
+}
+.aesthetic-brutal .cloned-component-inner * {
+  font-family: 'Courier New', Courier, monospace !important;
+  border-radius: 0 !important;
+}
+
+/* 7. Minimalist Wireframe */
+.aesthetic-minimal {
+  background: #f8fafc !important;
+  --comp-bg-primary: transparent;
+  --comp-bg-secondary: transparent;
+  --comp-border: #cbd5e1;
+  --comp-bg-dark: #cbd5e1;
+}
+.aesthetic-minimal .cloned-component-inner {
+  background: transparent !important;
+  border: 2px dashed #94a3b8 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  color: #475569 !important;
+}
+.aesthetic-minimal .cloned-component-inner * {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: #cbd5e1 !important;
+}

@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking & Neo-Bank Suites — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/screens-data.js"></script>
+  <script src="../js/screen-renderers.js"></script>
+  <script src="../js/catalog.js" defer></script>
+</head>
+<body>
+<div class="catalog-shell">
+  <!-- Sidebar -->
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div style="margin-bottom: 12px; display:flex; align-items:center; justify-content:space-between;">
+        <a href="../index.html" style="text-decoration:none; display:flex; align-items:center; gap:8px;">
+          <div style="width:28px; height:28px; border-radius:8px; background:#0F172A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:13px;">R</div>
+          <span style="font-size: 15px; font-weight: 800; color: var(--color-text-primary);">RentenPe</span>
+        </a>
+        <span style="font-size: 10px; font-weight: 800; color: #10B981; background:rgba(16,185,129,0.1); padding:2px 8px; border-radius:99px;">PRO 2.0</span>
+      </div>
+
+      <!-- Search Input -->
+      <div class="sidebar-search" style="position: relative;">
+        <span style="position: absolute; left: 12px; top: 10px; font-size: 14px; color: #94A3B8;">🔍</span>
+        <input type="text" id="catalogSearch" placeholder="Search pages or components..." style="width: 100%; padding: 10px 10px 10px 36px; background: var(--color-surface-sunken, #F1F5F9); border: none; border-radius: 8px; font-size: 13px; outline: none;">
+      </div>
+    </div>
+
+    <!-- Top Sidebar Tab Switcher -->
+    <div class="sidebar-tab-switcher">
+      <button class="sidebar-tab-btn" id="tabBtnComponents" onclick="window.location.href='../index.html#components'">
+        <span>🧩 Components</span>
+        <span class="sidebar-tab-badge">320+</span>
+      </button>
+      <button class="sidebar-tab-btn active" id="tabBtnPages" onclick="switchSidebarTab('pages')">
+        <span>📱 Pages</span>
+        <span class="sidebar-tab-badge">125</span>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="catalog-nav" id="navPagesList" style="display:block;">
+      
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏦 BANKING & NEO-BANK SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">15</span>
+        </div>
+        <a href="banking-suite.html" class="catalog-nav-item active" style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">15 screens</span></div>
+        </a>
+    
+        <a href="banking-suite.html#monex-home-glow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Home — Card Glow</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-card-reveal" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex Card — Credentials Flip</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-send-money" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Instant Send Money Keypad</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Financial Analytics & Spline</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-crypto" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Crypto Asset Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#monex-settings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monex — Profile & Tier Management</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Emerald Dashboard</span>
+        </a>
+      
+        <a href="banking-suite.html#alimbank-receipt" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">AlimBank — Perforated Serrated Receipt</span>
+        </a>
+      
+        <a href="banking-suite.html#bluebank-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sapphire Blue — Neo-Bank Home</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-savings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Savings Goals Hub</span>
+        </a>
+      
+        <a href="banking-suite.html#salung-goal-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Salung — Goal Analytics & Top-Up</span>
+        </a>
+      
+        <a href="banking-suite.html#monero-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Monero — Dark Privacy Wallet</span>
+        </a>
+      
+        <a href="banking-suite.html#shipping-wallet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Logistics — Shipping Balance & Tracker</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Bento Financial Overview</span>
+        </a>
+      
+        <a href="banking-suite.html#pastel-finance-chart" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pastel Minimal — Income Spline & Trades</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ CRYPTO & WEB3 SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="crypto-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="crypto-suite.html#trantor-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Portfolio & Candlestick</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-swap" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Exchange Rate Timer & Swap</span>
+        </a>
+      
+        <a href="crypto-suite.html#trantor-goal-pool" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Trantor — Collaborative Savings Pool</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-onboard-cards" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Stacked Glass Asset Onboarding</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-nft-gallery" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bored Ape Curated Gallery</span>
+        </a>
+      
+        <a href="crypto-suite.html#web3-purple-auth" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Lavender SSO & Account Creation</span>
+        </a>
+      
+        <a href="crypto-suite.html#fuse-plus-membership" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Fuse Plus — Solana VIP Membership Sheet</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-wallet-skeuo" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Wallet — 3D Skeuomorphic Leather Stack</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-bento-card" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Bento High-Yield Protocol Card</span>
+        </a>
+      
+        <a href="crypto-suite.html#crypto-integrations" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Web3 — Multi-Chain Integration Hub</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏠 REAL ESTATE & RENTAL SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="realestate-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="realestate-suite.html#findora-welcome" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Full-Bleed Welcome & Hero</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-discovery-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Discovery & Grid</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-property-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Gallery & Specifications</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-lease-signing" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Digital Lease & E-Signature</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rent-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Roommate Rent Splitter</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-tenant-screening" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Instant Tenant Screening Score</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-move-in-checklist" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Move-In Condition Checklist</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-maintenance-req" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — 1-Tap Maintenance Request</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-rewards-hub" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — On-Time Rent Cashback Rewards</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-neighborhood-guide" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Commute & Neighborhood Index</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-deposit-escrow" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Deposit Shield & Zero-Deposit Bond</span>
+        </a>
+      
+        <a href="realestate-suite.html#findora-owner-analytics" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Findora — Property Owner Yield Dashboard</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🚌 GOBUS TRANSPORT & TRAVEL SUITE</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">24</span>
+        </div>
+        <a href="transport-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">24 screens</span></div>
+        </a>
+    
+        <a href="transport-suite.html#gobus-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Splash & Brand Launch</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-1" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 1: Real-Time Tracking</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-2" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 2: Fleet Welcome</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-onboard-3" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Onboarding 3: Effortless Payments</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-search-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Origin & Destination Booking Hub</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-bus-results" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Bus Results & Timetable</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-gps-route-map" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live GPS Bus Tracking Map</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-notifications" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Alerts & Delay Feed</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-passenger-config" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Passenger & Fare Calculator</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-payment-success" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Payment Success Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route 101 Stop-by-Stop Timeline</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-routes-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Regional Bus Directory</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-catalog" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Transit Pass Types</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-package-selector" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Pass Package Duration & Buy</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-trip-planner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Route & Stop Lookup</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-route-autocomplete" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Live Route Autocomplete Search</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-student-pass" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Student Concession Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-qr-ticket" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — High-Res Digital QR Ticket Pass</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-account" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — My Account & Preferences</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-emergency-contacts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Emergency SOS Contact Config</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-phone-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Mobile OTP Login & SSO</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-pass-congrats" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Monthly Pass Issued Celebration</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-sos-active" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Active Emergency SOS Screen</span>
+        </a>
+      
+        <a href="transport-suite.html#gobus-drawer-menu" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">GoBus — Slide-Out Navigation Drawer</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🏋️ FITNESS, NUTRITION & HEALTH SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">16</span>
+        </div>
+        <a href="fitness-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">16 screens</span></div>
+        </a>
+    
+        <a href="fitness-suite.html#fitfuel-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Light Fitness Onboarding</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Health & Activity Dashboard</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workouts" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Workout Library & Filters</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Exercise Session & Rep List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-activity-rings" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Apple-Style Activity Rings & Spline</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitfuel-nutrition" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitFuel — Macros Bento & Meal Diary</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-browse" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Workout Grid</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Minimalist Neon Splash</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-activity" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Daily Activity & Step Goal</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-booking-confirmed" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Neon Lime Confirmation Card</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-workout-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Calisthenics Routine Specs</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-exercise-timer" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Giant Countdown Rep Timer</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-trainer-profile" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Chris Heria Trainer Profile</span>
+        </a>
+      
+        <a href="fitness-suite.html#credfit-reviews" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CRED Fitness — Rating Breakdown & Exercise List</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-onboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Smarter Eating Food Scanning</span>
+        </a>
+      
+        <a href="fitness-suite.html#fitbite-dashboard" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">FitBite — Daily Nutrition & Water Counter</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌿 BOTANICAL, IOT & E-COMMERCE SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="botanical-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="botanical-suite.html#leafora-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Frosted Glass Welcome</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Botanical Shop & Best Sellers</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-product-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — Snake Plant Care Specs & Buy</span>
+        </a>
+      
+        <a href="botanical-suite.html#leafora-cart-checkout" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Leafora — My Cart & Order Breakdown</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — My Plants Carousel</span>
+        </a>
+      
+        <a href="botanical-suite.html#plantcare-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">PlantCare IoT — Soil & Moisture Telemetry</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Dark Roast Home</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-shop-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Cup Detail & Size Picker</span>
+        </a>
+      
+        <a href="botanical-suite.html#coffee-landing-desktop" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Artisan Coffee — Desktop Responsive Showcase</span>
+        </a>
+      
+        <a href="botanical-suite.html#gourmet-food-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Gourmet Food — Ramen & Sushi Discovery</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🌙 SLEEP, WELLNESS & ONBOARDING SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">10</span>
+        </div>
+        <a href="sleep-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">10 screens</span></div>
+        </a>
+    
+        <a href="sleep-suite.html#moonie-splash" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Night Sky Splash & Cottage</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-name-input" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Name Input with Frosted Keyboard</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-interests" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Interest Selection Cards</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-personalize" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Wellness Goal Checkboxes</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-time-picker" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Bedtime Frosted Wheel Dial</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-paywall" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie PLUS — Sleeping Fox Paywall</span>
+        </a>
+      
+        <a href="sleep-suite.html#moonie-color-palette" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Moonie — Calming Palette Selector</span>
+        </a>
+      
+        <a href="sleep-suite.html#habit-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Daily Routine — Color-Coded Habit Timeline</span>
+        </a>
+      
+        <a href="sleep-suite.html#neumorphic-widget" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Neumorphic White — Analog Clock & Audio Player</span>
+        </a>
+      
+        <a href="sleep-suite.html#mood-diary-suite" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Mood Diary — Gamified Journey & World Clock</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🎮 GAMING & ENTERTAINMENT SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="gaming-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="gaming-suite.html#minecraft-store" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Store — 3D Game Carousel</span>
+        </a>
+      
+        <a href="gaming-suite.html#minecraft-detail" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Minecraft Detail — Trailer & Player Stats</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-timeline" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Date Axis & Event Cards</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-invites" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Hero RSVP & Upcoming Events</span>
+        </a>
+      
+        <a href="gaming-suite.html#music-festival-directory" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Music Festival — Attendee Stacks & Filter Tabs</span>
+        </a>
+      
+        <a href="gaming-suite.html#sports-booking-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sports League — Sunset Orange Match Booking</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-home" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Buy Tickets & Featured Fest</span>
+        </a>
+      
+        <a href="gaming-suite.html#event-marketplace-vendors" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Event Market — Vendor Discovery & Ratings</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>📊 DASHBOARDS & SAAS SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">12</span>
+        </div>
+        <a href="dashboards-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">12 screens</span></div>
+        </a>
+    
+        <a href="dashboards-suite.html#leaderboard-podium" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">3D Podium — Gamified Leaderboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-day-agenda" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Day View & Meetings</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-week-timeblocks" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — Weekly Timeblock Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#calendar-year-grid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Agenda Planner — 12-Month Color Grid</span>
+        </a>
+      
+        <a href="dashboards-suite.html#task-manager-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Task Board — Dark Calendar Strip & Tasks</span>
+        </a>
+      
+        <a href="dashboards-suite.html#deployment-status-split" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">DevOps — Light/Dark Deployment Matrix</span>
+        </a>
+      
+        <a href="dashboards-suite.html#data-usage-gauge" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Telemetry — 3D Apple-Style Data Gauge</span>
+        </a>
+      
+        <a href="dashboards-suite.html#transaction-table-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Finance SaaS — Dense Data Table & Search</span>
+        </a>
+      
+        <a href="dashboards-suite.html#fitness-dashboard-dark" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Health SaaS — Multi-Metric Ring Dashboard</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-agency-hero" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Agency Landing Page Hero</span>
+        </a>
+      
+        <a href="dashboards-suite.html#brandbuzz-testimonials" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">BrandBuzz — Client Testimonial Carousel</span>
+        </a>
+      
+        <a href="dashboards-suite.html#medical-doctor-booking" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">HealthCare — Doctor Booking & Specialists</span>
+        </a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label" style="display:flex; justify-content:space-between; align-items:center;">
+          <span>🔒 AUTH, SECURITY & VERIFICATION SUITES</span>
+          <span style="font-size:9px; background:#F1F5F9; color:#64748B; padding:2px 6px; border-radius:99px;">8</span>
+        </div>
+        <a href="security-suite.html" class="catalog-nav-item " style="font-weight:700;">
+          <span class="uk-nav-icon">📱</span> View Full Suite
+          <div style="margin-left:auto;"><span class="nav-count">8 screens</span></div>
+        </a>
+    
+        <a href="security-suite.html#dark-curl-login" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — Dark Corner-Curl Reveal Login</span>
+        </a>
+      
+        <a href="security-suite.html#otp-bottom-sheet" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Auth — 4-Digit OTP Verification Sheet</span>
+        </a>
+      
+        <a href="security-suite.html#biometric-faceid" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Apple FaceID Authentication</span>
+        </a>
+      
+        <a href="security-suite.html#passkey-enrollment" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — WebAuthn Passkey Registration</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-id-scanner" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Government ID Card Scanner</span>
+        </a>
+      
+        <a href="security-suite.html#kyc-selfie-liveness" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">KYC — Biometric Liveness Selfie</span>
+        </a>
+      
+        <a href="security-suite.html#pin-lock-dial" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — 6-Digit App Security Lock</span>
+        </a>
+      
+        <a href="security-suite.html#session-devices" class="catalog-nav-item" style="padding-left:28px; font-size:12px;">
+          <span style="color:#94A3B8; font-size:10px;">↳</span> <span class="nav-text" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Security — Active Sessions & Device Revoke</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <div class="catalog-sidebar-footer">
+      <button onclick="window.openThemePicker()" style="width: 100%; margin-bottom: 12px; padding: 10px; background: var(--color-surface, #FFFFFF); border: 1px solid var(--color-border, #E2E8F0); border-radius: 10px; color: var(--color-text-primary, #0F172A); font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        🎨 Customize Tokens
+      </button>
+      <div class="theme-toggle">
+        <button class="theme-toggle-option active" data-theme="light">☀️ Light</button>
+        <button class="theme-toggle-option" data-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="catalog-main" style="background: var(--color-surface-sunken, #F8FAFC); padding: 32px 48px;">
+    <!-- Suite Header Banner -->
+    <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-radius: 24px; padding: 40px; color: #fff; margin-bottom: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <a href="../index.html#pages" style="color:#94A3B8; text-decoration:none; font-size:12px; font-weight:700;">← All Suites</a>
+          <span style="color:#64748B;">/</span>
+          <span style="color:#38BDF8; font-size:12px; font-weight:700;">Banking & Neo-Bank Suites</span>
+        </div>
+        <h1 style="font-size:32px; font-weight:900; letter-spacing:-0.03em; margin:0 0 10px 0;">🏦 Banking & Neo-Bank Suites</h1>
+        <p style="font-size:14px; color:#94A3B8; margin:0; max-width:600px; line-height:1.6;">Cutting-edge digital banking, dark luxury wallets, perforated receipts, and savings meters.</p>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-size:36px; font-weight:900; color:#38BDF8;">15</div>
+        <div style="font-size:11px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Interactive Screens</div>
+      </div>
+    </div>
+
+    <!-- Screens Gallery Grid -->
+    <div class="screens-gallery-grid">
+      
+      <div class="screen-card-container" id="monex-home-glow">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B; color:#fff; border-radius:36px; padding:24px 20px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+          <!-- Top Bar -->
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+              <span style="font-weight:700; font-size:16px;">Home</span>
+              <div style="width:36px; height:36px; border-radius:50%; background:#18181B; display:flex; align-items:center; justify-content:center; border:1px solid #27272A; cursor:pointer;">
+                <span style="font-size:14px;">🔔</span>
+              </div>
+            </div>
+            
+            <!-- Lime Glowing Card -->
+            <div style="background:linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius:22px; padding:22px 20px; color:#064E3B; margin-bottom:20px; box-shadow:0 12px 30px rgba(16,185,129,0.3); position:relative; overflow:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <span style="font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#064E3B; opacity:0.8;">Total Balance</span>
+                <span style="font-size:11px; font-weight:800; background:rgba(0,0,0,0.1); padding:3px 8px; border-radius:99px;">+$4,560.50</span>
+              </div>
+              <div style="font-size:32px; font-weight:900; letter-spacing:-0.03em; color:#022C22; margin-bottom:20px;">$6,324.49</div>
+              
+              <!-- Quick Action Pills -->
+              <div style="display:flex; gap:8px;">
+                <button style="flex:1; padding:10px 0; border-radius:12px; background:rgba(255,255,255,0.3); border:none; font-size:11px; font-weight:700; color:#022C22; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                  ↑ Withdraw
+                </button>
+                <button style="flex:1; padding:10px 0; border-radius:12px; background:rgba(255,255,255,0.3); border:none; font-size:11px; font-weight:700; color:#022C22; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                  ↓ Top up
+                </button>
+                <button style="flex:1; padding:10px 0; border-radius:12px; background:rgba(255,255,255,0.3); border:none; font-size:11px; font-weight:700; color:#022C22; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px;">
+                  ⇆ Exchange
+                </button>
+              </div>
+            </div>
+
+            <!-- Recent Transfers Header -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <span style="font-size:13px; font-weight:700; color:#E4E4E7;">Recent Transfers</span>
+              <a href="#" style="font-size:11px; color:#A1A1AA; text-decoration:none;">View All</a>
+            </div>
+
+            <!-- Transfer List -->
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#18181B; padding:12px 14px; border-radius:16px; border:1px solid #27272A;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <div style="width:38px; height:38px; border-radius:12px; background:#10B981; color:#064E3B; font-weight:900; display:flex; align-items:center; justify-content:center; font-size:12px;">Bolt</div>
+                  <div>
+                    <div style="font-size:13px; font-weight:700;">Bolt Food</div>
+                    <div style="font-size:11px; color:#71717A;">12:15 • Lunch</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:13px; font-weight:800; color:#EF4444;">-26.81 $</div>
+                  <div style="font-size:10px; color:#71717A;">-123.31 lei</div>
+                </div>
+              </div>
+
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#18181B; padding:12px 14px; border-radius:16px; border:1px solid #27272A;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <div style="width:38px; height:38px; border-radius:12px; background:#F43F5E; color:#fff; font-weight:900; display:flex; align-items:center; justify-content:center; font-size:12px;">M</div>
+                  <div>
+                    <div style="font-size:13px; font-weight:700;">Marie</div>
+                    <div style="font-size:11px; color:#71717A;">26 March, 16:24</div>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <div style="font-size:13px; font-weight:800; color:#EF4444;">-100.00 $</div>
+                  <div style="font-size:10px; color:#71717A;">-100 $</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Nav Dock -->
+          <div style="background:#18181B; border-radius:24px; padding:10px 16px; display:flex; justify-content:space-around; align-items:center; border:1px solid #27272A; margin-top:20px;">
+            <div style="color:#10B981; font-size:18px; cursor:pointer;">🏠</div>
+            <div style="color:#71717A; font-size:18px; cursor:pointer;">📊</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#10B981; color:#064E3B; font-weight:900; display:flex; align-items:center; justify-content:center; cursor:pointer;">+</div>
+            <div style="color:#71717A; font-size:18px; cursor:pointer;">🪙</div>
+            <div style="color:#71717A; font-size:18px; cursor:pointer;">⚙️</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 1 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex Home — Card Glow</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">Hero balance card with lime neon edge illumination, quick action pills, and transaction feed.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Lime gradient card</span><span class="screen-element-tag">Total Balance $6,324.49</span><span class="screen-element-tag">Withdraw / Top up / Exchange pills</span><span class="screen-element-tag">Bolt Food & Uber transaction feed</span><span class="screen-element-tag">Floating bottom dock</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monex-card-reveal">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B; color:#fff; border-radius:36px; padding:24px 20px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+              <span style="font-weight:700; font-size:16px;">Virtual Cards</span>
+              <div style="font-size:11px; background:#18181B; padding:6px 12px; border-radius:99px; border:1px solid #27272A; color:#10B981;">● Active</div>
+            </div>
+
+            <!-- Virtual Visa Card -->
+            <div style="background:linear-gradient(135deg, #A3E635 0%, #4D7C0F 100%); border-radius:24px; padding:24px 20px; color:#14532D; margin-bottom:24px; position:relative; box-shadow:0 15px 35px rgba(163,230,53,0.25);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;">
+                <span style="font-size:14px; font-weight:800; letter-spacing:0.05em;">Standard</span>
+                <span style="font-size:18px; font-weight:900; font-style:italic;">VISA</span>
+              </div>
+
+              <!-- Card Number with Copy -->
+              <div style="background:rgba(255,255,255,0.3); backdrop-filter:blur(10px); padding:10px 14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border:1px solid rgba(255,255,255,0.4);">
+                <span style="font-family:monospace; font-size:14px; font-weight:800; letter-spacing:0.1em; color:#052E16;">3456 5667 3211 3377</span>
+                <span style="cursor:pointer; font-size:12px;" title="Copy">📋</span>
+              </div>
+
+              <!-- Expiry & CVV -->
+              <div style="display:flex; gap:12px;">
+                <div style="flex:1; background:rgba(255,255,255,0.25); padding:8px 12px; border-radius:10px;">
+                  <div style="font-size:9px; text-transform:uppercase; font-weight:700; color:#14532D; opacity:0.8;">Expiry</div>
+                  <div style="font-family:monospace; font-size:12px; font-weight:800; color:#052E16;">01/29</div>
+                </div>
+                <div style="flex:1; background:rgba(255,255,255,0.25); padding:8px 12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <div style="font-size:9px; text-transform:uppercase; font-weight:700; color:#14532D; opacity:0.8;">CVV</div>
+                    <div style="font-family:monospace; font-size:12px; font-weight:800; color:#052E16;">277</div>
+                  </div>
+                  <span style="font-size:11px;">🔒</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Controls -->
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#18181B; padding:14px 16px; border-radius:16px; border:1px solid #27272A;">
+                <span style="font-size:13px; font-weight:600;">Freeze Card</span>
+                <input type="checkbox" style="accent-color:#10B981; width:18px; height:18px;">
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#18181B; padding:14px 16px; border-radius:16px; border:1px solid #27272A;">
+                <span style="font-size:13px; font-weight:600;">Online Payments</span>
+                <span style="font-size:12px; color:#10B981; font-weight:700;">Enabled</span>
+              </div>
+            </div>
+          </div>
+
+          <button style="width:100%; padding:14px 0; background:#10B981; color:#064E3B; border:none; border-radius:16px; font-weight:800; font-size:14px; cursor:pointer; margin-top:20px;">
+            + Add to Apple Wallet
+          </button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 2 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex Card — Credentials Flip</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">Interactive Visa card reveal with masked numbers, 1-click copy icons, and expiry/CVV security badges.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Card number 3456 5667 3211 3377 with copy icon</span><span class="screen-element-tag">CVV 277 with security shield</span><span class="screen-element-tag">Expiry 01/29 badge</span><span class="screen-element-tag">Balance summary overlay</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monex-send-money">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B; color:#fff; border-radius:36px; padding:24px 20px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+          <div>
+            <!-- Header -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <span style="cursor:pointer; font-size:16px;">←</span>
+              <span style="font-weight:700; font-size:15px;">Send Money</span>
+              <span style="font-size:16px;">⋮</span>
+            </div>
+
+            <!-- Recipient Avatar Stack -->
+            <div style="display:flex; gap:12px; overflow-x:auto; padding:6px 0 16px 0; margin-bottom:12px;">
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div style="width:44px; height:44px; border-radius:50%; background:#27272A; display:flex; align-items:center; justify-content:center; border:1px dashed #71717A; cursor:pointer;">+</div>
+                <span style="font-size:10px; color:#71717A;">New</span>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div style="width:44px; height:44px; border-radius:50%; background:#3B82F6; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; border:2px solid #10B981;">J</div>
+                <span style="font-size:10px; font-weight:600;">James</span>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div style="width:44px; height:44px; border-radius:50%; background:#EC4899; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px;">M</div>
+                <span style="font-size:10px; color:#A1A1AA;">Marie</span>
+              </div>
+              <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                <div style="width:44px; height:44px; border-radius:50%; background:#F59E0B; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px;">J</div>
+                <span style="font-size:10px; color:#A1A1AA;">John</span>
+              </div>
+            </div>
+
+            <!-- Large Amount Display -->
+            <div style="text-align:center; margin:16px 0 20px 0;">
+              <div style="font-size:11px; color:#71717A; text-transform:uppercase; font-weight:700; margin-bottom:6px;">Enter amount</div>
+              <div style="font-size:38px; font-weight:900; letter-spacing:-0.03em; color:#fff;">$6,324<span style="color:#10B981;">.49</span></div>
+            </div>
+
+            <!-- Quick Preset Chips -->
+            <div style="display:flex; justify-content:center; gap:6px; margin-bottom:20px;">
+              <span style="background:#18181B; border:1px solid #27272A; padding:6px 12px; border-radius:99px; font-size:11px; font-weight:600; cursor:pointer;">$50</span>
+              <span style="background:#18181B; border:1px solid #27272A; padding:6px 12px; border-radius:99px; font-size:11px; font-weight:600; cursor:pointer;">$100</span>
+              <span style="background:#18181B; border:1px solid #27272A; padding:6px 12px; border-radius:99px; font-size:11px; font-weight:600; cursor:pointer;">$500</span>
+              <span style="background:#18181B; border:1px solid #27272A; padding:6px 12px; border-radius:99px; font-size:11px; font-weight:600; cursor:pointer;">$1000</span>
+            </div>
+
+            <!-- Numeric Keypad -->
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; max-width:260px; margin:0 auto 16px auto;">
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">1</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">2</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">3</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">4</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">5</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">6</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">7</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">8</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">9</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">.</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">0</button>
+              <button style="padding:14px; background:#18181B; border:1px solid #27272A; border-radius:14px; color:#fff; font-size:16px; font-weight:700; cursor:pointer;">⌫</button>
+            </div>
+          </div>
+
+          <button style="width:100%; padding:14px 0; background:#10B981; color:#064E3B; border:none; border-radius:16px; font-weight:800; font-size:14px; cursor:pointer;">
+            Send money
+          </button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 3 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex — Instant Send Money Keypad</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">Tactile circular recipient selector, custom numeric dial keypad, and quick preset amount chips.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Recipient avatar stack</span><span class="screen-element-tag">Quick amount chips ($50, $100, $500, $1000)</span><span class="screen-element-tag">Custom glass numeric keypad (1-9, ., 0, ⌫)</span><span class="screen-element-tag">Neon lime Send Money button</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monex-analytics">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-weight:700;font-size:16px;">Analytics</span>
+              <div style="width:36px;height:36px;border-radius:50%;background:#18181B;display:flex;align-items:center;justify-content:center;border:1px solid #27272A;">🔔</div>
+            </div>
+            <div style="display:flex;gap:6px;margin-bottom:16px;">
+              <span style="background:#10B981;color:#064E3B;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:800;">Monthly</span>
+              <span style="background:#18181B;color:#A1A1AA;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:600;border:1px solid #27272A;">Weekly</span>
+              <span style="background:#18181B;color:#A1A1AA;padding:6px 14px;border-radius:99px;font-size:11px;font-weight:600;border:1px solid #27272A;">Daily</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <div style="font-size:11px;color:#71717A;font-weight:600;">Total Balance</div>
+                <div style="font-size:24px;font-weight:900;">$6,324</div>
+              </div>
+              <span style="font-size:12px;color:#10B981;font-weight:700;">▲ $4,560.50</span>
+            </div>
+            <div style="background:#18181B;border-radius:16px;padding:16px;margin-bottom:16px;border:1px solid #27272A;height:100px;position:relative;overflow:hidden;">
+              <svg viewBox="0 0 260 80" style="width:100%;height:100%;">
+                <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10B981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10B981" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,60 Q30,55 60,40 T120,25 T180,35 T240,15 L260,15 L260,80 L0,80Z" fill="url(#cg)"/>
+                <path d="M0,60 Q30,55 60,40 T120,25 T180,35 T240,15" fill="none" stroke="#10B981" stroke-width="2.5"/>
+                <circle cx="240" cy="15" r="4" fill="#10B981" stroke="#09090B" stroke-width="2"/>
+              </svg>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;">
+                <div style="font-size:10px;color:#71717A;font-weight:600;">Income</div>
+                <div style="font-size:18px;font-weight:900;margin-top:4px;">$8,567</div>
+                <div style="font-size:10px;color:#EF4444;margin-top:2px;">▼ $4,560.50</div>
+              </div>
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;">
+                <div style="font-size:10px;color:#71717A;font-weight:600;">Income</div>
+                <div style="font-size:18px;font-weight:900;margin-top:4px;">$8,567</div>
+                <div style="font-size:10px;color:#10B981;margin-top:2px;">● Positive</div>
+                <div style="height:4px;background:#27272A;border-radius:99px;margin-top:6px;overflow:hidden;"><div style="height:100%;width:70%;background:linear-gradient(90deg,#10B981,#A3E635);border-radius:99px;"></div></div>
+              </div>
+            </div>
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;margin-top:10px;">
+              <div style="font-size:10px;color:#71717A;font-weight:600;">Budget</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;">
+                <span style="font-size:16px;font-weight:900;">$0</span>
+                <span style="font-size:10px;color:#EF4444;font-weight:700;">● Overspent</span>
+              </div>
+              <div style="height:4px;background:#27272A;border-radius:99px;margin-top:6px;overflow:hidden;"><div style="height:100%;width:100%;background:#EF4444;border-radius:99px;"></div></div>
+            </div>
+          </div>
+          <div style="background:#18181B;border-radius:24px;padding:10px 16px;display:flex;justify-content:space-around;align-items:center;border:1px solid #27272A;margin-top:14px;">
+            <div style="color:#71717A;font-size:18px;">🏠</div>
+            <div style="color:#10B981;font-size:18px;">📊</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#10B981;color:#064E3B;font-weight:900;display:flex;align-items:center;justify-content:center;">+</div>
+            <div style="color:#71717A;font-size:18px;">🪙</div>
+            <div style="color:#71717A;font-size:18px;">⚙️</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 4 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex — Financial Analytics & Spline</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">Monthly/Weekly/Daily balance spline chart with neon green glow, income cards, and budget meter.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Timeframe segmented control</span><span class="screen-element-tag">Glowing gradient line chart</span><span class="screen-element-tag">Income $8,567 card</span><span class="screen-element-tag">Overspent budget progress bar</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monex-crypto">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-weight:700;font-size:16px;">Crypto</span>
+              <div style="width:36px;height:36px;border-radius:50%;background:#18181B;display:flex;align-items:center;justify-content:center;border:1px solid #27272A;">🔔</div>
+            </div>
+            <div style="margin-bottom:4px;">
+              <div style="font-size:11px;color:#71717A;font-weight:600;">Total Balance</div>
+              <div style="font-size:28px;font-weight:900;margin-top:4px;">$6,324.49</div>
+              <div style="font-size:12px;color:#10B981;font-weight:700;">+$456 (+7.21%)</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0;">
+              <button style="padding:10px;background:#18181B;border:1px solid #27272A;border-radius:14px;color:#fff;font-size:11px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;"><span>📈</span>Trade</button>
+              <button style="padding:10px;background:#18181B;border:1px solid #27272A;border-radius:14px;color:#fff;font-size:11px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;"><span>↑</span>Send</button>
+              <button style="padding:10px;background:#18181B;border:1px solid #27272A;border-radius:14px;color:#fff;font-size:11px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;"><span>↓</span>Receive</button>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:16px;padding:14px;">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#F7931A;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:900;">₿</div>
+                  <span style="font-size:12px;font-weight:700;">BTC</span>
+                </div>
+                <div style="font-size:16px;font-weight:900;">$82,567.6</div>
+                <div style="font-size:10px;color:#10B981;margin-top:2px;">▲ +2.20%</div>
+                <svg viewBox="0 0 100 30" style="width:100%;height:24px;margin-top:6px;"><path d="M0,20 Q15,18 30,12 T60,15 T90,5 L100,8" fill="none" stroke="#10B981" stroke-width="1.5"/></svg>
+              </div>
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:16px;padding:14px;">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#627EEA;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:900;">Ξ</div>
+                  <span style="font-size:12px;font-weight:700;">ETH</span>
+                </div>
+                <div style="font-size:16px;font-weight:900;">$1,818.6</div>
+                <div style="font-size:10px;color:#EF4444;margin-top:2px;">▼ -3.99%</div>
+                <svg viewBox="0 0 100 30" style="width:100%;height:24px;margin-top:6px;"><path d="M0,8 Q15,12 30,18 T60,14 T90,22 L100,20" fill="none" stroke="#EF4444" stroke-width="1.5"/></svg>
+              </div>
+            </div>
+            <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;">
+              <div style="font-size:11px;color:#71717A;font-weight:600;">All crypto</div>
+              <div style="display:flex;align-items:center;gap:6px;margin-left:auto;">
+                <div style="width:20px;height:20px;border-radius:50%;background:#F7931A;font-size:9px;display:flex;align-items:center;justify-content:center;font-weight:900;">₿</div>
+                <span style="font-size:12px;font-weight:700;">Bitcoin</span>
+              </div>
+              <span style="font-size:12px;font-weight:700;margin-left:auto;">$82,567.6</span>
+            </div>
+          </div>
+          <div style="background:#18181B;border-radius:24px;padding:10px 16px;display:flex;justify-content:space-around;align-items:center;border:1px solid #27272A;margin-top:14px;">
+            <div style="color:#71717A;font-size:18px;">🏠</div>
+            <div style="color:#71717A;font-size:18px;">📊</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#10B981;color:#064E3B;font-weight:900;display:flex;align-items:center;justify-content:center;">+</div>
+            <div style="color:#10B981;font-size:18px;">🪙</div>
+            <div style="color:#71717A;font-size:18px;">⚙️</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 5 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex — Crypto Asset Overview</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">Real-time crypto portfolio tracker with mini trend sparklines and quick buy/sell trade triggers.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Crypto total balance $6,324.49 (+7.21%)</span><span class="screen-element-tag">BTC sparkline card ($82,567.6)</span><span class="screen-element-tag">ETH sparkline card ($1,818.6)</span><span class="screen-element-tag">Trade / Send / Receive actions</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monex-settings">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#09090B;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="font-weight:700;font-size:16px;margin-bottom:20px;">Settings</div>
+            <div style="text-align:center;margin-bottom:20px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#10B981,#059669);margin:0 auto 10px auto;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#064E3B;">L</div>
+              <div style="font-size:16px;font-weight:800;">Leonard Lopez</div>
+              <div style="font-size:11px;color:#71717A;">@leonardlopez</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:14px;text-align:center;">
+                <div style="font-size:16px;margin-bottom:4px;">⭐</div>
+                <div style="font-size:12px;font-weight:800;">Standard</div>
+                <div style="font-size:10px;color:#71717A;">Your plan</div>
+              </div>
+              <div style="background:#18181B;border:1px solid #27272A;border-radius:14px;padding:14px;text-align:center;">
+                <div style="font-size:16px;margin-bottom:4px;">👥</div>
+                <div style="font-size:12px;font-weight:800;">Referrals</div>
+                <div style="font-size:10px;color:#71717A;">Invite & earn</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#18181B;border-radius:12px 12px 4px 4px;border:1px solid #27272A;">
+                <span style="font-size:14px;">❓</span><span style="font-size:13px;font-weight:600;">Help</span>
+                <span style="margin-left:auto;color:#71717A;font-size:12px;">›</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#18181B;border:1px solid #27272A;">
+                <span style="font-size:14px;">👤</span><span style="font-size:13px;font-weight:600;">Account</span>
+                <span style="margin-left:auto;color:#71717A;font-size:12px;">›</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#18181B;border:1px solid #27272A;">
+                <span style="font-size:14px;">📄</span><span style="font-size:13px;font-weight:600;">Documents & statements</span>
+                <span style="margin-left:auto;color:#71717A;font-size:12px;">›</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#18181B;border-radius:4px 4px 12px 12px;border:1px solid #27272A;">
+                <span style="font-size:14px;">📚</span><span style="font-size:13px;font-weight:600;">Learn</span>
+                <span style="margin-left:auto;color:#71717A;font-size:12px;">›</span>
+              </div>
+            </div>
+          </div>
+          <div style="background:#18181B;border-radius:24px;padding:10px 16px;display:flex;justify-content:space-around;align-items:center;border:1px solid #27272A;margin-top:14px;">
+            <div style="color:#71717A;font-size:18px;">🏠</div>
+            <div style="color:#71717A;font-size:18px;">📊</div>
+            <div style="width:36px;height:36px;border-radius:50%;background:#10B981;color:#064E3B;font-weight:900;display:flex;align-items:center;justify-content:center;">+</div>
+            <div style="color:#71717A;font-size:18px;">🪙</div>
+            <div style="color:#10B981;font-size:18px;">⚙️</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 6 OF 15 • REF PIN_48</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monex — Profile & Tier Management</h3>
+            </div>
+            <span class="screen-info-badge">dark-neon</span>
+          </div>
+          <p class="screen-info-desc">User identity header, Standard membership tier card, referral invite card, and account settings.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Leonard Lopez profile avatar</span><span class="screen-element-tag">Standard plan badge</span><span class="screen-element-tag">Referrals invite rewards card</span><span class="screen-element-tag">Security & Statements menu rows</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="alimbank-home">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0A1628;color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-size:18px;">🏦</span>
+                <span style="font-weight:800;font-size:15px;">Alim<span style="color:#10B981;">Bank</span></span>
+              </div>
+              <div style="width:32px;height:32px;border-radius:50%;background:#18181B;display:flex;align-items:center;justify-content:center;">🔔</div>
+            </div>
+            <div style="font-size:12px;color:#94A3B8;margin-bottom:4px;">Good Evening</div>
+            <div style="font-size:18px;font-weight:800;margin-bottom:16px;">Fatimah Azzahrah</div>
+            <div style="background:linear-gradient(135deg,#10B981,#059669);border-radius:20px;padding:18px;margin-bottom:16px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span style="font-size:11px;color:#064E3B;font-weight:700;">Account Balance</span>
+                <span style="font-size:11px;cursor:pointer;">→</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-size:26px;font-weight:900;color:#022C22;">$2,235.1145</span>
+                <span style="font-size:14px;cursor:pointer;">👁</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px;">
+                <div style="text-align:center;background:rgba(255,255,255,0.2);border-radius:12px;padding:10px 4px;">
+                  <div style="font-size:14px;">✈️</div>
+                  <div style="font-size:9px;font-weight:700;margin-top:4px;color:#064E3B;">Transfer</div>
+                </div>
+                <div style="text-align:center;background:rgba(255,255,255,0.2);border-radius:12px;padding:10px 4px;">
+                  <div style="font-size:14px;">💰</div>
+                  <div style="font-size:9px;font-weight:700;margin-top:4px;color:#064E3B;">Withdraw</div>
+                </div>
+                <div style="text-align:center;background:rgba(255,255,255,0.2);border-radius:12px;padding:10px 4px;">
+                  <div style="font-size:14px;">📥</div>
+                  <div style="font-size:9px;font-weight:700;margin-top:4px;color:#064E3B;">Deposit</div>
+                </div>
+                <div style="text-align:center;background:rgba(255,255,255,0.2);border-radius:12px;padding:10px 4px;">
+                  <div style="font-size:14px;">💳</div>
+                  <div style="font-size:9px;font-weight:700;margin-top:4px;color:#064E3B;">Pay & Buy</div>
+                </div>
+              </div>
+            </div>
+            <div style="font-size:13px;font-weight:700;margin-bottom:10px;">● Promos & Reminders</div>
+            <div style="display:flex;gap:8px;overflow-x:auto;">
+              <div style="min-width:140px;background:#18181B;border:1px solid #27272A;border-radius:14px;padding:14px;">
+                <div style="font-size:11px;color:#94A3B8;">Discount up to</div>
+                <div style="font-size:20px;font-weight:900;margin-top:4px;">$15.25</div>
+                <div style="font-size:9px;color:#71717A;margin-top:4px;">every non-cash transactions</div>
+              </div>
+              <div style="min-width:140px;background:#18181B;border:1px solid #27272A;border-radius:14px;padding:14px;">
+                <div style="font-size:11px;color:#94A3B8;">Monthly</div>
+                <div style="font-size:20px;font-weight:900;margin-top:4px;">$18</div>
+                <div style="font-size:9px;color:#71717A;margin-top:4px;">saving oct</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:#18181B;border-radius:24px;padding:10px 16px;display:flex;justify-content:space-around;align-items:center;border:1px solid #27272A;margin-top:14px;">
+            <div style="color:#10B981;font-size:11px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:4px;">🏠<span>Home</span></div>
+            <div style="color:#71717A;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:4px;">💱<span>Transaction</span></div>
+            <div style="width:40px;height:40px;border-radius:50%;background:#10B981;color:#064E3B;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:16px;">📷</div>
+            <div style="color:#71717A;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:4px;">📊<span>Report</span></div>
+            <div style="color:#71717A;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:4px;">⚙️<span>Setting</span></div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 7 OF 15 • REF PIN_30</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">AlimBank — Emerald Dashboard</h3>
+            </div>
+            <span class="screen-info-badge">emerald-dark</span>
+          </div>
+          <p class="screen-info-desc">Curved emerald account balance card with hidden privacy toggle, promo banners, and glowing QR dock.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Emerald card $2,235.1145</span><span class="screen-element-tag">Eye privacy toggle</span><span class="screen-element-tag">4-action matrix (Transfer, Withdraw, Deposit, Pay)</span><span class="screen-element-tag">POS promo card</span><span class="screen-element-tag">Glowing QR scanner dock</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="alimbank-receipt">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#0F172A; color:#0F172A; border-radius:36px; padding:24px 20px; font-family:'Inter', sans-serif; height:100%; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+          <!-- Jagged Ticket Card -->
+          <div style="background:#FFFDF7; border-radius:24px; padding:24px 20px; box-shadow:0 10px 25px rgba(0,0,0,0.2); position:relative; overflow:hidden;">
+            <!-- Perforated top deco -->
+            <div style="text-align:center; margin-bottom:16px;">
+              <div style="width:44px; height:44px; border-radius:50%; background:#10B981; color:#fff; display:flex; align-items:center; justify-content:center; margin:0 auto 10px auto; font-size:18px;">✓</div>
+              <div style="font-size:11px; font-weight:800; color:#10B981; letter-spacing:0.05em; text-transform:uppercase;">Transaction Success</div>
+              <div style="font-size:18px; font-weight:900; color:#0F172A; margin-top:4px;">TOKO HYPERSHOP.CO</div>
+              <div style="font-size:10px; color:#64748B;">Transaction #8512857528</div>
+            </div>
+
+            <!-- Dotted Divider -->
+            <div style="border-top:2px dashed #CBD5E1; margin:18px 0;"></div>
+
+            <!-- Receipt Metadata -->
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:11px;">
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#64748B;">Date & time</span>
+                <span style="font-weight:700;">Dec 15, 2022 | 8:58 PM</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#64748B;">Reference number</span>
+                <span style="font-weight:700; font-family:monospace;">442774356886</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#64748B;">Source of funds</span>
+                <span style="font-weight:700;">Fatimah Azzahrah</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#64748B;">Recipient alias</span>
+                <span style="font-weight:700;">Kevin Hypershop</span>
+              </div>
+            </div>
+
+            <!-- Dotted Divider -->
+            <div style="border-top:2px dashed #CBD5E1; margin:18px 0;"></div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#64748B;">Total transaction</span>
+              <span style="font-size:22px; font-weight:900; color:#059669;">$10.525</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div style="display:flex; gap:12px; margin-top:20px;">
+            <button style="flex:1; padding:12px 0; background:#1E293B; color:#fff; border:1px solid #334155; border-radius:14px; font-weight:700; font-size:13px; cursor:pointer;">
+              Share 📤
+            </button>
+            <button style="flex:1; padding:12px 0; background:#10B981; color:#064E3B; border:none; border-radius:14px; font-weight:800; font-size:13px; cursor:pointer;">
+              Done →
+            </button>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 8 OF 15 • REF PIN_30</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">AlimBank — Perforated Serrated Receipt</h3>
+            </div>
+            <span class="screen-info-badge">emerald-light</span>
+          </div>
+          <p class="screen-info-desc">Apple Wallet style perforated ticket voucher with serrated edges, transaction metadata, and share action.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Jagged serrated top & bottom edges</span><span class="screen-element-tag">Success badge & Merchant TOKO HYPERSHOP</span><span class="screen-element-tag">Reference number #442774356886</span><span class="screen-element-tag">Total $10.525</span><span class="screen-element-tag">Share & Back actions</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="bluebank-home">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:linear-gradient(180deg,#2E3A8C 0%,#4A5BC7 40%,#F8F9FE 40%);color:#fff;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+              <span style="font-size:18px;">⊞</span>
+              <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:12px;">👤</div>
+            </div>
+            <div style="font-size:22px;font-weight:900;margin-bottom:16px;">Hi, Mark</div>
+            <div style="display:flex;gap:16px;align-items:flex-end;margin-bottom:20px;">
+              <div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.7);">Balance</div>
+                <div style="font-size:32px;font-weight:900;">$3,567</div>
+                <div style="font-size:12px;color:#A3E635;">+ $223.74</div>
+              </div>
+              <div style="background:#fff;border-radius:16px;padding:16px;color:#0F172A;min-width:140px;">
+                <div style="width:28px;height:16px;background:linear-gradient(90deg,#EB001B 50%,#F79E1B 50%);border-radius:10px;margin-bottom:12px;"></div>
+                <div style="font-size:11px;color:#64748B;">FlexPerks Travel</div>
+                <div style="font-size:14px;font-weight:800;letter-spacing:0.05em;margin-top:4px;">3759 ···· 2100</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;">
+              <div style="min-width:120px;background:#3B82F6;border-radius:16px;padding:14px;">
+                <div style="font-size:11px;font-weight:700;">Save part of your recent deposit</div>
+                <div style="font-size:24px;margin-top:8px;">📊</div>
+              </div>
+              <div style="min-width:120px;background:#EF4444;border-radius:16px;padding:14px;">
+                <div style="font-size:11px;font-weight:700;color:#fff;">Car insurance</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.8);">from $149/year</div>
+                <div style="font-size:24px;margin-top:4px;">🚗</div>
+              </div>
+            </div>
+            <div style="color:#0F172A;">
+              <div style="display:flex;gap:16px;margin-bottom:12px;border-bottom:2px solid #E2E8F0;padding-bottom:8px;">
+                <span style="font-size:14px;font-weight:800;border-bottom:2px solid #0F172A;padding-bottom:6px;">History</span>
+                <span style="font-size:14px;font-weight:600;color:#94A3B8;">Statistics</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #F1F5F9;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:36px;height:36px;border-radius:12px;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:14px;">🛒</div>
+                  <div><div style="font-size:13px;font-weight:700;">Shopping</div><div style="font-size:10px;color:#94A3B8;">3:40 pm</div></div>
+                </div>
+                <span style="font-size:13px;font-weight:800;color:#EF4444;">- $140.59</span>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div style="width:36px;height:36px;border-radius:12px;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-size:14px;">🌐</div>
+                  <div><div style="font-size:13px;font-weight:700;">Internet</div><div style="font-size:10px;color:#94A3B8;">3:56 pm</div></div>
+                </div>
+                <span style="font-size:13px;font-weight:800;color:#EF4444;">- $56.00</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;color:#64748B;">
+            <div style="text-align:center;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:16px;">↔</span>Transfer</div>
+            <div style="text-align:center;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:16px;">📷</span>Deposit</div>
+            <div style="text-align:center;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:16px;">📋</span>Pay bill</div>
+            <div style="text-align:center;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-size:16px;">📤</span>Send</div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 9 OF 15 • REF PIN_34</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Sapphire Blue — Neo-Bank Home</h3>
+            </div>
+            <span class="screen-info-badge">sapphire-blue</span>
+          </div>
+          <p class="screen-info-desc">Gradient sapphire hero with FlexPerks travel credit card, horizontal insurance feature cards, and expense history.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Balance $3,567 (+$223.74)</span><span class="screen-element-tag">FlexPerks Mastercard 3759..2100</span><span class="screen-element-tag">Deposit & Insurance 3D feature cards</span><span class="screen-element-tag">History vs Statistics tabs</span><span class="screen-element-tag">Shopping & Internet expenses</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="salung-savings">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FFFFFF;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="font-weight:800;font-size:16px;">💰 Savings Goals</span>
+            <div style="width:32px;height:32px;border-radius:50%;background:#F1F5F9;display:flex;align-items:center;justify-content:center;font-size:14px;">+</div>
+          </div>
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:13px;font-weight:700;">🏖️ Vacation Fund</span>
+              <span style="font-size:11px;color:#10B981;font-weight:700;">67%</span>
+            </div>
+            <div style="height:6px;background:#E2E8F0;border-radius:99px;overflow:hidden;margin-bottom:6px;"><div style="height:100%;width:67%;background:linear-gradient(90deg,#10B981,#A3E635);border-radius:99px;"></div></div>
+            <div style="font-size:11px;color:#64748B;">$3,350 of $5,000</div>
+          </div>
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:13px;font-weight:700;">🚗 New Car</span>
+              <span style="font-size:11px;color:#3B82F6;font-weight:700;">25%</span>
+            </div>
+            <div style="height:6px;background:#E2E8F0;border-radius:99px;overflow:hidden;margin-bottom:6px;"><div style="height:100%;width:25%;background:linear-gradient(90deg,#3B82F6,#60A5FA);border-radius:99px;"></div></div>
+            <div style="font-size:11px;color:#64748B;">$7,500 of $30,000</div>
+          </div>
+          <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:20px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:13px;font-weight:700;">🏠 Down Payment</span>
+              <span style="font-size:11px;color:#F59E0B;font-weight:700;">12%</span>
+            </div>
+            <div style="height:6px;background:#E2E8F0;border-radius:99px;overflow:hidden;margin-bottom:6px;"><div style="height:100%;width:12%;background:linear-gradient(90deg,#F59E0B,#FBBF24);border-radius:99px;"></div></div>
+            <div style="font-size:11px;color:#64748B;">$6,000 of $50,000</div>
+          </div>
+          <button style="width:100%;padding:14px;background:#0F172A;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">+ Create New Goal</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 10 OF 15 • REF PIN_4</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Salung — Savings Goals Hub</h3>
+            </div>
+            <span class="screen-info-badge">minimal-light</span>
+          </div>
+          <p class="screen-info-desc">Clean matte black card with 4-button dock, multi-category savings goal progress bars, and timeline indicators.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Black card $23,400.00</span><span class="screen-element-tag">Summer vacation goal ($15,000 / $50,000 - 40%)</span><span class="screen-element-tag">Real estate goal ($60,500 / $230,000)</span><span class="screen-element-tag">Education goal progress bar</span><span class="screen-element-tag">Bottom pill dock</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="salung-goal-detail">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#F8FAFC;color:#0F172A;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <span style="font-size:18px;cursor:pointer;">←</span>
+            <span style="font-weight:700;font-size:15px;">Tokyo Trip Goal</span>
+            <span style="font-size:14px;cursor:pointer;">⚙️</span>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:24px;padding:20px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.03);margin-bottom:16px;">
+            <div style="width:64px;height:64px;border-radius:20px;background:#EFF6FF;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:28px;">🗼</div>
+            <div style="font-size:12px;color:#64748B;font-weight:600;margin-bottom:4px;">Saved so far</div>
+            <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;color:#0F172A;margin-bottom:6px;">$3,450.00</div>
+            <div style="font-size:11px;color:#10B981;font-weight:700;margin-bottom:16px;">69% of $5,000 target</div>
+            <div style="height:8px;background:#F1F5F9;border-radius:99px;overflow:hidden;margin-bottom:12px;">
+              <div style="width:69%;height:100%;background:linear-gradient(90deg,#3B82F6,#60A5FA);border-radius:99px;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:#94A3B8;font-weight:600;">
+              <span>Started Jan 10</span>
+              <span>Deadline Nov 15</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:16px;">
+            <button style="flex:1;padding:12px;background:#0F172A;color:#fff;border:none;border-radius:14px;font-weight:700;font-size:12px;cursor:pointer;">+ Quick Top-Up</button>
+            <button style="flex:1;padding:12px;background:#FFFFFF;border:1px solid #E2E8F0;color:#0F172A;border-radius:14px;font-weight:700;font-size:12px;cursor:pointer;">Auto-Save Rule</button>
+          </div>
+          <div style="font-size:12px;font-weight:700;margin-bottom:10px;">Recent Deposits</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border:1px solid #F1F5F9;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:12px;font-weight:700;">Weekly Round-up</div>
+                <div style="font-size:10px;color:#94A3B8;">Yesterday, 4:15 PM</div>
+              </div>
+              <div style="font-size:13px;font-weight:800;color:#10B981;">+$42.50</div>
+            </div>
+            <div style="background:#fff;border:1px solid #F1F5F9;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <div style="font-size:12px;font-weight:700;">Monthly Salary Sweep</div>
+                <div style="font-size:10px;color:#94A3B8;">Oct 1, 9:00 AM</div>
+              </div>
+              <div style="font-size:13px;font-weight:800;color:#10B981;">+$500.00</div>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 11 OF 15 • REF PIN_4</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Salung — Goal Analytics & Top-Up</h3>
+            </div>
+            <span class="screen-info-badge">minimal-light</span>
+          </div>
+          <p class="screen-info-desc">Detailed savings analytics screen with average per month, stippled bar chart, and sticky Top-up action.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">+112.00% growth indicator</span><span class="screen-element-tag">Stipple texture bar chart</span><span class="screen-element-tag">Average per month $1,202</span><span class="screen-element-tag">Goal top up transaction row</span><span class="screen-element-tag">Sticky + Top up CTA</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="monero-wallet">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#000000;color:#FFFFFF;border-radius:36px;padding:24px 20px;font-family:'JetBrains Mono',monospace;height:100%;display:flex;flex-direction:column;box-shadow:inset 0 0 40px rgba(255,102,0,0.05);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="width:24px;height:24px;border-radius:50%;background:#FF6600;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#000;">M</span>
+              <span style="font-size:14px;font-weight:800;letter-spacing:0.05em;color:#FF6600;">XMR VAULT</span>
+            </div>
+            <span style="font-size:9px;background:#18181B;border:1px solid #27272A;color:#10B981;padding:3px 8px;border-radius:99px;">● SYNCHRONIZED</span>
+          </div>
+          <div style="background:linear-gradient(180deg,#111111 0%,#0A0A0A 100%);border:1px solid #222;border-radius:20px;padding:20px;margin-bottom:20px;position:relative;">
+            <div style="font-size:9px;color:#71717A;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px;">Stealth Balance</div>
+            <div style="font-size:28px;font-weight:800;color:#FFF;letter-spacing:-0.02em;margin-bottom:4px;">142.8592 XMR</div>
+            <div style="font-size:11px;color:#FF6600;font-weight:700;">≈ $22,467.45 USD</div>
+            <div style="margin-top:16px;padding:8px 12px;background:#050505;border:1px solid #1A1A1A;border-radius:10px;font-size:9px;color:#A1A1AA;word-break:break-all;">
+              888tNkZrpn6JsE...9bFxZ (Primary Subaddress)
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <button style="flex:1;padding:12px;background:#FF6600;color:#000;border:none;border-radius:12px;font-weight:800;font-size:11px;cursor:pointer;letter-spacing:0.05em;">SEND PRIVATE</button>
+            <button style="flex:1;padding:12px;background:#18181B;border:1px solid #27272A;color:#FFF;border-radius:12px;font-weight:700;font-size:11px;cursor:pointer;">RECEIVE</button>
+          </div>
+          <div style="font-size:10px;color:#71717A;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Ring Signature Log</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:10px;">
+            <div style="background:#0D0D0D;border:1px solid #1A1A1A;padding:10px 12px;border-radius:10px;display:flex;justify-content:space-between;">
+              <span style="color:#A1A1AA;">16-Ring Mixin</span>
+              <span style="color:#10B981;font-weight:700;">+4.500 XMR</span>
+            </div>
+            <div style="background:#0D0D0D;border:1px solid #1A1A1A;padding:10px 12px;border-radius:10px;display:flex;justify-content:space-between;">
+              <span style="color:#A1A1AA;">Torus Relay</span>
+              <span style="color:#EF4444;font-weight:700;">-12.200 XMR</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 12 OF 15 • REF PIN_5</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Monero — Dark Privacy Wallet</h3>
+            </div>
+            <span class="screen-info-badge">pure-black</span>
+          </div>
+          <p class="screen-info-desc">Minimalist obsidian dark crypto wallet with live synchronization pill and multi-token portfolio breakdown.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Pure black container</span><span class="screen-element-tag">$63,000 (210.43 XMR)</span><span class="screen-element-tag">Receive / (+) / Send pill dock</span><span class="screen-element-tag">• Synchronized status pill</span><span class="screen-element-tag">Tether & Ethereum token cards</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="shipping-wallet">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FAFAFA;color:#171717;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="font-weight:800;font-size:16px;letter-spacing:-0.02em;">Logistics Hub</span>
+            <div style="font-size:11px;background:#000;color:#fff;padding:4px 10px;border-radius:99px;font-weight:700;">PRO TIER</div>
+          </div>
+          <div style="background:#000;color:#fff;border-radius:20px;padding:20px;margin-bottom:18px;">
+            <div style="font-size:11px;color:#A3A3A3;margin-bottom:4px;">Prepaid Freight Escrow</div>
+            <div style="font-size:30px;font-weight:900;letter-spacing:-0.03em;margin-bottom:12px;">$12,840.00</div>
+            <div style="display:flex;gap:12px;font-size:10px;color:#D4D4D4;">
+              <span>📦 18 In-Transit</span>
+              <span>✅ 142 Delivered</span>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;letter-spacing:-0.01em;">Active Shipments</div>
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="background:#FFFFFF;border:1px solid #E5E5E5;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="font-size:12px;font-weight:700;">Air Cargo #SHP-9921</span>
+                <span style="font-size:10px;background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:99px;font-weight:700;">Customs Clear</span>
+              </div>
+              <div style="font-size:10px;color:#737373;margin-bottom:8px;">Frankfurt → Singapore (ETA 6h)</div>
+              <div style="height:4px;background:#F5F5F5;border-radius:99px;overflow:hidden;">
+                <div style="width:75%;height:100%;background:#000;border-radius:99px;"></div>
+              </div>
+            </div>
+            <div style="background:#FFFFFF;border:1px solid #E5E5E5;border-radius:16px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span style="font-size:12px;font-weight:700;">Sea Freight #SHP-8842</span>
+                <span style="font-size:10px;background:#FEF9C3;color:#854D0E;padding:2px 8px;border-radius:99px;font-weight:700;">Port Docking</span>
+              </div>
+              <div style="font-size:10px;color:#737373;margin-bottom:8px;">Rotterdam → Mumbai (ETA 2d)</div>
+              <div style="height:4px;background:#F5F5F5;border-radius:99px;overflow:hidden;">
+                <div style="width:40%;height:100%;background:#000;border-radius:99px;"></div>
+              </div>
+            </div>
+          </div>
+          <button style="width:100%;padding:14px;background:#000;color:#fff;border:none;border-radius:16px;font-weight:800;font-size:13px;cursor:pointer;margin-top:auto;">+ Create Air Waybill</button>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 13 OF 15 • REF PIN_2</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Logistics — Shipping Balance & Tracker</h3>
+            </div>
+            <span class="screen-info-badge">clean-mono</span>
+          </div>
+          <p class="screen-info-desc">Black balance card with Top-up trigger, active consignment stepper, and delivery rider contact.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Balance $245.00</span><span class="screen-element-tag">New Shipping & Track Shipping pills</span><span class="screen-element-tag">Live tracking ID PAQ-327-P21</span><span class="screen-element-tag">3-step delivery progress bar</span><span class="screen-element-tag">Rider chat & call buttons</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="pastel-finance-home">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FDFBF7;color:#2D2D2D;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;overflow-y:auto;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#FCE7F3;display:flex;align-items:center;justify-content:center;font-size:16px;">🌸</div>
+              <div>
+                <div style="font-size:10px;color:#78716C;font-weight:600;">Good morning,</div>
+                <div style="font-size:14px;font-weight:800;">Sophia Ellis</div>
+              </div>
+            </div>
+            <div style="width:34px;height:34px;border-radius:50%;background:#F5F5F4;display:flex;align-items:center;justify-content:center;font-size:14px;">🔍</div>
+          </div>
+          <div style="background:#FFF1F2;border:1px solid #FFE4E6;border-radius:24px;padding:20px;margin-bottom:16px;">
+            <div style="font-size:11px;color:#9F1239;font-weight:700;">Net Liquidity</div>
+            <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;color:#881337;margin:6px 0;">$48,290.15</div>
+            <div style="display:inline-block;background:#FFE4E6;color:#BE123C;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:800;">+12.4% vs last month</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+            <div style="background:#FEF3C7;border-radius:20px;padding:16px;">
+              <div style="font-size:18px;margin-bottom:6px;">🍯</div>
+              <div style="font-size:10px;color:#92400E;font-weight:700;">Honey Pot</div>
+              <div style="font-size:18px;font-weight:900;color:#78350F;">$14,200</div>
+            </div>
+            <div style="background:#E0E7FF;border-radius:20px;padding:16px;">
+              <div style="font-size:18px;margin-bottom:6px;">🫐</div>
+              <div style="font-size:10px;color:#3730A3;font-weight:700;">Investments</div>
+              <div style="font-size:18px;font-weight:900;color:#312E81;">$22,540</div>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Quick Transfers</div>
+          <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#D1FAE5;display:flex;align-items:center;justify-content:center;font-size:18px;">🌿</div>
+              <span style="font-size:10px;font-weight:700;">Rent</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:18px;">⚡</div>
+              <span style="font-size:10px;font-weight:700;">Bills</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#DBEAFE;display:flex;align-items:center;justify-content:center;font-size:18px;">✈️</div>
+              <span style="font-size:10px;font-weight:700;">Travel</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#FEF3C7;display:flex;align-items:center;justify-content:center;font-size:18px;">☕</div>
+              <span style="font-size:10px;font-weight:700;">Dining</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 14 OF 15 • REF PIN_50</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Pastel Minimal — Bento Financial Overview</h3>
+            </div>
+            <span class="screen-info-badge">soft-pastel</span>
+          </div>
+          <p class="screen-info-desc">Gentle mint, peach, and lavender bento tiles for activity, weekly sales, and expense stream.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Mint activity bar chart</span><span class="screen-element-tag">Peach sales card $280.99</span><span class="screen-element-tag">Lavender revenue card</span><span class="screen-element-tag">Nike & Pepsi transaction feed</span><span class="screen-element-tag">Floating light nav</span>
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="screen-card-container" id="pastel-finance-chart">
+        <!-- iPhone 16 Pro Frame with Live Prototype -->
+        <div class="iphone-frame">
+          <div class="iphone-dynamic-island">
+            <div class="iphone-island-camera"></div>
+            <div style="width:10px; height:10px; border-radius:50%; background:#059669; opacity:0.8;"></div>
+          </div>
+          <div class="iphone-screen-viewport" style="padding-top:40px;">
+            
+        <div style="background:#FAF5FF;color:#3B0764;border-radius:36px;padding:24px 20px;font-family:'Inter',sans-serif;height:100%;display:flex;flex-direction:column;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <span style="font-size:16px;cursor:pointer;">←</span>
+            <span style="font-weight:800;font-size:15px;">Monthly Spline</span>
+            <span style="font-size:12px;background:#F3E8FF;padding:4px 10px;border-radius:99px;font-weight:700;">2026</span>
+          </div>
+          <div style="background:#FFFFFF;border:1px solid #F3E8FF;border-radius:24px;padding:20px;margin-bottom:18px;box-shadow:0 8px 30px rgba(168,85,247,0.06);">
+            <div style="font-size:11px;color:#7E22CE;font-weight:700;">Cash Inflow Trend</div>
+            <div style="font-size:28px;font-weight:900;margin:6px 0;">+$8,450.00</div>
+            <!-- Interactive SVG Spline Wave -->
+            <svg viewBox="0 0 300 100" style="width:100%;height:100px;margin-top:10px;">
+              <defs>
+                <linearGradient id="pastelGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C084FC" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#C084FC" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,80 Q50,20 100,50 T200,30 T300,10 L300,100 L0,100 Z" fill="url(#pastelGrad)" />
+              <path d="M0,80 Q50,20 100,50 T200,30 T300,10" fill="none" stroke="#9333EA" stroke-width="3" stroke-linecap="round" />
+              <circle cx="200" cy="30" r="5" fill="#9333EA" stroke="#fff" stroke-width="2"/>
+            </svg>
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:#A855F7;font-weight:700;margin-top:6px;">
+              <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:800;margin-bottom:10px;">Breakdown by Category</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;font-weight:700;">🏠 Rental Yield</span>
+              <span style="font-weight:800;font-size:12px;color:#16A34A;">$5,200.00 (62%)</span>
+            </div>
+            <div style="background:#fff;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;font-weight:700;">📈 Index Dividends</span>
+              <span style="font-weight:800;font-size:12px;color:#2563EB;">$2,150.00 (25%)</span>
+            </div>
+            <div style="background:#fff;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;font-weight:700;">🤝 Consulting Fees</span>
+              <span style="font-weight:800;font-size:12px;color:#9333EA;">$1,100.00 (13%)</span>
+            </div>
+          </div>
+        </div>
+      
+          </div>
+        </div>
+
+        <!-- Metadata Card -->
+        <div class="screen-info-card">
+          <div class="screen-info-header">
+            <div>
+              <span style="font-size:10px; font-weight:800; color:#3B82F6; letter-spacing:0.05em; text-transform:uppercase;">SCREEN 15 OF 15 • REF PIN_50</span>
+              <h3 class="screen-info-title" style="margin-top:2px;">Pastel Minimal — Income Spline & Trades</h3>
+            </div>
+            <span class="screen-info-badge">soft-pastel</span>
+          </div>
+          <p class="screen-info-desc">Total income $6,289.00 USD with chart/table toggle, smooth spline curve, and Buy/Sell crypto cards.</p>
+          
+          <div style="margin-bottom:8px; font-size:10px; font-weight:700; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">Key Elements Extracted:</div>
+          <div class="screen-elements-tags">
+            <span class="screen-element-tag">Total Income $6,289.00</span><span class="screen-element-tag">Savings spline area card $2,738.00</span><span class="screen-element-tag">Chart / Table toggle</span><span class="screen-element-tag">Buy BTC +0.82 card</span><span class="screen-element-tag">Sell BTC +0.98 card</span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+</div>
+</body>
+</html>

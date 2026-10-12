@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewards & Gamification — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    /* ═══════ REWARDS & GAMIFICATION STYLES ═══════ */
+    
+    /* Achievements */
+    .achieve-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .achieve-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .achieve-card.locked { opacity: 0.6; filter: grayscale(100%); }
+    .achieve-icon-wrapper {
+      width: 80px; height: 80px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, #FFD700 0%, #F59E0B 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px;
+      box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3), inset 0 2px 4px rgba(255,255,255,0.4);
+      position: relative;
+    }
+    .achieve-icon-wrapper::after { content: ''; position: absolute; inset: -4px; border: 2px dashed rgba(245, 158, 11, 0.5); border-radius: 50%; animation: spin 10s linear infinite; }
+    .achieve-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--color-text-primary); margin-bottom: 8px; }
+    .achieve-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.4; }
+
+    /* Reward Cards (Like CRED) */
+    .reward-card {
+      background: #111;
+      border-radius: 20px;
+      padding: 32px 24px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .reward-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 120px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .reward-brand { width: 48px; height: 48px; background: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1; }
+    .reward-title { font-family: var(--font-display); font-size: 24px; font-weight: 800; line-height: 1.2; z-index: 1; }
+    .reward-subtitle { font-size: 14px; color: rgba(255,255,255,0.7); z-index: 1; }
+    .reward-cost {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 999px;
+      font-weight: 700; font-family: var(--font-mono); font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); z-index: 1; width: max-content;
+    }
+
+    /* PayDash Glass Button Override */
+    .pd-btn-primary {
+      background: linear-gradient(180deg, #242424 0%, #0A0A0A 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.2);
+      border-radius: 9999px; padding: 0 24px; min-height: 48px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4); transition: all 150ms; width: 100%; z-index: 1;
+    }
+    .pd-btn-primary:hover {
+      background: linear-gradient(180deg, #333333 0%, #111111 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.25);
+    }
+    
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    <nav class="catalog-nav">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Gamification</div>
+        <a href="#achieve" class="catalog-nav-item active">🏆 Achievements</a>
+        <a href="#rewcard" class="catalog-nav-item">🎁 Reward Cards</a>
+        <a href="#redeem" class="catalog-nav-item">🔄 Redemption Flow</a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Navigate</div>
+        <a href="../index.html" class="catalog-nav-item">← Back to Index</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="catalog-main">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">Rewards & Gamification</h1>
+      <p class="catalog-page-description">Premium gamification elements engineered to drive user retention, including unlocking achievements and claiming high-value rewards.</p>
+    </div>
+
+    <!-- ═══ ACHIEVEMENTS ═══ -->
+    <section class="component-section" id="achieve">
+      <div class="component-section-header"><div><span class="component-family-id">ACHV</span><h2 class="component-family-name">Achievements & Badges</h2></div></div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">ACHV·A</span><span class="component-card-model">Model A — Unlocked Achievement</span></div>
+          <div class="component-card-preview">
+            <div class="achieve-card" style="width: 260px;">
+              <div class="achieve-icon-wrapper">🔥</div>
+              <h3 class="achieve-title">6-Month Streak</h3>
+              <p class="achieve-desc">Paid rent on time for 6 consecutive months. Keep it up!</p>
+            </div>
+          </div>
+        </div>
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">ACHV·B</span><span class="component-card-model">Model B — Locked Badge</span></div>
+          <div class="component-card-preview">
+            <div class="achieve-card locked" style="width: 260px;">
+              <div class="achieve-icon-wrapper" style="background:#E2E8F0; box-shadow:none;">🔒</div>
+              <h3 class="achieve-title">Early Bird</h3>
+              <p class="achieve-desc">Pay rent 3 days before the due date to unlock.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ REWARD CARDS ═══ -->
+    <section class="component-section" id="rewcard">
+      <div class="component-section-header"><div><span class="component-family-id">REWCARD</span><h2 class="component-family-name">Premium Reward Cards</h2></div></div>
+      <div class="component-grid">
+        <div class="component-card" style="grid-column: span 2;">
+          <div class="component-card-header"><span class="component-card-id">REWCARD·A</span><span class="component-card-model">Model A — Brand Offer Card (CRED-style)</span></div>
+          <div class="component-card-preview" style="background: #000;">
+            <div class="reward-card" style="width: 320px; background: linear-gradient(135deg, #1A1A1A 0%, #050505 100%);">
+              <div class="reward-brand">☕</div>
+              <div class="reward-title">Flat ₹500 off at Starbucks</div>
+              <div class="reward-subtitle">Exclusive for Rentenpe Prime members</div>
+              <div class="reward-cost">🪙 1,000 Coins</div>
+              <div style="margin-top: 16px;">
+                <button class="pd-btn-primary">Claim Reward</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="component-card" style="grid-column: span 2;">
+          <div class="component-card-header"><span class="component-card-id">REWCARD·B</span><span class="component-card-model">Model B — Rent Discount Card</span></div>
+          <div class="component-card-preview">
+            <div class="reward-card" style="width: 320px; background: linear-gradient(135deg, #8B5CF6 0%, #4C1D95 100%); border: 1px solid rgba(255,255,255,0.2);">
+              <div class="reward-brand" style="color: #8B5CF6;">💰</div>
+              <div class="reward-title">1% Cashback on Next Rent</div>
+              <div class="reward-subtitle">Apply directly to your next month's payment</div>
+              <div class="reward-cost">🪙 5,000 Coins</div>
+              <div style="margin-top: 16px;">
+                <button class="pd-btn-primary" style="background: #fff; color: #4C1D95; text-shadow: none;">Apply to Bill</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

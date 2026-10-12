@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Analytics & Dashboards — Rentenpe UI Kit</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/catalog.css">
+  <script src="../js/catalog.js" defer></script>
+  <style>
+    /* ═══════ MOBILE CHARTS & ANALYTICS STYLES ═══════ */
+    
+    .mobile-widget {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .mobile-widget-dark {
+      background: #111111;
+      border: 1px solid #2A2A2E;
+      color: #FFFFFF;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+    }
+    
+    .widget-title {
+      font-size: 11px; font-weight: 800; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
+    }
+
+    /* Area Chart Simulation */
+    .area-chart {
+      height: 180px; position: relative; margin-top: 16px; border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: flex-end;
+    }
+    .area-layer {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      clip-path: polygon(0 40%, 20% 35%, 40% 45%, 60% 30%, 80% 35%, 100% 20%, 100% 100%, 0 100%);
+    }
+    .area-green { height: 160px; background: linear-gradient(180deg, rgba(16,185,129,0.3) 0%, rgba(16,185,129,0) 100%); z-index: 1; border-top: 2px solid #10B981; }
+    .area-blue { height: 120px; background: linear-gradient(180deg, rgba(59,130,246,0.5) 0%, rgba(59,130,246,0) 100%); z-index: 2; border-top: 2px solid #3B82F6; clip-path: polygon(0 50%, 20% 55%, 40% 40%, 60% 50%, 80% 30%, 100% 40%, 100% 100%, 0 100%); }
+    
+    .chart-legend { display: flex; gap: 12px; margin-top: 12px; justify-content: center; }
+    .legend-item { display: flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; color: #A1A1AA; }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* Pie Chart Simulation */
+    .pie-chart-container { display: flex; justify-content: center; padding: 20px 0; }
+    .pie-chart {
+      width: 140px; height: 140px; border-radius: 50%;
+      background: conic-gradient(
+        #8B5CF6 0deg 160deg,    /* Purple */
+        #10B981 160deg 210deg,  /* Green */
+        #3B82F6 210deg 320deg,  /* Blue */
+        #EF4444 320deg 360deg   /* Red */
+      );
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 4px #111;
+    }
+    /* Donut hole */
+    .pie-chart::after {
+      content: ''; width: 80px; height: 80px; background: #111; border-radius: 50%;
+    }
+
+    /* Mobile Sidebar Drawer */
+    .mobile-drawer-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.6); z-index: 200;
+    }
+    .mobile-drawer {
+      position: absolute; top: 0; left: 0; bottom: 0; width: 260px;
+      background: #FFFFFF; z-index: 201; box-shadow: 20px 0 40px rgba(0,0,0,0.2);
+      display: flex; flex-direction: column; overflow-y: auto; padding: 24px 16px;
+    }
+    .drawer-section { margin-bottom: 24px; }
+    .drawer-label { font-size: 10px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; padding: 0 12px; }
+    .drawer-item { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 500; color: #475569; }
+    .drawer-item.active { background: #000; color: #FFF; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+<div class="catalog-shell">
+  <aside class="catalog-sidebar">
+    <div class="catalog-sidebar-header">
+      <div class="catalog-logo"><div class="catalog-logo-mark">R</div><div><div class="catalog-logo-text">Rentenpe</div><div class="catalog-logo-sub">Design System</div></div></div>
+    </div>
+    <nav class="catalog-nav">
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Mobile Analytics</div>
+        <a href="#mobchart" class="catalog-nav-item active">📈 Area & Line Charts</a>
+        <a href="#mobpie" class="catalog-nav-item">🍩 Donut Distribution</a>
+        <a href="#mobside" class="catalog-nav-item">☰ Mobile Drawer</a>
+      </div>
+      <div class="catalog-nav-group">
+        <div class="catalog-nav-group-label">Navigate</div>
+        <a href="../index.html" class="catalog-nav-item">← Back to Dashboard</a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="catalog-main" style="background: var(--color-bg);">
+    <div class="catalog-page-header">
+      <h1 class="catalog-page-title">Mobile Analytics & Dashboards</h1>
+      <p class="catalog-page-description">The massive Pay-Dash analytics components exactly recreated and perfectly constrained for the Rentenpe mobile application viewport.</p>
+    </div>
+
+    <!-- ═══ AREA CHARTS ═══ -->
+    <section class="component-section" id="mobchart">
+      <div class="component-section-header"><div><span class="component-family-id">MOBCHART</span><h2 class="component-family-name">Global Monitoring System</h2></div></div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">MOBCHART·A</span><span class="component-card-model">Mobile Area Chart</span></div>
+          <div class="component-card-preview" style="background: #0F0F11;">
+            <!-- Mobile App Container -->
+            <div style="width: 340px; margin: 0 auto;">
+              
+              <div class="mobile-widget mobile-widget-dark">
+                <div class="widget-title">Global Monitoring System</div>
+                <div style="font-size:12px; color: #A1A1AA;">Base Salary, Taxes, Benefits</div>
+                
+                <div class="area-chart">
+                  <div class="area-layer area-green"></div>
+                  <div class="area-layer area-blue"></div>
+                  <!-- x-axis labels -->
+                  <div style="position: absolute; bottom: -20px; width: 100%; display: flex; justify-content: space-between; font-size: 9px; color: #A1A1AA;">
+                    <span>Feb</span><span>May</span><span>Aug</span><span>Nov</span>
+                  </div>
+                </div>
+                
+                <div class="chart-legend" style="margin-top: 32px;">
+                  <div class="legend-item"><div class="legend-dot" style="background: #10B981;"></div> Gross</div>
+                  <div class="legend-item"><div class="legend-dot" style="background: #3B82F6;"></div> Salary</div>
+                  <div class="legend-item"><div class="legend-dot" style="background: #8B5CF6;"></div> Benefits</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PIE CHARTS ═══ -->
+    <section class="component-section" id="mobpie">
+      <div class="component-section-header"><div><span class="component-family-id">MOBPIE</span><h2 class="component-family-name">Distribution Donut</h2></div></div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">MOBPIE·A</span><span class="component-card-model">Mobile Donut Chart</span></div>
+          <div class="component-card-preview" style="background: #0F0F11;">
+            
+            <div style="width: 340px; margin: 0 auto;">
+              <div class="mobile-widget mobile-widget-dark">
+                <div class="widget-title">Distribution</div>
+                <div style="font-size:12px; color: #A1A1AA;">Tax burden breakdown</div>
+                
+                <div class="pie-chart-container">
+                  <div class="pie-chart"></div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+                  <div class="legend-item"><div class="legend-dot" style="background: #8B5CF6;"></div> Medicare</div>
+                  <div class="legend-item"><div class="legend-dot" style="background: #10B981;"></div> State Withholding</div>
+                  <div class="legend-item"><div class="legend-dot" style="background: #3B82F6;"></div> Federal Tax</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ MOBILE SIDEBAR ═══ -->
+    <section class="component-section" id="mobside">
+      <div class="component-section-header"><div><span class="component-family-id">MOBSIDE</span><h2 class="component-family-name">Mobile Drawer Navigation</h2></div></div>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-card-header"><span class="component-card-id">MOBSIDE·A</span><span class="component-card-model">Drawer Layout</span></div>
+          <div class="component-card-preview" style="background: #E2E8F0; padding: 0;">
+            
+            <div style="width: 375px; height: 600px; position: relative; background: #FFF; overflow: hidden; margin: 0 auto;">
+              
+              <!-- Dummy App Header -->
+              <div style="height: 60px; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; padding: 0 16px;">
+                <div style="font-size: 24px;">☰</div>
+                <div style="font-weight: 700; margin-left: 16px;">Rentenpe</div>
+              </div>
+
+              <!-- Overlay & Drawer Active -->
+              <div class="mobile-drawer-overlay"></div>
+              <div class="mobile-drawer">
+                <div style="font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px; margin-bottom: 32px; padding: 0 12px;">
+                  <div style="background: #000; color: #fff; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 14px;">R</div>
+                  Dashboard
+                </div>
+
+                <div class="drawer-section">
+                  <div class="drawer-label">Overview</div>
+                  <div class="drawer-item active">📊 Dashboard</div>
+                  <div class="drawer-item">📈 Analytics</div>
+                </div>
+                
+                <div class="drawer-section">
+                  <div class="drawer-label">Workforce</div>
+                  <div class="drawer-item">👥 People</div>
+                  <div class="drawer-item">✨ Talent</div>
+                </div>
+                
+                <div class="drawer-section">
+                  <div class="drawer-label">Payroll & Finance</div>
+                  <div class="drawer-item">💸 Payroll</div>
+                  <div class="drawer-item">🌍 Global Payroll</div>
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
