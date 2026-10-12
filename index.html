@@ -48,23 +48,23 @@
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 999px;
-      color: #34D399;
+      color: #FFFFFF !important;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 16px;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
     }
     .hero-pulse-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 10px #10B981;
+      background: #FFFFFF;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
       animation: heroPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
     @keyframes heroPulse {
@@ -73,29 +73,29 @@
     }
 
     .hero-title {
-      font-size: 42px !important;
+      font-size: 46px !important;
       font-weight: 850 !important;
-      margin: 0 0 12px 0 !important;
+      margin: 0 0 14px 0 !important;
       letter-spacing: -0.035em !important;
-      line-height: 1.12 !important;
+      line-height: 1.1 !important;
       color: #FFFFFF !important;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 55%, #CBD5E1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color: #FFFFFF !important;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
     }
     .hero-title-accent {
-      background: linear-gradient(135deg, #38BDF8 0%, #34D399 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
     }
 
     .hero-desc {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #CBD5E1;
-      margin: 0 0 20px 0;
-      max-width: 560px;
-      font-weight: 400;
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      color: #FFFFFF !important;
+      opacity: 0.92 !important;
+      margin: 0 0 22px 0 !important;
+      max-width: 580px !important;
+      font-weight: 450 !important;
+      letter-spacing: -0.01em !important;
     }
 
     .hero-features {
@@ -4244,10 +4244,10 @@
       <div>
         <div class="hero-badge-eyebrow">
           <span class="hero-pulse-dot"></span>
-          <span>RentenPe Design System • Enterprise 2.0</span>
+          <span>Rentenpe Design System</span>
         </div>
-        <h1 class="hero-title">580+ <span class="hero-title-accent">Components</span></h1>
-        <p class="hero-desc">Every component from PayDash reverse-engineered + 400 new PropTech & FinTech interaction patterns. Handcrafted for mobile-first precision and instant touch response.</p>
+        <h1 class="hero-title">580+ Components</h1>
+        <p class="hero-desc">Every component from PayDash extracted + 400 new fintech patterns</p>
         <div class="hero-features">
           <span class="hero-feature-chip">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
