@@ -2,10 +2,14 @@
 
 > Modern Pro, ultra-high-fidelity mobile-first component library and design system for RentenPe PropTech & FinTech applications.
 
-[![Vercel Deployment](https://img.shields.io/badge/Deployed-Vercel-black?logo=vercel)](https://vercel.com)
-[![Components](https://img.shields.io/badge/Components-420%2B-blue)](pages/)
+[![Vercel Deployment](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel&logoColor=white)](https://rentenpe-ui-kit.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repo-181717?logo=github&logoColor=white)](https://github.com/jkanatt/rentenpe-ui-kit)
+[![Components](https://img.shields.io/badge/Components-440%2B-blue)](pages/)
 [![Design](https://img.shields.io/badge/Aesthetics-Modern%20Pro-purple)](https://github.com/jkanatt/rentenpe-ui-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+🌐 **Live Demo**: [https://rentenpe-ui-kit.vercel.app](https://rentenpe-ui-kit.vercel.app)  
+📦 **GitHub Repo**: [https://github.com/jkanatt/rentenpe-ui-kit](https://github.com/jkanatt/rentenpe-ui-kit)
 
 ---
 
